@@ -1,0 +1,7 @@
+site_name: Serveis en Xarxa CFGM
+theme:
+  name: material
+
+nav: 
+  - Presentació: index.md
+  - Contingut:  contingut.md
