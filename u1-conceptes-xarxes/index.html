@@ -50,9 +50,21 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#2-components-duna-xarxa">2. Components d’una xarxa</a>
         <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#host">Host</a>
+    <li class="toctree-l3"><a class="reference internal" href="#21-host">2.1 Host</a>
     </li>
-    <li class="toctree-l3"><a class="reference internal" href="#periferics-compartits">Perifèrics compartits</a>
+    <li class="toctree-l3"><a class="reference internal" href="#22-periferics-compartits">2.2 Perifèrics compartits</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#23-dispositius-de-xarxa">2.3 Dispositius de xarxa</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#231-encaminador-router">2.3.1 Encaminador (router)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#232-concentrador-hub">2.3.2 Concentrador (hub)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#233-commutador-switch">2.3.3 Commutador (switch)</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#3-classificacio-de-les-xarxes">3. Classificació de les xarxes</a>
     </li>
         </ul>
     </li>
@@ -154,20 +166,50 @@ exemple ordinadors personals, servidors, dispositius de xarxa i cables.</p>
 - Dispositius de xarxa.
 - Medis de xarxa.
 - Protocols i regles.</p>
-<h3 id="host">Host</h3>
+<h3 id="21-host">2.1 Host</h3>
 <p>Els hosts envien i reben tràfic dels usuaris.</p>
 <p>Host és un nom genèric per la majoria dels dispositius d’usuari final.</p>
 <p>Els ordinadors personals i les impressores connectades a la xarxa són
 alguns exemples de hosts.</p>
-<h3 id="periferics-compartits">Perifèrics compartits</h3>
+<h3 id="22-periferics-compartits">2.2 Perifèrics compartits</h3>
 <p>Els dispositius perifèrics compartits no es comuniquen directament a
 través de la xarxa.</p>
 <p>Els perifèrics utilitzen al host al que estan connectats per realitzar
 totes les operacions de xarxa.</p>
 <p>Alguns exemples de perifèrics compartits poden ser les càmeres, els
 escàners i les impressores connectades localment.</p>
+<h3 id="23-dispositius-de-xarxa">2.3 Dispositius de xarxa</h3>
+<p>Els dispositius de xarxa es connecten a altres dispositius,
+principalment hosts.</p>
+<ul>
+<li>Targetes de xarxa</li>
+<li>Encaminadors (router)</li>
+<li>Commutador (switch)</li>
+<li>Concentrador (hub)</li>
+<li>Punt d’accés: concentrador a una xarxa sense fils</li>
+<li>Repetidors</li>
+<li>Ponts (bridge)</li>
+<li>Altres: telèfons IP, mòdems, etc.</li>
+</ul>
+<h4 id="231-encaminador-router">2.3.1 Encaminador (router)</h4>
+<p>Serveix per interconnectar xarxes diferents.</p>
+<p>Els protocols de comunicació de les diferents xarxes han de ser
+iguals i compatibles, a les capes superiors.</p>
+<p>Dirigeix els paquets que rep fins a la seva destinació després
+d’haver trobat la millor ruta, a partir de l’algoritme i la
+taula d’encaminament.</p>
+<p>Disposa d’una adreça pròpia a escala de xarxa (per exemple,
+adreça IP)</p>
+<h4 id="232-concentrador-hub">2.3.2 Concentrador (hub)</h4>
+<p>Reb un senyal en un port i el copia a tots els altres ports.</p>
+<p>Regenera i reenvia els senyals de xarxa (com un repetidor)</p>
+<p>De 8, 16 i 24 ports.</p>
+<h4 id="233-commutador-switch">2.3.3 Commutador (switch)</h4>
+<p>Regenera el senyal i el difon basant-se en les adreces MAC.</p>
+<p>Actualment substitueixen als concentradors.</p>
+<p>Evita dominis de col·lisió.</p>
+<h3 id="3-classificacio-de-les-xarxes">3. Classificació de les xarxes</h3>
 <ol>
-<li>Classificació de les xarxes</li>
 <li>Estàndards de xarxa</li>
 <li>Model OSI</li>
 <li>Model TCP/IP</li>
