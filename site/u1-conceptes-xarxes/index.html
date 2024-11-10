@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>1. Conceptes sobre xarxes - Serveis en Xarxa CFGM</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "1. Conceptes sobre xarxes";
+        var mkdocs_page_input_path = "u1-conceptes-xarxes.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Serveis en Xarxa CFGM
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">SERVEIS EN XARXA CFGM</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">1. Conceptes sobre xarxes</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#1-introduccio">1. Introducció</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#2-components-duna-xarxa">2. Components d’una xarxa</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#21-host">2.1 Host</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#22-periferics-compartits">2.2 Perifèrics compartits</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#23-dispositius-de-xarxa">2.3 Dispositius de xarxa</a>
+        <ul>
+    <li class="toctree-l4"><a class="reference internal" href="#231-encaminador-router">2.3.1 Encaminador (router)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#232-concentrador-hub">2.3.2 Concentrador (hub)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#233-commutador-switch">2.3.3 Commutador (switch)</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#234-punt-dacces-access-point-a-una-xarxa-sense-fils">2.3.4 Punt d’accès (access point) a una xarxa sense fils.</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#235-repetidor">2.3.5 Repetidor</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#236-medis-de-xarxa">2.3.6 Medis de xarxa</a>
+    </li>
+    <li class="toctree-l4"><a class="reference internal" href="#237-protocol">2.3.7 Protocol</a>
+    </li>
+        </ul>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#3-classificacio-de-les-xarxes">3. Classificació de les xarxes</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#31-extensio-geografica">3.1 Extensió geogràfica</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#32-titularitat">3.2 Titularitat</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#33-topologia">3.3 Topologia</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#34-funcio-del-host">3.4 Funció del host</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-estandards-de-xarxa">4. Estàndards de xarxa</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#41-model-osi">4.1 Model OSI</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../exercicis-ipv4/">1.1. Exercicis ipv4</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../u2-servei-ftp.md">2. Servei FTP</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../preguntes-test/">2.1 Preguntes exemple</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u2-ftp-vsftpd/">2.2 Instal.lació vsFTPd</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../u3-servei-http.md">3. SERVEI HTTP</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u3-prt-apache2/">3.1 Practica servidor apache</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../dns/">4. Servei DNS</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../practica-dns.md">4.1 Pràctica servei DNS</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../errors-comuns/">Errors Comuns Apache</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../curriculum/">Curriculum</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../contingut/">Contingut</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Serveis en Xarxa CFGM</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">1. Conceptes sobre xarxes</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="conceptes-basics-sobre-xarxes-locals">Conceptes bàsics sobre Xarxes Locals</h1>
+<ol>
+<li>Introducció</li>
+<li>Components d’una xarxa</li>
+<li>Classificació de les xarxes</li>
+<li>Estàndards de xarxa</li>
+<li>Model OSI</li>
+<li>Model TCP/IP</li>
+<li>Internet Protocol (IP)</li>
+<li>IPv4</li>
+<li>IPv6
+10.Subnetting Tamany fixe</li>
+<li>VLSM</li>
+</ol>
+<h2 id="1-introduccio">1. Introducció</h2>
+<p>La comunicació no és més que un intercanvi d'informació, aquest intercanvi
+pot ser local o remot.</p>
+<ol>
+<li>
+<p>Xarxa: Conjunt de dispositius autònoms, sovint anomenats nodes, amb
+capacitat d'interconnexió.</p>
+</li>
+<li>
+<p>Comunicació de dades: Moviment d'informació codificada d'un punt a un
+altre per mitjà de sistemes de transmissió elèctrica, òptica o ràdio.</p>
+</li>
+<li>
+<p>Canal de comunicació: Medi usat pels dispositius per comunicar-se.</p>
+</li>
+<li>
+<p>Xarxa de computadors: sistema d'interconnexió entre ordinadors que permet
+compartir recursos i informació.</p>
+</li>
+<li>
+<p>Protocol: Conjunt de normes i procediments hard / soft que permeten la
+comunicació entre sistemes, controlant que la informació es transmeti
+sense error, i organitzant la comunicació.</p>
+</li>
+</ol>
+<h2 id="2-components-duna-xarxa">2. Components d’una xarxa</h2>
+<p>Una xarxa d’àrea local, xarxa local o LAN (de l’anglès local area
+network) és la interconnexió de diversos ordinadors i perifèrics.</p>
+<p>El terme xarxa local inclou tant el maquinari com el programari necessari
+per a la interconnexió dels diferents dispositius i el tractament de la
+informació. Hi ha molts components que poden formar part d’una xarxa, per
+exemple ordinadors personals, servidors, dispositius de xarxa i cables.</p>
+<p>Aquests components es poden agrupar en cinc categories principals:
+- Hosts.
+- Perifèrics compartits.
+- Dispositius de xarxa.
+- Medis de xarxa.
+- Protocols i regles.</p>
+<h3 id="21-host">2.1 Host</h3>
+<p>Els hosts envien i reben tràfic dels usuaris.</p>
+<p>Host és un nom genèric per la majoria dels dispositius d’usuari final.</p>
+<p>Els ordinadors personals i les impressores connectades a la xarxa són
+alguns exemples de hosts.</p>
+<h3 id="22-periferics-compartits">2.2 Perifèrics compartits</h3>
+<p>Els dispositius perifèrics compartits no es comuniquen directament a
+través de la xarxa.</p>
+<p>Els perifèrics utilitzen al host al que estan connectats per realitzar
+totes les operacions de xarxa.</p>
+<p>Alguns exemples de perifèrics compartits poden ser les càmeres, els
+escàners i les impressores connectades localment.</p>
+<h3 id="23-dispositius-de-xarxa">2.3 Dispositius de xarxa</h3>
+<p>Els dispositius de xarxa es connecten a altres dispositius,
+principalment hosts.</p>
+<ul>
+<li>Targetes de xarxa</li>
+<li>Encaminadors (router)</li>
+<li>Commutador (switch)</li>
+<li>Concentrador (hub)</li>
+<li>Punt d’accés: concentrador a una xarxa sense fils</li>
+<li>Repetidors</li>
+<li>Ponts (bridge)</li>
+<li>Altres: telèfons IP, mòdems, etc.</li>
+</ul>
+<h4 id="231-encaminador-router">2.3.1 Encaminador (router)</h4>
+<p>Serveix per interconnectar xarxes diferents.</p>
+<p>Els protocols de comunicació de les diferents xarxes han de ser
+iguals i compatibles, a les capes superiors.</p>
+<p>Dirigeix els paquets que rep fins a la seva destinació després
+d’haver trobat la millor ruta, a partir de l’algoritme i la
+taula d’encaminament.</p>
+<p>Disposa d’una adreça pròpia a escala de xarxa (per exemple,
+adreça IP)</p>
+<h4 id="232-concentrador-hub">2.3.2 Concentrador (hub)</h4>
+<p>Reb un senyal en un port i el copia a tots els altres ports.</p>
+<p>Regenera i reenvia els senyals de xarxa (com un repetidor)</p>
+<p>De 8, 16 i 24 ports.</p>
+<h4 id="233-commutador-switch">2.3.3 Commutador (switch)</h4>
+<p>Regenera el senyal i el difon basant-se en les adreces MAC.</p>
+<p>Actualment substitueixen als concentradors.</p>
+<p>Evita dominis de col·lisió.</p>
+<h4 id="234-punt-dacces-access-point-a-una-xarxa-sense-fils">2.3.4 Punt d’accès (access point) a una xarxa sense fils.</h4>
+<p>És un dispositiu que interconnecta dispositius de comunicació sense fils
+per formar una xarxa sense fils.</p>
+<p>Funciona de manera similar a un switch però sense fils.</p>
+<h4 id="235-repetidor">2.3.5 Repetidor</h4>
+<p>Regenera i reenvia els senyals de xarxa a nivell de bits.</p>
+<p>Senyal es deteriora i es debilita (senyals elèctrics, polsos de llum, …)</p>
+<p>Distàncies més llargues.</p>
+<h4 id="236-medis-de-xarxa">2.3.6 Medis de xarxa</h4>
+<ul>
+<li>
+<p>Guiats
+-- Coure: ones electromagnètiques
+-- Fibra òptica: polsos lluminosos</p>
+</li>
+<li>
+<p>No guiats
+-- Ones de ràdio: WIFI
+-- Ones infrarotges: comandaments
+a distància
+-- Microones: Bluetooth</p>
+</li>
+</ul>
+<h4 id="237-protocol">2.3.7 Protocol</h4>
+<ul>
+<li>
+<p>Controlen diferents aspectes: construcció de la xarxa física, connexió
+dels nodes, format de les dades, etc.</p>
+</li>
+<li>
+<p>Actualment l’estàndard de la industria en xarxes és TCP/IP (protocol de
+control de transmissió/protocol d’Internet).</p>
+</li>
+<li>
+<p>TCP/IP s’utilitza en xarxes comercials i do- mèstiques, i també és el
+protocol primari d’Internet.</p>
+</li>
+<li>
+<p>Són els protocols TCP/IP els que especifiquen els mecanismes de
+formateig, d’encaminament que garantissin que els nostres missatges
+siguin entregats als destinataris correctes.</p>
+</li>
+</ul>
+<h2 id="3-classificacio-de-les-xarxes">3. Classificació de les xarxes</h2>
+<h3 id="31-extensio-geografica">3.1 Extensió geogràfica</h3>
+<ul>
+<li>PAN</li>
+<li>LAN</li>
+<li>MAN</li>
+<li>NAN</li>
+<li>WAN</li>
+</ul>
+<h3 id="32-titularitat">3.2 Titularitat</h3>
+<ul>
+<li>Xarxa privada</li>
+<li>Xarxa pública</li>
+</ul>
+<h3 id="33-topologia">3.3 Topologia</h3>
+<ul>
+<li>Bus</li>
+<li>Estrella</li>
+<li>Anell</li>
+<li>Arbre</li>
+<li>Malla</li>
+<li>Doble anell</li>
+<li>Mixt</li>
+</ul>
+<h3 id="34-funcio-del-host">3.4 Funció del host</h3>
+<ul>
+<li>Client/servidor</li>
+<li>Peer to peer</li>
+</ul>
+<h2 id="4-estandards-de-xarxa">4. Estàndards de xarxa</h2>
+<h3 id="41-model-osi">4.1 Model OSI</h3>
+<p>El model de referència OSI es defineix en set capes
+numerades, i cada una defineix una funció especifica de la
+xarxa:</p>
+<table>
+<thead>
+<tr>
+<th><strong>Capa 7: capa d’aplicació.</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Capa 6: capa de presentació.</strong></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td><strong>Capa 5: capa de sessió.</strong></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td><strong>Capa 4: capa de transport.</strong></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td><strong>Capa 3: capa de xarxa.</strong></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td><strong>Capa 2: capa d’enllaç de dades.</strong></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td></td>
+</tr>
+<tr>
+<td>Capa 1: capa física.</td>
+</tr>
+</tbody>
+</table>
+<ol>
+<li>Model OSI</li>
+<li>Model TCP/IP</li>
+<li>Internet Protocol (IP)</li>
+<li>IPv4</li>
+<li>IPv6
+10.Subnetting Tamany fixe</li>
+<li>VLSM</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href=".." class="btn btn-neutral float-left" title="SERVEIS EN XARXA CFGM"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../exercicis-ipv4/" class="btn btn-neutral float-right" title="1.1. Exercicis ipv4">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href=".." style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../exercicis-ipv4/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

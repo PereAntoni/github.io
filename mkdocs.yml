@@ -1,7 +1,18 @@
 site_name: Serveis en Xarxa CFGM
 theme:
-  name: material
+  name: readthedocs
 
 nav: 
-  - Presentació: index.md
+  - SERVEIS EN XARXA CFGM: index.md
+  - 1. Conceptes sobre xarxes: u1-conceptes-xarxes.md
+  -   1.1. Exercicis ipv4: exercicis-ipv4.md
+  - 2. Servei FTP: u2-servei-ftp.md
+  - 2.1 Preguntes exemple: preguntes-test.md
+  - 2.2 Instal.lació vsFTPd: u2-ftp-vsftpd.md
+  - 3. SERVEI HTTP: u3-servei-http.md
+  -   3.1 Practica servidor apache: u3-prt-apache2.md
+  - 4. Servei DNS: dns.md
+  -   4.1 Pràctica servei DNS: practica-dns.md
+  - Errors Comuns Apache: errors-comuns.md
+  - Curriculum: curriculum.md
   - Contingut:  contingut.md

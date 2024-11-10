@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>3.1 Practica servidor apache - Serveis en Xarxa CFGM</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "3.1 Practica servidor apache";
+        var mkdocs_page_input_path = "u3-prt-apache2.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Serveis en Xarxa CFGM
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">SERVEIS EN XARXA CFGM</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u1-conceptes-xarxes/">1. Conceptes sobre xarxes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../exercicis-ipv4/">1.1. Exercicis ipv4</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../u2-servei-ftp.md">2. Servei FTP</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../preguntes-test/">2.1 Preguntes exemple</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u2-ftp-vsftpd/">2.2 Instal.lació vsFTPd</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../u3-servei-http.md">3. SERVEI HTTP</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">3.1 Practica servidor apache</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#caracteristiques-de-la-practica">Característiques de la pràctica</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#instruccions-per-realitzar-la-practica">Instruccions per realitzar la pràctica</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#entrega-de-la-practica">Entrega de la pràctica</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#format-dentrega">Format d'entrega</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercicis">EXERCICIS</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../dns/">4. Servei DNS</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../practica-dns.md">4.1 Pràctica servei DNS</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../errors-comuns/">Errors Comuns Apache</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../curriculum/">Curriculum</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../contingut/">Contingut</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Serveis en Xarxa CFGM</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">3.1 Practica servidor apache</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="practica-instalacio-dun-serveidor-apache-sobre-una-maquina-virtual">PRÀCTICA: INSTALACIÓ D'UN SERVEIDOR APACHE SOBRE UNA MÀQUINA VIRTUAL.</h1>
+<h2 id="caracteristiques-de-la-practica">Característiques de la pràctica</h2>
+<p>Volem instalar un servidor de http sobre la màquina virtual del nostre ordinador. Tendrà les característiques:
+1. El servidor és un apache2
+2. Està muntat sobre una maquina virtual al virtual box
+3. Ha de ser accessible dins la xarxa d'aula. Actualment hem fet una distribució de 10.0.100.X+1/16
+4. Cream les màquines usant [vagrant]https://developer.hashicorp.com/vagrant/docs.</p>
+<h2 id="instruccions-per-realitzar-la-practica">Instruccions per realitzar la pràctica</h2>
+<p>Per fer l'instal·lació seguim el manual de [devopscube]https://devopscube.com/vagrant-tutorial-beginners/.</p>
+<p>S'ha triat aquest manual per que conté les proves d'instal·lació i comprovació pas a pas, desde local fins a fora de la xarxa.</p>
+<ul>
+<li>Sols s'ha de fer fins a l'instal·lació d'apache i proves.</li>
+</ul>
+<h2 id="entrega-de-la-practica">Entrega de la pràctica</h2>
+<p>S'ha de crear un html que amb les pràctiques anteriors i aquesta, on s'han de respondre les preguntes de l'[arxiu] https://docs.google.com/document/d/1cy9ntr3vyZx_EKqyOVfURuP5bXZ8gHDu4ClTY3JtNE8/edit?usp=sharing</p>
+<h3 id="format-dentrega">Format d'entrega</h3>
+<p>L'HTML és el llenguatge de marques que empren el navegadors. Per entregar les pràctiques aprendrem i usarem  aquest llenguatge.Hi ha molt de material per aprendre a la xarxa, la pàgina https://www.w3schools.com/ és la de referència.</p>
+<p>Un  document html té un esquema bàsic, pas un exemple per que el modifiqueu i poseu les pràctiques.</p>
+<p>Sobre [aquest]https://drive.google.com/file/d/1tIpNRhY9TGHBg0R1HMXjr09ER6tJbBT1/view?usp=sharing esquelet de html documentam les pràctiques.</p>
+<p>Consulta i aprèn a la web de referència [w3schools]https://www.w3schools.com/html/. </p>
+<h3 id="exercicis">EXERCICIS</h3>
+<p>manual sencer apache2 (versio httpd) https://www.dedoimedo.com/computers/www.dedoimedo.com-apache-web-server-lm.pdf</p>
+<p>| Rule no. 1: don’t panic! The list before you might seem intimidating at the moment, but that is simply because you are not yet familiar with Apache. |</p>
+<p>Cerca al manual  apache2 (versio httpd) https://www.dedoimedo.com/computers/www.dedoimedo.com-apache-web-server-lm.pdf la taula de localitzacions del </p>
+<ol>
+<li>
+<p>En quina carpeta es troben els logs?</p>
+</li>
+<li>
+<p>Quins tipus de fitxer log trobam dins la carpeta anterior.</p>
+</li>
+<li>
+<p>Volem saber les vegades que s’ha accedit desde una ip del vostre ordinador d’aula.Quina instrucció usarem. </p>
+</li>
+<li>
+<p>Ves a la carpeta del server.pid i quin pid té el servidor. Posa les instruccions</p>
+</li>
+<li>
+<p>Quines instruccions s’usen per posar el servidor en marxa, per aturar, per sabetr l'estat i per reiniciar?</p>
+</li>
+<li>
+<p>Fer una copia de l’index.html del servidor, posali nom index-copia.html      </p>
+</li>
+<li>
+<p>Edita un document index.html i posa el teu nom.</p>
+</li>
+</ol>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../u2-ftp-vsftpd/" class="btn btn-neutral float-left" title="2.2 Instal.lació vsFTPd"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../dns/" class="btn btn-neutral float-right" title="4. Servei DNS">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../u2-ftp-vsftpd/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../dns/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
