@@ -137,18 +137,21 @@
 <li>Integram un usuari "gestorweb" tipus CRUD (create, read, update, delete) sobre la carpeta html d'Apache2.</li>
 </ol>
 <h2 id="1-previa">1. Prèvia</h2>
-<p>| Abans de començar es molt convenient tenir l'escriptori preparat per poder executar el filezilla i dos CMD.
-La nostra màquina virtual ja té una ip de xarxa dins la xarxa local.
-El manual de configuració del vsftpd és a <a href="https://security.appspot.com/vsftpd.html">manualWeb</a></p>
-<pre><code>1. Sobre un cmd ens conectam a la nostra màquina virtual. 
-2. Entram a la carpeta on tenim la màquina.
-3. Feim un vagrant up per posar la màquina en marxa.
-4. Esperam i després ens connectam amb vagrant ssh. 
-5. Feim les actualitzacions del apt-get o apt
-    - sudo apt-get upgrade
-    - sudo apt-get update
-    - Comprovam que no hagi donat missatges d'error
-</code></pre>
+<p>| Abans de començar es molt convenient tenir l'escriptori preparat per poder executar el filezilla i dos CMD.</p>
+<p>La nostra màquina virtual ja té una ip de xarxa dins la xarxa local.</p>
+<p>El manual de configuració del vsftpd és a <a href="https://security.appspot.com/vsftpd.html">manualWeb</a></p>
+<ol>
+<li>Sobre un cmd ens conectam a la nostra màquina virtual. </li>
+<li>Entram a la carpeta on tenim la màquina.</li>
+<li>Feim un vagrant up per posar la màquina en marxa.</li>
+<li>Esperam i després ens connectam amb vagrant ssh. </li>
+<li>Feim les actualitzacions del apt-get o apt<ul>
+<li>sudo apt-get upgrade</li>
+<li>sudo apt-get update</li>
+<li>Comprovam que no hagi donat missatges d'error</li>
+</ul>
+</li>
+</ol>
 <h2 id="2-installacio-i-primera-prova">2. Instal·lació i primera prova</h2>
 <p>Després d'actualitzar el repositori apt ens disposam a fer l'instal·lació del servei FTP.
     1. Executam la instal·lació
