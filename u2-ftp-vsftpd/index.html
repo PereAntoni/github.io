@@ -130,14 +130,16 @@
 <h2 id="caracteritiques-de-la-practica">Caracterítiques de la pràctica</h2>
 <p>Volem instal·lar un servidor FTP (File Transfer Protocol) sobre una màquina virtual.</p>
 <ol>
-<li>La màquina virtual ja conté el servidor http apache2.</li>
+<li>Prèvia: La màquina virtual ja conté el servidor http apache2.</li>
 <li>Instal·lam el servidor vsftpd.</li>
 <li>Provam l'usuari root del sistema operatiu</li>
 <li>Cream un usuari anònim</li>
 <li>Integram un usuari "gestorweb" tipus CRUD (create, read, update, delete) sobre la carpeta html d'Apache2.</li>
 </ol>
 <h2 id="1-previa">1. Prèvia</h2>
-<p>Abans de començar es molt convenient tenir l'escriptori preparat per poder executar el filezilla i dos CMD.</p>
+<p>| Abans de començar es molt convenient tenir l'escriptori preparat per poder executar el filezilla i dos CMD.
+La nostra màquina virtual ja té una ip de xarxa dins la xarxa local.
+El manual de configuració del vsftpd és a <a href="https://security.appspot.com/vsftpd.html">manualWeb</a></p>
 <pre><code>1. Sobre un cmd ens conectam a la nostra màquina virtual. 
 2. Entram a la carpeta on tenim la màquina.
 3. Feim un vagrant up per posar la màquina en marxa.
