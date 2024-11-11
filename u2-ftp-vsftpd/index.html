@@ -68,7 +68,9 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#2-installacio-i-primera-prova">2. Instal·lació i primera prova</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#3-donam-servei-dusuari-anonymous">3. Donam servei d'usuari anonymous.</a>
+    <li class="toctree-l2"><a class="reference internal" href="#3-copia-de-larxiu-de-configuracio">3. Còpia de l'arxiu de configuració.</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-creacio-usuari-anonim">4. Creació usuari anònim.</a>
     </li>
     </ul>
                 </li>
@@ -128,9 +130,11 @@
 <h2 id="caracteritiques-de-la-practica">Caracterítiques de la pràctica</h2>
 <p>Volem instal·lar un servidor FTP (File Transfer Protocol) sobre una màquina virtual.</p>
 <ol>
-<li>La maquina virtual ja conté el servidor http apache2.</li>
-<li>Instal·larem el servidor vsftpd</li>
-<li>Integrarem un usuari "gestorweb" tipus CRUD (create, read, update, delete) sobre la carpeta html d'Apache2.</li>
+<li>La màquina virtual ja conté el servidor http apache2.</li>
+<li>Instal·lam el servidor vsftpd.</li>
+<li>Provam l'usuari root del sistema operatiu</li>
+<li>Cream un usuari anònim</li>
+<li>Integram un usuari "gestorweb" tipus CRUD (create, read, update, delete) sobre la carpeta html d'Apache2.</li>
 </ol>
 <h2 id="1-previa">1. Prèvia</h2>
 <p>Abans de començar es molt convenient tenir l'escriptori preparat per poder executar el filezilla i dos CMD.</p>
@@ -158,12 +162,17 @@
             - port: 21 (o el deixam per defecte)
         - Ens avisa de que la connexió no es privada i li donam ok.</p>
 <p>|El vsftpd utilitza els usuaris del sistema on està allotjat, i en aquest cas, està allotjat a una màquina virtual que té l'usuari vagrant amb el password vagrant.|</p>
-<h2 id="3-donam-servei-dusuari-anonymous">3. Donam servei d'usuari anonymous.</h2>
-<p>Aquest primer exercici ens permet provar amb usuari que no necessita estar creat dins del sistema operatiu del servidor. És l'usuari anonymous.
-    1. Abans de tocar la configuració del sistema és MOLT CONVENIENT fer una còpia de l'arxiu de configuració inicial del vsftpd
-        - sudo cp /etc/vsftpd.conf /etc/vsftpd-conf-default
-    2. Ara podem editar el document fer servir l'editor nano:
-        - sudo /etc/vsftpd.conf</p>
+<h2 id="3-copia-de-larxiu-de-configuracio">3. Còpia de l'arxiu de configuració.</h2>
+<p>Aquest primer exercici ens permet provar amb usuari que no necessita estar creat dins del sistema operatiu del servidor. És l'usuari anonymous.</p>
+<pre><code>1. Abans de tocar la configuració del sistema és MOLT CONVENIENT fer una còpia de l'arxiu de configuració inicial del vsftpd
+
+    - sudo cp /etc/vsftpd.conf /etc/vsftpd-conf-default
+
+2. Ara podem editar el document fer servir l'editor nano:
+
+    - sudo /etc/vsftpd.conf
+</code></pre>
+<h2 id="4-creacio-usuari-anonim">4. Creació usuari anònim.</h2>
               
             </div>
           </div><footer>
