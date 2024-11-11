@@ -137,9 +137,8 @@
 <li>Integram un usuari "gestorweb" tipus CRUD (create, read, update, delete) sobre la carpeta html d'Apache2.</li>
 </ol>
 <h2 id="1-previa">1. Prèvia</h2>
-<p>| Abans de començar es molt convenient tenir l'escriptori preparat per poder executar el filezilla i dos CMD.</p>
+<p>Abans de començar es molt convenient tenir l'escriptori preparat per poder executar el filezilla i dos CMD.</p>
 <p>La nostra màquina virtual ja té una ip de xarxa dins la xarxa local.</p>
-<p>El manual de configuració del vsftpd és a <a href="https://security.appspot.com/vsftpd.html">manualWeb</a></p>
 <ol>
 <li>Sobre un cmd ens conectam a la nostra màquina virtual. </li>
 <li>Entram a la carpeta on tenim la màquina.</li>
@@ -153,19 +152,29 @@
 </li>
 </ol>
 <h2 id="2-installacio-i-primera-prova">2. Instal·lació i primera prova</h2>
-<p>Després d'actualitzar el repositori apt ens disposam a fer l'instal·lació del servei FTP.
-    1. Executam la instal·lació
-        - sudo apt-get install vsftpd"
-    2. Posam en marxa el servidor ftp
-        - sudo service vsftpd start.
-        - sudo service vsftpd status.
-    3. Provam que funciona
-        - Desde el Filezilla que ja tenim obert posam:
-            - direcció 10.0.100.x+1 (on x= la teva posició dins l'aula * 10) 
-            - usuari: vagrant
-            - password: vagrant
-            - port: 21 (o el deixam per defecte)
-        - Ens avisa de que la connexió no es privada i li donam ok.</p>
+<p>Després d'actualitzar el repositori apt ens disposam a fer l'instal·lació del servei FTP.</p>
+<ol>
+<li>Executam la instal·lació<ul>
+<li>sudo apt-get install vsftpd"</li>
+</ul>
+</li>
+<li>Posam en marxa el servidor ftp<ul>
+<li>sudo service vsftpd start.</li>
+<li>sudo service vsftpd status.</li>
+</ul>
+</li>
+<li>Provam que funciona<ul>
+<li>Desde el Filezilla que ja tenim obert posam:<ul>
+<li>direcció 10.0.100.x+1 (on x= la teva posició dins l'aula * 10) </li>
+<li>usuari: vagrant</li>
+<li>password: vagrant</li>
+<li>port: 21 (o el deixam per defecte)</li>
+</ul>
+</li>
+<li>Ens avisa de que la connexió no es privada i li donam ok.</li>
+</ul>
+</li>
+</ol>
 <p>|El vsftpd utilitza els usuaris del sistema on està allotjat, i en aquest cas, està allotjat a una màquina virtual que té l'usuari vagrant amb el password vagrant.|</p>
 <h2 id="3-copia-de-larxiu-de-configuracio">3. Còpia de l'arxiu de configuració.</h2>
 <p>Aquest primer exercici ens permet provar amb usuari que no necessita estar creat dins del sistema operatiu del servidor. És l'usuari anonymous.</p>
