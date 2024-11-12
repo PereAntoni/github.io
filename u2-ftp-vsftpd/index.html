@@ -177,17 +177,20 @@
 </ol>
 <p>|El vsftpd utilitza els usuaris del sistema on està allotjat, i en aquest cas, està allotjat a una màquina virtual que té l'usuari vagrant amb el password vagrant.|</p>
 <h2 id="3-copia-de-larxiu-de-configuracio">3. Còpia de l'arxiu de configuració.</h2>
-<p>El manual de configuració del vsftpd és a <a href="https://security.appspot.com/vsftpd.html">manualWeb</a></p>
+<p>La primera tasca és fer una còpia de l'arxiu de configuració que es troba a /etc/vsftpd.conf</p>
+<p>El manual de configuració del vsftpd és a <a href="https://security.appspot.com/vsftpd.html">manualWeb</a> i hi podem trobar 
+les configuracions bàsiques del servidor.</p>
+<p>Per algunes tasques podem fer cerques al web.</p>
 <p>Aquest primer exercici ens permet provar amb usuari que no necessita estar creat dins del sistema operatiu del servidor. És l'usuari anonymous.</p>
 <pre><code>1. Abans de tocar la configuració del sistema és MOLT CONVENIENT fer una còpia de l'arxiu de configuració inicial del vsftpd
 
     - sudo cp /etc/vsftpd.conf /etc/vsftpd-conf-default
-
-2. Ara podem editar el document fer servir l'editor nano:
-
-    - sudo /etc/vsftpd.conf
 </code></pre>
 <h2 id="4-creacio-usuari-anonim">4. Creació usuari anònim.</h2>
+<p>Per activar l'usuari anònim ho feim dins la configuració que trobam a /etc/vsftpd.conf</p>
+<p>Editam el document fent servir l'editor nano:</p>
+<pre><code>    - sudo nano /etc/vsftpd.conf
+</code></pre>
               
             </div>
           </div><footer>
