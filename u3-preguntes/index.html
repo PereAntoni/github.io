@@ -164,7 +164,6 @@ function updateScore(value) {
         display: grid
         }
 </style>
-<p>Aquest test té 20 preguntes per posar a prova els teus coneixements sobre comandes de shell. Selecciona una resposta per a cada pregunta i sabràs immediatament si és correcta o no!</p>
 <h2 id="encerts-0"><strong>Encerts: <span id="score">0</span></strong></h2>
 <h3 id="pregunta-1-que-fa-la-instruccio-ls">Pregunta 1: Què fa la instrucció <code>ls</code>?</h3>
 <div id="q1">
@@ -398,7 +397,158 @@ backup:x:1004:1004:Usuari Còpies:/var/backups:/bin/bash
 <button onclick="checkAnswer(this, false)">d) Canvia els permisos del fitxer usuaris.tx</button>
 </div>
 
-<h3 id="pregunta-12-com-cercaries-al-fitxer-usuaristxt-els-usuaris-que-tenen-binbash-com-a-shell">Pregunta 12: Com cercaries al fitxer usuaris.txt els usuaris que tenen /bin/bash com a shell?</h3>
+<h3 id="pregunta-12-com-cercaries-al-fitxer-usuaristxt-els-usuaris-que-tenen-binbash-com-a-shell">Pregunta    12  .   Com cercaries al fitxer usuaris.txt els usuaris que tenen /bin/bash com a shell?</h3>
+<pre><code>&lt;div id='q12'&gt;
+</code></pre>
+<p><button onclick='checkAnswer(this, true)'   >       a) grep "/bin/bash" usuaris.txt </button>
+<button onclick='checkAnswer(this, false)'  >       b) grep "bash" usuaris.txt  </button>
+<button onclick='checkAnswer(this, false)'  >       c) ls -l /bin/bash usuaris.txt  </button>
+<button onclick='checkAnswer(this, false)'  >       d) cat bash | usuaris.txt   </button>
+</div>              </p>
+<h3 id="pregunta-13-quina-comanda-mostra-nomes-els-usuaris-administradors-amb-uid-0">Pregunta    13      Quina comanda mostra només els usuaris administradors (amb UID 0)?</h3>
+<pre><code>&lt;div id='q13'&gt;
+</code></pre>
+<p><button onclick='checkAnswer(this, true)'   >       a) grep ":0:" usuaris.txt   </button>
+<button onclick='checkAnswer(this, false)'  >       b) grep "admin" usuaris.txt </button>
+<button onclick='checkAnswer(this, false)'  >       c) grep "/root" usuaris.txt </button>
+<button onclick='checkAnswer(this, false)'  >       d) grep "x:0:" usuaris.txt  </button>
+</div>              </p>
+<h3 id="pregunta-14-com-pots-comptar-quants-usuaris-hi-ha-al-fitxer-usuaristxt">Pregunta    14      Com pots comptar quants usuaris hi ha al fitxer usuaris.txt?</h3>
+<pre><code>&lt;div id='q14'&gt;
+</code></pre>
+<p><button onclick='checkAnswer(this, true)'   >       a) cat usuaris.txt | wc -l  </button>
+<button onclick='checkAnswer(this, false)'  >       b) grep "user" usuaris.txt | wc -l  </button>
+<button onclick='checkAnswer(this, false)'  >       c) ls usuaris.txt | wc -l   </button>
+<button onclick='checkAnswer(this, false)'  >       d) grep "x:" usuaris.txt | wc -c    </button>
+</div>              </p>
+<h3 id="pregunta-15-quin-comandament-llistara-nomes-els-usuaris-convidats">Pregunta    15      Quin comandament llistarà només els usuaris convidats?</h3>
+<pre><code>&lt;div id='q15'&gt;
+</code></pre>
+<p><button onclick='checkAnswer(this, false)'  >       a) grep "guest" usuaris.txt </button>
+<button onclick='checkAnswer(this, false)'  >       b) grep "Usuari" usuaris.txt    </button>
+<button onclick='checkAnswer(this, true)'   >       c) cat usuaris.txt | grep "/home/guest" </button>
+<button onclick='checkAnswer(this, false)'  >       d) ls | grep "guest"    </button>
+</div>              </p>
+<h3 id="pregunta-16-que-fa-la-comanda-sortidatxt-despres-dexecutar-un-comandament">Pregunta    16      Què fa la comanda &gt; sortida.txt després d'executar un comandament?</h3>
+<pre><code>&lt;div id='q16'&gt;
+</code></pre>
+<p><button onclick='checkAnswer(this, true)'   >       a) Sobreescriu el fitxer sortida.txt amb la sortida del comandament </button>
+<button onclick='checkAnswer(this, false)'  >       b) Afegeix la sortida del comandament al fitxer sortida.txt </button>
+<button onclick='checkAnswer(this, false)'  >       c) Crea un nou fitxer buit  </button>
+<button onclick='checkAnswer(this, false)'  >       d) No fa res, només redirigeix errors   </button>
+</div>              </p>
+<h3 id="pregunta-17-quina-diferencia-hi-ha-entre-grep-bash-usuaristxt-resultattxt-i-grep-bash-usuaristxt-resultattxt">Pregunta    17      Quina diferència hi ha entre grep "bash" usuaris.txt &gt; resultat.txt i grep "bash" usuaris.txt &gt;&gt; resultat.txt?</h3>
+<pre><code>&lt;div id='q17'&gt;
+</code></pre>
+<p><button onclick='checkAnswer(this, true)'   >       a) &gt; sobreescriu el fitxer i &gt;&gt; afegeix contingut al fitxer </button>
+<button onclick='checkAnswer(this, false)'  >       b) &gt; crea un fitxer nou i &gt;&gt; només llista resultats </button>
+<button onclick='checkAnswer(this, false)'  >       c) No hi ha cap diferència  </button>
+<button onclick='checkAnswer(this, false)'  >       d) &gt; mostra errors i &gt;&gt; només mostra resultats  </button>
+</div>              </p>
+<h3 id="pregunta-18-que-fa-la-comanda-ls-l">Pregunta    18      Què fa la comanda ls -l /?</h3>
+<pre><code>&lt;div id='q18'&gt;
+</code></pre>
+<p><button onclick='checkAnswer(this, true)'   >       a) Mostra el contingut del directori arrel en format detallat   </button>
+<button onclick='checkAnswer(this, false)'  >       b) Llista tots els fitxers de manera recursiva  </button>
+<button onclick='checkAnswer(this, false)'  >       c) Mostra els permisos d'un fitxer específic    </button>
+<button onclick='checkAnswer(this, false)'  >       d) Accedeix al directori arrel  </button>
+</div>              </p>
+<h3 id="pregunta-19-per-a-que-serveix-la-comanda-cd-home">Pregunta    19      Per a què serveix la comanda cd /home?</h3>
+<pre><code>&lt;div id='q19'&gt;
+</code></pre>
+<p><button onclick='checkAnswer(this, true)'   >       a) Canvia al directori /home    </button>
+<button onclick='checkAnswer(this, false)'  >       b) Llista el contingut del directori /home  </button>
+<button onclick='checkAnswer(this, false)'  >       c) Esborra el directori /home   </button>
+<button onclick='checkAnswer(this, false)'  >       d) Mostra la ruta completa del directori /home  </button>
+</div>              </p>
+<h3 id="pregunta-20-com-pots-redirigir-la-sortida-dun-error-a-un-fitxer-especific">Pregunta    20      Com pots redirigir la sortida d'un error a un fitxer específic?</h3>
+<pre><code>&lt;div id='q20'&gt;
+</code></pre>
+<p><button onclick='checkAnswer(this, true)'   >       a) comandament 2&gt; error.txt </button>
+<button onclick='checkAnswer(this, false)'  >       b) comandament &gt; error.txt  </button>
+<button onclick='checkAnswer(this, false)'  >       c) comandament &gt;&gt; error.txt </button>
+<button onclick='checkAnswer(this, false)'  >       d) comandament | error.txt  </button>
+</div>              </p>
+<h3 id="pregunta-21-quin-comandament-utilitzaries-per-combinar-la-sortida-de-dos-fitxers-en-un-sol-fitxer">Pregunta    21      Quin comandament utilitzaries per combinar la sortida de dos fitxers en un sol fitxer?</h3>
+<pre><code>&lt;div id='q21'&gt;
+</code></pre>
+<p><button onclick='checkAnswer(this, true)'   >       a) cat fitxer1 fitxer2 &gt; combinat.txt   </button>
+<button onclick='checkAnswer(this, false)'  >       b) grep fitxer1 fitxer2 &gt; combinat.txt  </button>
+<button onclick='checkAnswer(this, false)'  >       c) ls fitxer1 fitxer2 &gt; combinat.txt    </button>
+<button onclick='checkAnswer(this, false)'  >       d) pwd fitxer1 fitxer2 &gt; combinat.txt   </button>
+</div>              </p>
+<h3 id="pregunta-22-com-pots-buscar-de-manera-insensible-a-majuscules-i-minuscules-amb-grep">Pregunta    22      Com pots buscar de manera insensible a majúscules i minúscules amb grep?</h3>
+<pre><code>&lt;div id='q22'&gt;
+</code></pre>
+<p><button onclick='checkAnswer(this, true)'   >       a) grep -i "text" fitxer    </button>
+<button onclick='checkAnswer(this, false)'  >       b) grep -c "text" fitxer    </button>
+<button onclick='checkAnswer(this, false)'  >       c) grep -v "text" fitxer    </button>
+<button onclick='checkAnswer(this, false)'  >       d) grep "text" fitxer   </button>
+</div>              </p>
+<h3 id="pregunta-23-que-fa-ls-l-grep-test">Pregunta    23      Què fa ls -l | grep "test"?</h3>
+<pre><code>&lt;div id='q23'&gt;
+</code></pre>
+<p><button onclick='checkAnswer(this, true)'   >       a) Llista els fitxers del directori que contenen la paraula "test"  </button>
+<button onclick='checkAnswer(this, false)'  >       b) Esborra els fitxers que contenen la paraula "test"   </button>
+<button onclick='checkAnswer(this, false)'  >       c) Mostra només els directoris que contenen "test"  </button>
+<button onclick='checkAnswer(this, false)'  >       d) Redirigeix la sortida al fitxer "test"   </button>
+</div>              </p>
+<h3 id="pregunta-24-quina-instruccio-mostra-el-nombre-total-de-linies-dun-fitxer">Pregunta    24      Quina instrucció mostra el nombre total de línies d'un fitxer?</h3>
+<pre><code>&lt;div id='q24'&gt;
+</code></pre>
+<p><button onclick='checkAnswer(this, true)'   >       a) wc -l fitxer </button>
+<button onclick='checkAnswer(this, false)'  >       b) ls -l fitxer </button>
+<button onclick='checkAnswer(this, false)'  >       c) grep -l fitxer   </button>
+<button onclick='checkAnswer(this, false)'  >       d) pwd -l fitxer    </button>
+</div>              </p>
+<h3 id="pregunta-25-per-que-sutilitza-chmod-755-fitxer">Pregunta    25      Per què s'utilitza chmod 755 fitxer?</h3>
+<pre><code>&lt;div id='q25'&gt;
+</code></pre>
+<p><button onclick='checkAnswer(this, true)'   >       a) Per canviar els permisos del fitxer  </button>
+<button onclick='checkAnswer(this, false)'  >       b) Per mostrar el contingut del fitxer  </button>
+<button onclick='checkAnswer(this, false)'  >       c) Per moure el fitxer  </button>
+<button onclick='checkAnswer(this, false)'  >       d) Per redirigir el fitxer  </button>
+</div>              </p>
+<h3 id="pregunta-26-que-fa-la-comanda-grep-v-bash-usuaristxt">Pregunta    26      Què fa la comanda grep -v "bash" usuaris.txt?</h3>
+<pre><code>&lt;div id='q26'&gt;
+</code></pre>
+<p><button onclick='checkAnswer(this, true)'   >       a) Mostra les línies que no contenen "bash" </button>
+<button onclick='checkAnswer(this, false)'  >       b) Mostra les línies que contenen "bash"    </button>
+<button onclick='checkAnswer(this, false)'  >       c) Redirigeix la sortida al fitxer "usuaris.txt"    </button>
+<button onclick='checkAnswer(this, false)'  >       d) Llista tots els usuaris que tenen "bash" </button>
+</div>              </p>
+<h3 id="pregunta-27-com-pots-mostrar-els-permisos-dun-fitxer">Pregunta    27      Com pots mostrar els permisos d'un fitxer?</h3>
+<pre><code>&lt;div id='q27'&gt;
+</code></pre>
+<p><button onclick='checkAnswer(this, true)'   >       a) ls -l fitxer </button>
+<button onclick='checkAnswer(this, false)'  >       b) chmod fitxer </button>
+<button onclick='checkAnswer(this, false)'  >       c) grep fitxer  </button>
+<button onclick='checkAnswer(this, false)'  >       d) pwd fitxer   </button>
+</div>              </p>
+<h3 id="pregunta-28-com-es-pot-combinar-la-sortida-dun-comandament-amb-lentrada-dun-altre">Pregunta    28      Com es pot combinar la sortida d'un comandament amb l'entrada d'un altre?</h3>
+<pre><code>&lt;div id='q28'&gt;
+</code></pre>
+<p><button onclick='checkAnswer(this, false)'  >       a) Amb cat |    </button>
+<button onclick='checkAnswer(this, false)'  >       b) Amb &gt;&gt;   </button>
+<button onclick='checkAnswer(this, false)'  >       c) Amb &gt;    </button>
+<button onclick='checkAnswer(this, true)'   >       d) Amb |    </button>
+</div>              </p>
+<h3 id="pregunta-29-que-indica-el-simbol-en-la-jerarquia-de-directoris">Pregunta    29      Què indica el símbol / en la jerarquia de directoris?</h3>
+<pre><code>&lt;div id='q29'&gt;
+</code></pre>
+<p><button onclick='checkAnswer(this, false)'  >       a) Directori actual </button>
+<button onclick='checkAnswer(this, true)'   >       b) Directori arrel  </button>
+<button onclick='checkAnswer(this, false)'  >       c) Directori anterior   </button>
+<button onclick='checkAnswer(this, false)'  >       d) Directori home   </button>
+</div>              </p>
+<h3 id="pregunta-30-com-pots-saber-quina-es-la-teva-ubicacio-actual-en-el-sistema">Pregunta    30      Com pots saber quina és la teva ubicació actual en el sistema?</h3>
+<pre><code>&lt;div id='q30'&gt;
+</code></pre>
+<p><button onclick='checkAnswer(this, false)'  >       a) cd   </button>
+<button onclick='checkAnswer(this, false)'  >       b) ls -l    </button>
+<button onclick='checkAnswer(this, true)'   >       c) pwd  </button>
+<button onclick='checkAnswer(this, false)'  >       d) chmod    </button></p>
+<h3 id="pregunta-12-com-cercaries-al-fitxer-usuaristxt-els-usuaris-que-tenen-binbash-com-a-shell_1">Pregunta 12: Com cercaries al fitxer usuaris.txt els usuaris que tenen /bin/bash com a shell?</h3>
 <p>a) grep "/bin/bash" usuaris.txt
 b) grep "bash" usuaris.txt
 c) ls -l /bin/bash usuaris.txt
