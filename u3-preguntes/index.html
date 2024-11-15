@@ -127,9 +127,7 @@
                 <h1 id="preguntes-per-provar-i-valorar-els-coneixements">PREGUNTES PER PROVAR I VALORAR ELS CONEIXEMENTS</h1>
 <h1 id="tipus-test-interactiu-shell-i-comandes">Tipus Test Interactiu - Shell i Comandes</h1>
 <script>
-
 let score = 0;
-
 function checkAnswer(button, isCorrect) {
   // Restableix tots els botons al seu estat inicial
   const buttons = button.parentNode.querySelectorAll('button');
@@ -161,9 +159,11 @@ function updateScore(value) {
 </script>
 <style>
     button {
-        display: grid
+        display: grid;
+        margin: 2px
         }
 </style>
+
 <h2 id="encerts-0"><strong>Encerts: <span id="score">0</span></strong></h2>
 <h3 id="pregunta-1-que-fa-la-instruccio-ls">Pregunta 1: Què fa la instrucció <code>ls</code>?</h3>
 <div id="q1">
