@@ -121,6 +121,122 @@
             <div class="section" itemprop="articleBody">
               
                 <h1 id="preguntes-per-provar-i-valorar-els-coneixements">PREGUNTES PER PROVAR I VALORAR ELS CONEIXEMENTS</h1>
+<h1 id="tipus-test-interactiu-shell-i-comandes">Tipus Test Interactiu - Shell i Comandes</h1>
+<p>Aquest test té 20 preguntes per posar a prova els teus coneixements sobre comandes de shell. Selecciona una resposta per a cada pregunta i sabràs immediatament si és correcta o no!</p>
+<hr />
+<h3 id="pregunta-1-que-fa-la-instruccio-ls">Pregunta 1: Què fa la instrucció <code>ls</code>?</h3>
+<div id="q1">
+<button onclick="checkAnswer(this, true)">a) Llista els fitxers i directoris</button>
+<button onclick="checkAnswer(this, false)">b) Mostra el contingut d'un fitxer</button>
+<button onclick="checkAnswer(this, false)">c) Crea un nou fitxer</button>
+<button onclick="checkAnswer(this, false)">d) Esborra un fitxer</button>
+</div>
+
+<hr />
+<h3 id="pregunta-2-quina-comanda-mostra-el-directori-actual">Pregunta 2: Quina comanda mostra el directori actual?</h3>
+<div id="q2">
+<button onclick="checkAnswer(this, false)">a) `ls`</button>
+<button onclick="checkAnswer(this, true)">b) `pwd`</button>
+<button onclick="checkAnswer(this, false)">c) `cd`</button>
+<button onclick="checkAnswer(this, false)">d) `chmod`</button>
+</div>
+
+<hr />
+<h3 id="pregunta-3-com-pots-cercar-un-fitxer-amb-la-paraula-document-al-seu-nom">Pregunta 3: Com pots cercar un fitxer amb la paraula "document" al seu nom?</h3>
+<div id="q3">
+<button onclick="checkAnswer(this, true)">a) `ls | grep "document"`</button>
+<button onclick="checkAnswer(this, false)">b) `cat | grep "document"`</button>
+<button onclick="checkAnswer(this, false)">c) `pwd "document"`</button>
+<button onclick="checkAnswer(this, false)">d) `chmod "document"`</button>
+</div>
+
+<hr />
+<h3 id="pregunta-4-que-fa-la-comanda-cd">Pregunta 4: Què fa la comanda <code>cd ..</code>?</h3>
+<div id="q4">
+<button onclick="checkAnswer(this, true)">a) Puja un nivell en la jerarquia de directoris</button>
+<button onclick="checkAnswer(this, false)">b) Canvia al directori arrel</button>
+<button onclick="checkAnswer(this, false)">c) Llista els fitxers del directori anterior</button>
+<button onclick="checkAnswer(this, false)">d) Reseteja el terminal</button>
+</div>
+
+<hr />
+<h3 id="pregunta-5-quina-comanda-es-fa-servir-per-canviar-els-permisos-dun-fitxer">Pregunta 5: Quina comanda es fa servir per canviar els permisos d’un fitxer?</h3>
+<div id="q5">
+<button onclick="checkAnswer(this, false)">a) `ls -l`</button>
+<button onclick="checkAnswer(this, true)">b) `chmod`</button>
+<button onclick="checkAnswer(this, false)">c) `cd`</button>
+<button onclick="checkAnswer(this, false)">d) `pwd`</button>
+</div>
+
+<hr />
+<h3 id="pregunta-6-com-pots-redirigir-la-sortida-dun-comandament-a-un-fitxer">Pregunta 6: Com pots redirigir la sortida d’un comandament a un fitxer?</h3>
+<div id="q6">
+<button onclick="checkAnswer(this, false)">a) `ls | fitxer.txt`</button>
+<button onclick="checkAnswer(this, true)">b) `ls > fitxer.txt`</button>
+<button onclick="checkAnswer(this, false)">c) `ls >> fitxer.txt`</button>
+<button onclick="checkAnswer(this, false)">d) `ls < fitxer.txt`</button>
+</div>
+
+<hr />
+<h3 id="pregunta-7-que-fa-la-comanda-grep">Pregunta 7: Què fa la comanda <code>grep</code>?</h3>
+<div id="q7">
+<button onclick="checkAnswer(this, false)">a) Mostra els permisos d’un fitxer</button>
+<button onclick="checkAnswer(this, false)">b) Canvia a un altre directori</button>
+<button onclick="checkAnswer(this, true)">c) Cerca patrons dins d’un fitxer</button>
+<button onclick="checkAnswer(this, false)">d) Esborra un fitxer</button>
+</div>
+
+<hr />
+<h3 id="pregunta-8-quin-es-el-significat-del-simbol-pipe">Pregunta 8: Quin és el significat del símbol <code>|</code> (pipe)?</h3>
+<div id="q8">
+<button onclick="checkAnswer(this, true)">a) Redirigeix la sortida d’un comandament com a entrada per a un altre</button>
+<button onclick="checkAnswer(this, false)">b) Indica un directori</button>
+<button onclick="checkAnswer(this, false)">c) Crea un fitxer nou</button>
+<button onclick="checkAnswer(this, false)">d) Canvia els permisos d’un fitxer</button>
+</div>
+
+<hr />
+<h3 id="pregunta-9-com-pots-mostrar-el-contingut-dun-fitxer">Pregunta 9: Com pots mostrar el contingut d’un fitxer?</h3>
+<div id="q9">
+<button onclick="checkAnswer(this, false)">a) `ls`</button>
+<button onclick="checkAnswer(this, true)">b) `cat`</button>
+<button onclick="checkAnswer(this, false)">c) `chmod`</button>
+<button onclick="checkAnswer(this, false)">d) `pwd`</button>
+</div>
+
+<hr />
+<h3 id="pregunta-10-que-indica-el-directori">Pregunta 10: Què indica el directori <code>/</code>?</h3>
+<div id="q10">
+<button onclick="checkAnswer(this, true)">a) El directori arrel</button>
+<button onclick="checkAnswer(this, false)">b) El directori personal</button>
+<button onclick="checkAnswer(this, false)">c) Un directori buit</button>
+<button onclick="checkAnswer(this, false)">d) Un fitxer executat recentment</button>
+</div>
+
+<hr />
+<p>(Afegeix fins a 20 preguntes seguint el mateix patró.)</p>
+<hr />
+<h3 id="script-per-gestionar-respostes">Script per gestionar respostes</h3>
+<p>Afegeix aquest codi JavaScript al final del fitxer <code>.md</code> (només funcionarà si el visualitzador de Markdown suporta HTML/JS):</p>
+<p>```html</p>
+<script>
+function checkAnswer(button, isCorrect) {
+  if (isCorrect) {
+    button.style.backgroundColor = '#d4edda';
+    button.style.color = '#155724';
+    button.textContent += " ✅ Correcte!";
+  } else {
+    button.style.backgroundColor = '#f8d7da';
+    button.style.color = '#721c24';
+    button.textContent += " ❌ Incorrecte!";
+  }
+
+  // Deshabilitar altres respostes de la mateixa pregunta
+  const buttons = button.parentNode.querySelectorAll('button');
+  buttons.forEach(btn => btn.disabled = true);
+}
+</script>
+
 <p>Test Tipus - Shell Instruccions
 Preguntes</p>
 <ol>
@@ -378,7 +494,7 @@ d) chmod
 Resposta correcta: a</p>
 <p><a href="https://mybinder.org/v2/gh/USERNAME/REPOSITORY/BRANCH"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
 <h1 id="tipus-test-interactiu-shell">Tipus Test Interactiu - Shell</h1>
-<h3 id="pregunta-1-que-fa-la-instruccio-ls">Pregunta 1: Què fa la instrucció <code>ls</code>?</h3>
+<h3 id="pregunta-1-que-fa-la-instruccio-ls_1">Pregunta 1: Què fa la instrucció <code>ls</code>?</h3>
 <div id="q1">
 <p><strong>Selecciona una resposta:</strong></p>
 <button onclick="checkAnswer(this, true)">a) Llista els fitxers i directoris</button>
@@ -386,24 +502,6 @@ Resposta correcta: a</p>
 <button onclick="checkAnswer(this, false)">c) Crea un nou fitxer</button>
 <button onclick="checkAnswer(this, false)">d) Esborra un fitxer</button>
 </div>
-
-<script>
-function checkAnswer(button, isCorrect) {
-  if (isCorrect) {
-    button.style.backgroundColor = '#d4edda';
-    button.style.color = '#155724';
-    button.textContent += " ✅ Correcte!";
-  } else {
-    button.style.backgroundColor = '#f8d7da';
-    button.style.color = '#721c24';
-    button.textContent += " ❌ Incorrecte!";
-  }
-
-  // Deshabilitar altres respostes de la mateixa pregunta
-  const buttons = button.parentNode.querySelectorAll('button');
-  buttons.forEach(btn => btn.disabled = true);
-}
-</script>
               
             </div>
           </div><footer>
