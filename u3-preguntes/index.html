@@ -155,15 +155,14 @@ function updateScore(value) {
   document.getElementById('score').textContent = score;
 }
 </script>
-
-<p>Aquest test té 20 preguntes per posar a prova els teus coneixements sobre comandes de shell. Selecciona una resposta per a cada pregunta i sabràs immediatament si és correcta o no!</p>
-<h2 id="encerts-0"><strong>Encerts: <span id="score">0</span></strong></h2>
-<h3 id="pregunta-1-que-fa-la-instruccio-ls">Pregunta 1: Què fa la instrucció <code>ls</code>?</h3>
 <style>
     button {
         display: grid
         }
 </style>
+<p>Aquest test té 20 preguntes per posar a prova els teus coneixements sobre comandes de shell. Selecciona una resposta per a cada pregunta i sabràs immediatament si és correcta o no!</p>
+<h2 id="encerts-0"><strong>Encerts: <span id="score">0</span></strong></h2>
+<h3 id="pregunta-1-que-fa-la-instruccio-ls">Pregunta 1: Què fa la instrucció <code>ls</code>?</h3>
 <div id="q1">
 <button onclick="checkAnswer(this, true)">a) Llista els fitxers i directoris</button>
 <button onclick="checkAnswer(this, false)">b) Mostra el contingut d'un fitxer</button>
@@ -380,20 +379,22 @@ Resposta correcta: a</p>
 <p>omanda cat.</p>
 <p>plaintext
 Copiar código</p>
-<h1 id="contingut-de-usuaristxt">Contingut de usuaris.txt</h1>
-<p>user1:x:1001:1001:Usuari 1:/home/user1:/bin/bash
+<h3 id="contingut-de-usuaristxt">Contingut de usuaris.txt</h3>
+<pre><code>user1:x:1001:1001:Usuari 1:/home/user1:/bin/bash
 user2:x:1002:1002:Usuari 2:/home/user2:/bin/bash
 admin:x:0:0:Administrador:/root:/bin/bash
 guest:x:1003:1003:Usuari Convidat:/home/guest:/bin/false
 backup:x:1004:1004:Usuari Còpies:/var/backups:/bin/bash
-Preguntes Addicionals
-Què fa la comanda cat usuaris.txt?</p>
-<p>a) Mostra el contingut del fitxer a la consola
-b) Crea un nou fitxer amb el nom usuaris.txt
-c) Esborra el fitxer usuaris.txt
-d) Canvia els permisos del fitxer usuaris.txt
-Resposta correcta: a</p>
-<p>Com cercaries al fitxer usuaris.txt els usuaris que tenen /bin/bash com a shell?</p>
+</code></pre>
+<h3 id="pregunta-11-que-fa-la-comanda-cat-usuaristxt">Pregunta 11: Què fa la comanda cat usuaris.txt?</h3>
+<div id="q11">
+<button onclick="checkAnswer(this, true)">a) Mostra el contingut del fitxer a la consola</button>
+<button onclick="checkAnswer(this, false)">b) Crea un nou fitxer amb el nom usuaris.txt</button>
+<button onclick="checkAnswer(this, false)">c) Esborra el fitxer usuaris.txt</button>
+<button onclick="checkAnswer(this, false)">d) Canvia els permisos del fitxer usuaris.tx</button>
+</div>
+
+<h3 id="pregunta-12-com-cercaries-al-fitxer-usuaristxt-els-usuaris-que-tenen-binbash-com-a-shell">Pregunta 12: Com cercaries al fitxer usuaris.txt els usuaris que tenen /bin/bash com a shell?</h3>
 <p>a) grep "/bin/bash" usuaris.txt
 b) grep "bash" usuaris.txt
 c) ls -l /bin/bash usuaris.txt
@@ -509,14 +510,6 @@ d) chmod
 Resposta correcta: a</p>
 <p><a href="https://mybinder.org/v2/gh/USERNAME/REPOSITORY/BRANCH"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
 <h1 id="tipus-test-interactiu-shell">Tipus Test Interactiu - Shell</h1>
-<h3 id="pregunta-1-que-fa-la-instruccio-ls_1">Pregunta 1: Què fa la instrucció <code>ls</code>?</h3>
-<div id="q1">
-<p><strong>Selecciona una resposta:</strong></p>
-<button onclick="checkAnswer(this, true)">a) Llista els fitxers i directoris</button>
-<button onclick="checkAnswer(this, false)">b) Mostra el contingut d'un fitxer</button>
-<button onclick="checkAnswer(this, false)">c) Crea un nou fitxer</button>
-<button onclick="checkAnswer(this, false)">d) Esborra un fitxer</button>
-</div>
               
             </div>
           </div><footer>
