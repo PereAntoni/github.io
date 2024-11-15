@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>provaVue - Serveis en Xarxa CFGM</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "provaVue";
+        var mkdocs_page_input_path = "provaVue.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Serveis en Xarxa CFGM
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">SERVEIS EN XARXA CFGM</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u1-conceptes-xarxes/">1. Conceptes sobre xarxes</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../exercicis-ipv4/">1.1. Exercicis ipv4</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../u2-servei-ftp.md">2. Servei FTP</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../preguntes-test/">2.1 Preguntes exemple</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u2-ftp-vsftpd/">2.2 Instal.lació vsFTPd</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../u3-servei-http.md">3. SERVEI HTTP</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u3-prt-apache2/">3.1 Practica servidor apache</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u3-preguntes/">3.2 Preguntes test</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../dns/">4. Servei DNS</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="" href="../practica-dns.md">4.1 Pràctica servei DNS</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../errors-comuns/">Errors Comuns Apache</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../curriculum/">Curriculum</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../contingut/">Contingut</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">provaVue</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Serveis en Xarxa CFGM</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">provaVue</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <html>
+<head>
+    <meta charset="UTF-8">
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@1,900&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+
+
+
+    div.scrollmenu {
+        background-color: #fef4ec;
+        overflow: auto;
+        white-space: nowrap;
+        }
+
+    div.scrollmenu a {
+        display: inline-block;
+        color: white;
+        text-align: center;
+        padding: 14px;
+        text-decoration: none;
+        }
+
+    div.scrollmenu a:hover {
+       background-color: #777;
+    }
+
+    .imgScroll  {
+        cursor: pointer;
+        width: 15%;
+
+    }
+    body {  background-color:rgb(90, 130, 168);
+            padding: 0;
+            margin: 0;
+            font-family: 'lora', sans-serif;
+            background: rgb(254, 244, 236);
+            height: 100vh;
+            width: 100vw;}
+    .col {text-align: center}
+    #bottom {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    .cara {
+        cursor: pointer;
+        opacity: 1; 
+    }
+    .cara:hover, .cara:active{
+        opacity: 1;
+        animation: tada; 
+        animation-duration: 1s;
+    }
+    .fade-enter-active{
+        transition: opacity 2.5s
+    }
+
+    .fade-leave-active {
+        transition: opacity 1s
+    }
+    .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+        opacity: 0
+    }
+    .logo {
+        background-color: rgba(197,214,186,255);
+    }
+    .logol {
+        background-image: "/imatges/fons/d1-1.png";
+    }
+    p {
+        font-size: 25px;
+        line-height: 110%;
+        padding-left: 10px;
+        padding-top: -10%;
+        padding-bottom: -10%;
+        margin: 0%;
+    }
+    h1 {
+        font-size: 5.8vh;
+    }
+    .pare {
+        display: flex;
+        align-items: center;
+    }
+    .fill {
+        line-height: 100px; 
+    }
+    .texte {
+            font-family: 'Lora', serif;
+            color: rgb(48, 44, 44);
+            font-size: 3.5vh;
+            text-align: left;
+    }
+    ul {
+            font-family: 'Lora', serif;
+            color: rgb(48, 44, 44);
+            font-size: 2vw;
+            text-align: left;
+    }
+    pre {
+        white-space: pre-wrap;
+        word-wrap: break-word;
+        text-align: left;
+    }
+    u {
+        color: grey;
+        font-size: 2.5vh;
+    }
+    .cap {
+
+        font-size: 3.5vh;
+    }
+    body {
+        background-image: "/imatges/fons/d1-1.png";
+    }
+    .bCara {
+        font-size: 15cap;
+        cursor: pointer;
+    }
+
+    .cDau {
+        cursor: pointer;
+    }
+
+    .superior {
+        background-color: beige;
+    }
+
+</style>
+
+<body>
+    <div class="logo row">
+        <div class="col-1"></div>
+        <div class="col-4">
+            <a href="http://rondaulles.cat">
+            <img src="http://www.rondaulles.cat/wp-content/uploads/2022/10/cropped-RondaullesLogo-1.png" 
+                alt="Lights" 
+                class="img-fluid logo">
+            </a>
+        </div>
+        <div class="col-7"></div>
+    </div>
+    <div class="container-fluid" id="app-rondaulles">
+        <div class="row" v-if="!show">
+            <div v-for="item in daus" class="col-xl-2 col-md-3 col-sm-4">
+
+                <img    v-bind:id=item 
+                        class="cDau img-fluid animate__animated animate__bounceIn" 
+                        v-bind:src="'imatges/cares/' + item + '.png'" 
+                        v-on:click="triaSubSeccio(item)">
+            </div>
+        </div>
+
+        <div v-if="show">
+            <div class="col-12">
+
+                <div class="row superior">
+                    <div class="col-3">
+                        <img v-on:click="tancaSeccio()" class="animate__animated animate__rollIn img-fluid" v-bind:src="'imatges/cares/' + codi + '.png'">
+                    </div>
+                    <div class="col-9 pare">
+
+                        <div class="row align-bottom">
+                            <div class="col-12 ">
+                                <br>
+
+                                <h1  style="text-align:left" class="col-12 animate__animated animate__lightSpeedInRight">{{nom}}</h1>
+
+                                <div class="row">
+                                    <div class="col-3 bcara align-bottom">
+                                        <img v-if="text" class="img-fluid align-bottom" v-on:click="seccio('text')" src="imatges/botons/descripcioS.png">
+                                        <img v-else class="img-fluid align-bottom" v-on:click="seccio('text')" src="imatges/botons/descripcio.png">
+                                    </div>
+                                    <div class="col-3 bcara align-bottom">
+                                        <img v-if="ilustracions" class="img-fluid align-bottom" v-on:click="seccio('ilustracions')" src="imatges/botons/ilustracionsS.png">
+                                        <img v-else class="img-fluid align-bottom" v-on:click="seccio('ilustracions')" src="imatges/botons/ilustracions.png">
+                                    </div>
+                                    <div class="col-3 bcara align-bottom">
+                                        <img v-if="apareix" class="img-fluid align-bottom" v-on:click="seccio('apareix')" src="imatges/botons/aparicionsS.png">
+                                        <img v-else class="img-fluid align-bottom" v-on:click="seccio('apareix')" src="imatges/botons/aparicions.png">
+
+                                    </div>
+
+                                </div>
+
+                                </p>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+
+                    <div class="row"></div>
+                        <div class="col-12">
+                            <div v-if="text">
+                                <pre style="padding: 2px"class="texte animate__animated animate__fadeIn" v-on:click="mostraText()" v-html="textDescripcio"></pre>
+
+                            </div>
+
+
+                            <div class="col-12 texte animate__animated animate__fadeIn" v-if="ilustracions">
+                                <div v-for="(imatges,index) in imatges" 
+                                :key="index"
+                                :codi="imatges.codi"
+                                :imatge="imatges.imatge"
+                                :descripcio="imatges.descripcio"
+                                >
+
+                                <img v-bind:src="'imatges/rondalles/' + imatges.imatge+ '.png'" class="img-fluid caraSeleccio animate__animated backInUp">
+                                <p>{{imatges.imatge}}-{{imatges.descripcio}}</p>
+                                </div>
+                            </div>
+
+                            <div v-if="apareix">
+                                <pre class=texte>{{ aparicions }}</pre>
+                            </div>
+
+                        </div>
+
+
+
+
+                    </div>
+                    </div>
+                </div></div>
+                </div>
+            </div> 
+        </div>
+
+
+
+
+    </div>
+
+</body>
+<script>
+    const a = new Vue({
+        el: '#app-rondaulles',
+        data: function(){
+            return{
+                cara:[],
+                nom:'',
+                descripcio:'',
+                imatges:[],
+                aparicions:'',
+                codi:'',
+                show: false,
+                textDescripcio: '',
+                ilustracions: true,
+                text: false,
+                apareix:false,
+                expand: false,
+                daus:   ['d1-1','d1-2','d1-3','d1-4','d1-5','d1-6',
+                        'd2-1','d2-2','d2-3','d2-4','d2-5','d2-6',
+                        'd3-1','d3-2','d3-3','d3-4','d3-5','d3-6',
+                        'd4-1','d4-2','d4-3','d4-4','d4-5','d4-6',
+                        'd5-1','d5-2','d5-3','d5-4','d5-5','d5-6',
+                        'd6-1','d6-2','d6-3','d6-4','d6-5','d6-6'
+                        ]
+            }
+        },
+        watch: {
+                cara(a,b){
+
+                    this.imatges=a["imatges"];
+                    this.nom=a.info[0].nom;
+                    this.codi=a.info[0].codi;
+                    this.descripcio=a.info[0].descripcio;
+                    //this.textDescripcio = "<cap>" + this.descripcio.slice(0,1) + "</cap>" +  this.descripcio.slice(1,300) + "...<u>click per llegir més</u>";
+
+                    this.textDescripcio = a.info[0].descripcio;
+                    this.expand=false;
+                    this.aparicions=a.info[0].extra;
+                }
+        },
+        mounted() {
+            setInterval(() => {
+
+                let dau = Math.floor(Math.random() * 6) + 1;
+                let cara = Math.floor(Math.random() * 6) + 1;
+                let element = document.querySelector("#d" + dau +"-"+cara);
+                element.classList.remove("animate__bounceIn");
+                element.classList.add("animate__jello");
+                //alert(element);
+            }, 2500)
+        },
+        methods:{
+            triaSubSeccio: 
+                function(e){
+                    this.show= true;
+                    this.subSeccio=e;
+                    let dades = {codi: e};
+
+                    axios
+                        .post('api/cara/read_one.php', dades)
+                        .then(response => (this.cara = response.data))
+
+                    let urlAudio = "sons/" + e + ".mp3";
+                    let audio = new Audio(urlAudio);
+                    audio.play();
+                    }   
+
+
+                    ,
+            seccio:
+                function(i){
+                    this.apareix=false
+                    this.text=false
+                    this.ilustracions=false
+                    if (i=='text'){this.text=true}
+                    if (i=='ilustracions'){this.ilustracions=true}
+                    if (i=='apareix'){this.apareix=true}
+
+            },
+            tancaSeccio:
+                function(){
+                    this.show=false;
+                },
+            hoverCara:
+                function(e){
+                    alert(e);
+                    let audio = new Audio("/sons/" + e + ".mp3");
+                    audio.play();
+                },
+            mostraText:
+                function(){
+                    if(this.expand){
+                        this.textDescripcio = this.descripcio.slice(0,300) + "...<u>click per llegir més</u>";
+                    }else{
+                        this.textDescripcio = this.descripcio;
+                    }
+                    this.expand=!this.expand;
+                },
+        }
+    })
+    function sortir(){
+        var element = document.getElementsByClassName('cara')
+        element.classList.add("fadeOutDown")
+
+        //animate__fadeOutDown
+    }
+
+
+</script>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../contingut/" class="btn btn-neutral float-left" title="Contingut"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../contingut/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
