@@ -374,6 +374,34 @@ b) ls -l
 c) cd
 d) chmod
 Resposta correcta: a</p>
+<p><a href="https://mybinder.org/v2/gh/USERNAME/REPOSITORY/BRANCH"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
+<h1 id="tipus-test-interactiu-shell">Tipus Test Interactiu - Shell</h1>
+<h3 id="pregunta-1-que-fa-la-instruccio-ls">Pregunta 1: Què fa la instrucció <code>ls</code>?</h3>
+<div id="q1">
+<p><strong>Selecciona una resposta:</strong></p>
+<button onclick="checkAnswer(this, true)">a) Llista els fitxers i directoris</button>
+<button onclick="checkAnswer(this, false)">b) Mostra el contingut d'un fitxer</button>
+<button onclick="checkAnswer(this, false)">c) Crea un nou fitxer</button>
+<button onclick="checkAnswer(this, false)">d) Esborra un fitxer</button>
+</div>
+
+<script>
+function checkAnswer(button, isCorrect) {
+  if (isCorrect) {
+    button.style.backgroundColor = '#d4edda';
+    button.style.color = '#155724';
+    button.textContent += " ✅ Correcte!";
+  } else {
+    button.style.backgroundColor = '#f8d7da';
+    button.style.color = '#721c24';
+    button.textContent += " ❌ Incorrecte!";
+  }
+
+  // Deshabilitar altres respostes de la mateixa pregunta
+  const buttons = button.parentNode.querySelectorAll('button');
+  buttons.forEach(btn => btn.disabled = true);
+}
+</script>
               
             </div>
           </div><footer>
