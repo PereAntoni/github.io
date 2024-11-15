@@ -220,20 +220,36 @@
 <p>Afegeix aquest codi JavaScript al final del fitxer <code>.md</code> (només funcionarà si el visualitzador de Markdown suporta HTML/JS):</p>
 <p>```html</p>
 <script>
+
+let score = 0;
+
 function checkAnswer(button, isCorrect) {
+  // Restableix tots els botons al seu estat inicial
+  const buttons = button.parentNode.querySelectorAll('button');
+  buttons.forEach(btn => {
+    btn.style.backgroundColor = '';
+    btn.style.color = '';
+    btn.disabled = false; // Permet tornar a provar
+  });
+
   if (isCorrect) {
+    // Marca el botó correcte i incrementa l'encert
     button.style.backgroundColor = '#d4edda';
     button.style.color = '#155724';
-    button.textContent += " ✅ Correcte!";
+    button.textContent = button.textContent.replace(" ✅ Correcte!", "") + " ✅ Correcte!";
+    updateScore(1);
   } else {
+    // Marca el botó incorrecte
     button.style.backgroundColor = '#f8d7da';
     button.style.color = '#721c24';
-    button.textContent += " ❌ Incorrecte!";
+    button.textContent = button.textContent.replace(" ❌ Incorrecte!", "") + " ❌ Incorrecte!";
   }
+}
 
-  // Deshabilitar altres respostes de la mateixa pregunta
-  const buttons = button.parentNode.querySelectorAll('button');
-  buttons.forEach(btn => btn.disabled = true);
+function updateScore(value) {
+  // Actualitza el marcador d'encerts
+  score += value;
+  document.getElementById('score').textContent = score;
 }
 </script>
 
