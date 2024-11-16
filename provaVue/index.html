@@ -140,13 +140,19 @@
 
     </main>
 <script type="module">
-    function pintarCapsalera(){
+    const titol = document.createElement("h1");
+    titol.innerHTML="MODEL EXAMEN";
+    document.querySelector("#capsalera").appendChild(titol);
+    console.log("som dins script")
+/*    function pintarCapsalera(){
         const titol = document.createElement("h1");
         titol.innerHTML="MODEL EXAMEN";
         document.querySelector("#capsalera").appendChild(titol);
     }
+*/
     (async()=>
-        pintarCapsalera()
+        console.log("som dins async")
+        //pintarCapsalera()
 
     )
 
