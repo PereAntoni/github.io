@@ -141,13 +141,11 @@
 
     </main>
 <script type="module">
-    const titol = document.createElement("h1");
-    titol.innerHTML="MODEL EXAMEN";
-    document.querySelector("#capsalera").appendChild(titol);
+
     console.log("som dins script")
-    function pintarCapsalera(){
+    function pintarCapsalera(model){
         const titol = document.createElement("h1");
-        titol.innerHTML="MODEL EXAMEN";
+        titol.innerHTML="MODEL EXAMEN " + model;
         document.querySelector("#capsalera").appendChild(titol);
         console.log("som dins pintar capsalera");
     }
@@ -162,7 +160,7 @@
         const idPost = url.searchParams.get("idPost");
         console.log("URL: " + url);
         console.log("idPost:" + idPost)
-        pintarCapsalera()
+        pintarCapsalera(idPost)
         prova();
     }
     )()
