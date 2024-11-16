@@ -145,20 +145,22 @@
     titol.innerHTML="MODEL EXAMEN";
     document.querySelector("#capsalera").appendChild(titol);
     console.log("som dins script")
-/*    function pintarCapsalera(){
+    function pintarCapsalera(){
         const titol = document.createElement("h1");
         titol.innerHTML="MODEL EXAMEN";
         document.querySelector("#capsalera").appendChild(titol);
+        console.log("som dins pintar capsalera");
     }
-*/
+
     function prova(){
         console.log("som dins prova, cridat de async");
     }
-    (async()=>
+
+    (async()=>{
         console.log("som dins async");
         prova();
-        //pintarCapsalera()
-
+        pintarCapsalera()
+    }
     )
 
 </script>   
