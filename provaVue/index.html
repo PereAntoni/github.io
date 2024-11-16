@@ -127,73 +127,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>EXAMEN TEST</title>
 </head>
 <body>
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
-    <button onclick="initGoogle()">Connexió Google</button>
-    <button onclick="initBlogger()">Connexió Blogger</button>
-    <button onclick="peticioBlog()">Connexió Blogger</button>
+    <header id="capsalera">
+        <div class="titol"></div>
+    <header>
+    <main id="cos">
+        <div id="formulari">
++.+
+        </div>
 
-<script>
-    //client id: 93131392495-ener171a5pc6c9bhqhn7gck61hiup4bu.apps.googleusercontent.com
-    //TUTORIAL BLOOGER API: https://developers.google.com/blogger/docs/3.0/using
+    </main>
+<script type="module">
+    function pintarCapsalera(){
+        const titol = document.createElement("h1");
+        titol.innerHTML="MODEL EXAMEN";
+        document.querySelector("#capsalera").appendChild(titol);
 
-    function initGoogle(){
-        const client = google.accounts.oauth2.initTokenClient({
-            client_id: '93131392495-ener171a5pc6c9bhqhn7gck61hiup4bu.apps.googleusercontent.com',
-            scope: 'https://www.googleapis.com/auth/blogger',//'https://www.googleapis.com/auth/calendar.readonly \ https://www.googleapis.com/auth/blogger'
-            callback: (tokenResponse) => {
-              if (tokenResponse && tokenResponse.access_token) {
-                console.log("tokenResponse: ",tokenResponse,tokenResponse.access_token);
-                localStorage.setItem("token",tokenResponse.access_token);
-              }
-            },
-          });
-        client.requestAccessToken();
-    }
-
-    function initBlogger(){
-        /*
-        const myHeaders = new Headers();
-            myHeaders.append("Authorization",localStorage.getItem('token'));
-        console.log("El valor del token és "+ localStorage.getItem('token'));
-        const requestOptions = {
-            method: "GET",
-            headers: myHeaders,
-            redirect: "follow"
-        };
-
-        fetch("https://www.googleapis.com/blogger/v3/blogs/5061924546610576807", requestOptions)
-            .then((response) => response.text())
-            .then((result) => console.log(result))
-            .catch((error) => console.error(error));
-        */
-        //const peticioFetch = fetch("https://www.googleapis.com/blogger/v3/blogs/5061924546610576807",{
-        console.log("El valor del token és "+ localStorage.getItem('token'));
-        const peticioFetch = fetch("https://www.googleapis.com/blogger/v3/blogs/5061924546610576807",{
-            method: 'get',
-            headers: {
-                //'Authorization': localStorage.getItem('token')
-                'Authorization': 'Bearer '+localStorage.getItem('token')
-            }
-        })
-
-
-
-    }
-    async function peticioBlog(){
-        //console.log("El valor del token és "+ localStorage.getItem('token'));
-        const peticioFetch = await fetch("https://www.googleapis.com/blogger/v3/blogs/5061924546610576807/posts",{
-            method: 'get',
-            headers: {
-                //'Authorization': localStorage.getItem('token')
-                'Authorization': 'Bearer '+localStorage.getItem('token')
-            }
-
-        })
-        const response = await peticioFetch.json();
-        console.log(response);
 
     }
 </script>   
