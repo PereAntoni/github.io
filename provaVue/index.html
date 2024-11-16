@@ -158,6 +158,10 @@
 
     (async()=>{
         console.log("som dins async");
+        const url = new URL(document.location);
+        const idPost = url.searchParams.get("idPost");
+        console.log("URL: " + url);
+        console.log("idPost:" + idPost)
         pintarCapsalera()
         prova();
     }
