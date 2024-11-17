@@ -62,6 +62,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#utilitats-basiques">Utilitats bàsiques</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#funcionament-del-servei">Funcionament del servei</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#com-funciona">Com funciona</a>
     </li>
     </ul>
@@ -120,14 +122,10 @@
 <h2 id="per-a-que-serveix-ftp">Per a què serveix FTP?</h2>
 <p>FTP és especialment útil per a:</p>
 <ul>
-<li><em>Transferència de fitxers grans</em>: FTP pot transferir fitxers grans d'una sola vegada; per tant, és aplicable a l'allotjament de llocs web, a la còpia de seguretat de servidors o a l'ús compartit de fitxers en grans quantitats.</li>
-<li>
-<p><em>Gestió remota de fitxers</em> : els fitxers d'un servidor remot es poden carregar, descarregar, suprimir, canviar el nom i copiar-se segons les eleccions dels usuaris.</p>
-</li>
-<li>
-<p><em>Automatització de transferències de fitxers</em> : FTP és un gran protocol per a l'execució de transferències de fitxers en scripts i ocupacions predefinits.</p>
-</li>
-<li><em>Accés a fitxers públics</em>: FTP anònim significa que tothom, independentment de la seva identitat, pot descarregar alguns fitxers sense necessitat de permisos.</li>
+<li><strong>Transferència de fitxers grans</strong>: FTP pot transferir fitxers grans d'una sola vegada; per tant, és aplicable a l'allotjament de llocs web, a la còpia de seguretat de servidors o a l'ús compartit de fitxers en grans quantitats.</li>
+<li><strong>Gestió remota de fitxers</strong> : els fitxers d'un servidor remot es poden carregar, descarregar, suprimir, canviar el nom i copiar-se segons les eleccions dels usuaris.</li>
+<li><strong>Automatització de transferències de fitxers</strong> : FTP és un gran protocol per a l'execució de transferències de fitxers en scripts i ocupacions predefinits.</li>
+<li><strong>Accés a fitxers públics</strong>: FTP anònim significa que tothom, independentment de la seva identitat, pot descarregar alguns fitxers sense necessitat de permisos.</li>
 </ul>
 <h2 id="tipus-dftp">Tipus d'FTP</h2>
 <p>Hi ha diferents maneres mitjançant les quals un servidor i un client fan una transferència de fitxers mitjançant FTP. Alguns d'ells s'esmenten a continuació:</p>
@@ -153,6 +151,14 @@ FTP sobre SSL/TLS explícit (FTPES): FTPES ajuda a actualitzar la connexió FTP 
 <p><strong>Accés a fitxers públics</strong>: FTP anònim significa que tothom, independentment de la seva identitat, pot descarregar alguns fitxers sense necessitat de permisos.</p>
 </li>
 </ul>
+<h2 id="funcionament-del-servei">Funcionament del servei</h2>
+<p>-<strong>Connectar-se al servidor FTP</strong>: es pot connectar al servidor mitjançant l'adreça, el nom d'usuari i la contrasenya mitjançant un client FTP o una interfície de línia d'ordres. És possible que la informació anònima no necessiti un nom d'usuari i una contrasenya.
+-<strong>Navegació als directoris</strong>: algunes ordres inclouen ls que s'utilitza per llistar directoris i cd que s'utilitza per canviar directoris.
+-<strong>Transferir fitxers</strong>: la transferència de fitxers es pot fer mitjançant les ordres com ara get per descarregar fitxers i put per carregar fitxers.
+-<strong>Gestionar fitxers</strong>: 
+1. Eliminar fitxers
+2. canvi de nom (Canvi de nom) i la còpia (Copia) de fitxers.
+-<strong>Tancar la connexió</strong>: un cop s'hagi realitzat la transferència de fitxers, amb l'instrucció exit.</p>
 <h2 id="com-funciona">Com funciona</h2>
 <p><a href="https://www.geeksforgeeks.org/file-transfer-protocol-ftp-in-application-layer/">llegeix l'explicació</a></p>
               
