@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>PREGUNTES PER PROVAR I VALORAR ELS CONEIXEMENTS - Serveis en Xarxa CFGM</title>
+    <title>3. SERVEI HTTP - Serveis en Xarxa CFGM</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "PREGUNTES PER PROVAR I VALORAR ELS CONEIXEMENTS";
-        var mkdocs_page_input_path = "u3-preguntes.md";
+        var mkdocs_page_name = "3. SERVEI HTTP";
+        var mkdocs_page_input_path = "u3-servei-http.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -63,8 +63,22 @@
                 <li class="toctree-l1"><a class="reference internal" href="../u2-ftp-vsftpd/">2.2 Instal.lació vsFTPd</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../u3-servei-http/">3. SERVEI HTTP</a>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">3. SERVEI HTTP</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#caracteristiques-de-la-practica">Característiques de la pràctica</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#instruccions-per-realitzar-la-practica">Instruccions per realitzar la pràctica</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#entrega-de-la-practica">Entrega de la pràctica</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#format-dentrega">Format d'entrega</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercicis">EXERCICIS</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
                 </li>
               </ul>
               <ul>
@@ -89,7 +103,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">PREGUNTES PER PROVAR I VALORAR ELS CONEIXEMENTS</li>
+      <li class="breadcrumb-item active">3. SERVEI HTTP</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -98,7 +112,54 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="preguntes-per-provar-i-valorar-els-coneixements">PREGUNTES PER PROVAR I VALORAR ELS CONEIXEMENTS</h1>
+                <h1 id="practica-instalacio-dun-serveidor-apache-sobre-una-maquina-virtual">PRÀCTICA: INSTALACIÓ D'UN SERVEIDOR APACHE SOBRE UNA MÀQUINA VIRTUAL.</h1>
+<h2 id="caracteristiques-de-la-practica">Característiques de la pràctica</h2>
+<p>Volem instalar un servidor de http sobre la màquina virtual del nostre ordinador. Tendrà les característiques:
+1. El servidor és un apache2
+2. Està muntat sobre una maquina virtual al virtual box
+3. Ha de ser accessible dins la xarxa d'aula. Actualment hem fet una distribució de 10.0.100.X+1/16
+4. Cream les màquines usant [vagrant]https://developer.hashicorp.com/vagrant/docs.</p>
+<h2 id="instruccions-per-realitzar-la-practica">Instruccions per realitzar la pràctica</h2>
+<p>Per fer l'instal·lació seguim el manual de [devopscube]https://devopscube.com/vagrant-tutorial-beginners/.</p>
+<p>S'ha triat aquest manual per que conté les proves d'instal·lació i comprovació pas a pas, desde local fins a fora de la xarxa.</p>
+<ul>
+<li>Sols s'ha de fer fins a l'instal·lació d'apache i proves.</li>
+</ul>
+<h2 id="entrega-de-la-practica">Entrega de la pràctica</h2>
+<p>S'ha de crear un html que amb les pràctiques anteriors i aquesta, on s'han de respondre les preguntes de l'[arxiu] https://docs.google.com/document/d/1cy9ntr3vyZx_EKqyOVfURuP5bXZ8gHDu4ClTY3JtNE8/edit?usp=sharing</p>
+<h3 id="format-dentrega">Format d'entrega</h3>
+<p>L'HTML és el llenguatge de marques que empren el navegadors. Per entregar les pràctiques aprendrem i usarem  aquest llenguatge.Hi ha molt de material per aprendre a la xarxa, la pàgina https://www.w3schools.com/ és la de referència.</p>
+<p>Un  document html té un esquema bàsic, pas un exemple per que el modifiqueu i poseu les pràctiques.</p>
+<p>Sobre [aquest]https://drive.google.com/file/d/1tIpNRhY9TGHBg0R1HMXjr09ER6tJbBT1/view?usp=sharing esquelet de html documentam les pràctiques.</p>
+<p>Consulta i aprèn a la web de referència [w3schools]https://www.w3schools.com/html/. </p>
+<h3 id="exercicis">EXERCICIS</h3>
+<p>manual sencer apache2 (versio httpd) https://www.dedoimedo.com/computers/www.dedoimedo.com-apache-web-server-lm.pdf</p>
+<p>| Rule no. 1: don’t panic! The list before you might seem intimidating at the moment, but that is simply because you are not yet familiar with Apache. |</p>
+<p>Cerca al manual  apache2 (versio httpd) https://www.dedoimedo.com/computers/www.dedoimedo.com-apache-web-server-lm.pdf la taula de localitzacions del </p>
+<ol>
+<li>
+<p>En quina carpeta es troben els logs?</p>
+</li>
+<li>
+<p>Quins tipus de fitxer log trobam dins la carpeta anterior.</p>
+</li>
+<li>
+<p>Volem saber les vegades que s’ha accedit desde una ip del vostre ordinador d’aula.Quina instrucció usarem. </p>
+</li>
+<li>
+<p>Ves a la carpeta del server.pid i quin pid té el servidor. Posa les instruccions</p>
+</li>
+<li>
+<p>Quines instruccions s’usen per posar el servidor en marxa, per aturar, per sabetr l'estat i per reiniciar?</p>
+</li>
+<li>
+<p>Fer una copia de l’index.html del servidor, posali nom index-copia.html      </p>
+</li>
+<li>
+<p>Edita un document index.html i posa el teu nom.</p>
+</li>
+</ol>
+<h1 id="preguntes-per-provar-i-valorar-els-coneixements">PREGUNTES PER PROVAR I VALORAR ELS CONEIXEMENTS</h1>
 <h1 id="tipus-test-interactiu-shell-i-comandes">Tipus Test Interactiu - Shell i Comandes</h1>
 <script>
 let score = 0;
@@ -677,6 +738,10 @@ Resposta correcta: a</p>
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../u2-ftp-vsftpd/" class="btn btn-neutral float-left" title="2.2 Instal.lació vsFTPd"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../errors-comuns/" class="btn btn-neutral float-right" title="Errors Comuns Apache">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -698,6 +763,10 @@ Resposta correcta: a</p>
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../u2-ftp-vsftpd/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../errors-comuns/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
