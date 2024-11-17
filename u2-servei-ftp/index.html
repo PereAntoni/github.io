@@ -321,20 +321,6 @@ Utilitzant el nom d'usuari i la contrasenya, hem d'iniciar sessió al servidor F
 </ul>
 <h2 id="diferencia-entre-ftp-i-sftp">Diferència entre FTP i SFTP</h2>
 <table>
-    <thead>
-        <tr>
-            <th>FTP</th>
-            <th>SFTP</th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td></td>
-        </tr>
-    </tbody>
-</table>
-
-<table>
 <thead>
 <tr>
 <th>FTP</th>
@@ -346,12 +332,24 @@ Utilitzant el nom d'usuari i la contrasenya, hem d'iniciar sessió al servidor F
 <td>Significa Protocol de transferència de fitxers.</td>
 <td>Significa Secure File Transfer Protocol.</td>
 </tr>
+<tr>
+<td>A FTP, no es proporciona un canal segur per transferir els fitxers entre els amfitrions.</td>
+<td>A SFTP, es proporciona un canal segur per transferir els fitxers entre els amfitrions.</td>
+</tr>
+<tr>
+<td>Normalment funciona al port no-21.</td>
+<td>Normalment funciona al port no-22.</td>
+</tr>
+<tr>
+<td>No xifra les dades abans d'enviar-les</td>
+<td>Ha xifrat les dades abans d'enviar-les.</td>
+</tr>
+<tr>
+<td>Fa la càrrega i descàrrega d'arxius sense cap seguretat.</td>
+<td>Manté la seguretat total de les dades mitjançant l'ús de <a href="https://www.geeksforgeeks.org/introduction-to-ssh-secure-shell-keys/">claus SSH</a> .</td>
+</tr>
 </tbody>
 </table>
-<p>| A FTP, no es proporciona un canal segur per transferir els fitxers entre els amfitrions. | A SFTP, es proporciona un canal segur per transferir els fitxers entre els amfitrions. |</p>
-<p>| Normalment funciona al port no-21. | Normalment funciona al port no-22. |</p>
-<p>| No xifra les dades abans d'enviar-les | Ha xifrat les dades abans d'enviar-les. |</p>
-<p>| Fa la càrrega i descàrrega d'arxius sense cap seguretat. | Manté la seguretat total de les dades mitjançant l'ús de <a href="https://www.geeksforgeeks.org/introduction-to-ssh-secure-shell-keys/">claus SSH</a> . |</p>
 <h2 id="reptes-de-seguretat-ftp">Reptes de seguretat FTP</h2>
 <p>L'FTP no s'ha dissenyat tenint en compte la seguretat, la qual cosa comporta diverses vulnerabilitats:</p>
 <ul>
