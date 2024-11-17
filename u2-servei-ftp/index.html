@@ -74,6 +74,12 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sessio-ftp">Sessió FTP</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#clients-ftp">Clients FTP</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -198,6 +204,96 @@ FTP sobre SSL/TLS explícit (FTPES): FTPES ajuda a actualitzar la connexió FTP 
 <p>Per enviar el fitxer real, FTP utilitza una connexió de dades. S'inicia una connexió de dades al port número 20. </p>
 <p>FTP envia la informació de control fora de banda, ja que utilitza una connexió de control independent. Alguns protocols envien les seves línies de capçalera de sol·licitud i resposta i les dades a la mateixa connexió TCP. Per aquest motiu, es diu que envien la seva informació de control en banda. HTTP i SMTP en són exemples. </p>
 <p><img alt="" src="https://media.geeksforgeeks.org/wp-content/uploads/20240103125657/FTP-Connections-660.png" /></p>
+<h2 id="sessio-ftp">Sessió FTP</h2>
+<p>Quan s'inicia una sessió FTP entre un client i un servidor, el <strong>client inicia una connexió TCP de control</strong> amb el costat del servidor. El <strong>client envia informació de control</strong>. Quan el <strong>servidor ho rep</strong>, inicia una connexió de dades al costat del client. </p>
+<p>Però la connexió de control roman activa durant tota la sessió de l'usuari. Com sabem, HTTP és sense estat. Però FTP ha de mantenir un estat sobre el seu usuari durant tota la sessió. </p>
+<h3 id="clients-ftp">Clients FTP</h3>
+<p>FTP funciona en un model <strong>client-servidor</strong> . El client FTP és un programa que s'executa a l'ordinador de l'usuari per permetre a l'usuari parlar i obtenir fitxers d'ordinadors remots. És un conjunt d'ordres que estableix la connexió entre dos hosts, ajuda a transferir els fitxers i després tanca la connexió. </p>
+<p>Algunes de les ordres són: 
+- obtenir el nom del fitxer (recuperar el fitxer del servidor)
+- obtenir el nom del fitxer (recuperar diversos fitxers del servidor)
+- ls (llista els fitxers disponibles al directori actual del servidor)</p>
+<p>Tipus de dades FTP
+El tipus de dades d'un fitxer, que determina com es representa el fitxer en general, és la primera informació que es pot proporcionar al respecte. L'estàndard FTP especifica les quatre categories següents de dades:</p>
+<p>ASCII: Descriu un fitxer de text ASCII en el qual cada línia s'indica amb el tipus de marcador de final de línia esmentat anteriorment.
+EBCDIC: per als fitxers que utilitzen el conjunt de caràcters EBCDIC d'IBM, aquest tipus és conceptualment idèntic a ASCII.
+Imatge: aquest és el mode "caixa negra" que vaig descriure anteriorment; el fitxer no té una estructura interna formal i es transfereix un byte alhora sense cap processament.
+Local: els fitxers que contenen dades en bytes lògics amb un nombre de bits diferent de vuit es poden gestionar amb aquest tipus de dades.
+Respostes FTP
+Algunes de les respostes FTP són:</p>
+<p>200 - Comandament d'acord.
+530 - No s'ha iniciat sessió.
+331: el nom d'usuari està bé, cal una contrasenya.
+221 – Connexió de control de tancament del servei.
+551 – Acció sol·licitada avortada: tipus de pàgina desconegut.
+502 - L'ordre no s'ha implementat.
+503 – Mala seqüència d'ordres.
+504: l'ordre no s'ha implementat per a aquest paràmetre.
+Característiques de FTP 
+FTP utilitza TCP com a protocol de capa de transport.
+És bo per a transferències de fitxers senzilles, com ara durant el temps d'arrencada.
+Els errors en la transmissió (paquets perduts, errors de suma de verificació) han de ser gestionats pel servidor TFTP.
+Només utilitza una connexió a través del conegut port 69.
+TFTP utilitza un protocol de pas de bloqueig senzill (cal reconèixer cada paquet de dades). Per tant, el rendiment és limitat.
+Problemes de seguretat de FTP
+La informació no podia passar per un túnel segur ja que FTP no estava pensat per fer-ho. Per tant, el xifratge no està present. Un pirata informàtic no hauria de lluitar amb el xifratge per accedir o alterar les dades que es puguin utilitzar si pogués interceptar una transacció FTP.
+Fins i tot amb l'emmagatzematge al núvol FTP, les dades encara es poden interceptar i fer-ne un mal ús si el sistema del proveïdor de serveis és atacat.
+Com a resultat, les dades enviades mitjançant FTP són un objectiu per a la falsificació, l'sniffing, la força bruta i altres tipus d'atacs que es mouen una mica lentament. Un pirata informàtic pot examinar una transmissió FTP i intentar aprofitar qualsevol defecte simplement escanejant ports.
+El fet que FTP utilitzi contrasenyes de text clar (contrasenyes que no s'han xifrat) és un dels seus principals errors de seguretat. Dit d'una altra manera, "Jerry1992" apareix exactament com "Jerry1992". La contrasenya real s'amaga mitjançant un algorisme en protocols més segurs. Com a resultat, "Jerry1992" pot aparèixer com "dj18387saksng8937d9d8d7s6a8d89". Contrasenyes com aquesta no estan assegurades per FTP, la qual cosa fa que els actors maliciosos puguin trencar-les amb més facilitat.
+Què és un port FTP?
+FTP funciona amb dos ports:</p>
+<p>Port 21: Com s'ha esmentat anteriorment, aquí és on s'emeten les ordres.
+Port 20: Aquest és el port especial necessari per a la connexió de dades on es fa la transferència real del fitxer.
+Com canviar els números de port FTP
+Per canviar els números de port FTP predeterminats, seguiu aquests passos:</p>
+<p>Configuració del servidor d'accés: connecteu el tauler de control del vostre servidor FTP així com el fitxer de configuració del servidor FTP utilitzat.
+Modificar el número de port: esbrineu la configuració del port possible des del fitxer de configuració. Altereu el port de control, el port predeterminat és 21 i el de les dades és 20.
+Reinicieu el servei FTP: Finalment, un cop hàgiu desat els vostres canvis, heu d'aturar i reiniciar el servei FTP perquè es pugui implementar la nova configuració del port.
+Actualitza la configuració del client: assegureu-vos que tots els clients FTP que es connecten amb el servidor rebin els nous números de port.
+Avantatges de FTP
+L'ús compartit de fitxers també entra en la categoria dels avantatges de l'FTP, ja que els fitxers entre dues màquines es poden compartir a la xarxa.
+La velocitat és un dels principals avantatges de l'FTP.
+Com que no hem d'acabar totes les operacions per obtenir el fitxer sencer, és més eficient.
+Utilitzant el nom d'usuari i la contrasenya, hem d'iniciar sessió al servidor FTP. Com a resultat, FTP es podria considerar més segur.
+Podem moure els fitxers d'anada i tornada mitjançant FTP. Suposem que sou el gerent de l'empresa i proporcioneu informació a tots els empleats, i tots responen al mateix servidor.
+Inconvenients de FTP
+El límit de mida dels fitxers és l'inconvenient de l'FTP, només es poden transferir fitxers de 2 GB.
+Més d'un receptor no és compatible amb FTP.
+L'FTP no xifra les dades, aquest és un dels majors inconvenients de l'FTP.
+FTP no està segur, utilitzem identificadors d'inici de sessió i contrasenyes que el fan segur, però els pirates informàtics poden atacar-los.
+Diferència entre FTP i SFTP
+FTP</p>
+<p>SFTP</p>
+<p>Significa Protocol de transferència de fitxers.</p>
+<p>Significa Secure File Transfer Protocol.</p>
+<p>A FTP, no es proporciona un canal segur per transferir els fitxers entre els amfitrions.</p>
+<p>A SFTP, es proporciona un canal segur per transferir els fitxers entre els amfitrions.</p>
+<p>Normalment funciona al port no-21.</p>
+<p>Normalment funciona al port no-22.</p>
+<p>No xifra les dades abans d'enviar-les</p>
+<p>Ha xifrat les dades abans d'enviar-les.</p>
+<p>Fa la càrrega i descàrrega d'arxius sense cap seguretat.</p>
+<p>Manté la seguretat total de les dades mitjançant l'ús de claus SSH .</p>
+<p>Reptes de seguretat FTP
+L'FTP no s'ha dissenyat tenint en compte la seguretat, la qual cosa comporta diverses vulnerabilitats:</p>
+<p>Manca de xifratge: Això es deu al fet que les dades com ara els noms d'usuari i les contrasenyes es transmeten sense xifratge i, per tant, són fàcilment vulnerables a diferents atacs.
+Vulnerabilitats als atacs: les transmissions FTP són vulnerables a atacs com ara la falsificació, l'sniffing, la força bruta i altres atacs lents. Van suggerir que les dades poden ser interceptades i canviades fàcilment pels pirates informàtics .
+Contrasenyes de text clar: malauradament, l'autenticació del client FTP utilitza contrasenyes no xifrades, cosa que les fa vulnerables a la pirateria.
+Conclusió
+FTP segueix sent un mètode potent i eficaç per transferir fitxers entre sistemes i encara preval en els casos de transferència de fitxers grans i en el curs de sistemes automatitzats. No obstant això, no inclou millores de seguretat que el fan bastant inadequat per a l'intercanvi d'informació sensible. En el cas de les transferències, s'han de fomentar els modes més segurs com SFTP o FTPS, ja que fan que les transferències siguin segures. Per tant, malgrat aquests inconvenients, FTP segueix sent útil fins als nostres dies, ja que és senzill i estabilitzat.</p>
+<p>Preguntes freqüents sobre el protocol de transferència de fitxers - Preguntes freqüents
+Diferenciar entre FTP i SFTP?</p>
+<p>FTP és un mètode insegur i transfereix les dades en text sense format, mentre que SFTP és un mètode segur que transfereix les dades en text xifrat.</p>
+<p>Què és la connexió FTP passiva?</p>
+<p>En FTP passiu, el client inicia tant les connexions de control com de dades al servidor.</p>
+<p>Quin és el port predeterminat per a FTP?</p>
+<p>El port predeterminat per a FTP és 21. El port predeterminat s'utilitza per a la connexió de control quan la transferència de dades es produeix a altres ports.</p>
+<p>Anomeneu els dos modes de transferència de dades FTP?</p>
+<p>Mode actiu
+Mode passiu</p>
+<p>Quina diferència hi ha entre FTP i SFTP?</p>
+<p>El protocol de transmissió de fitxers convencional s'anomena FTP. És un mètode senzill per compartir fitxers a través d'Internet. S'afegeix un grau addicional de seguretat a les transferències de fitxers amb SFTP, o Secure File Transfer Protocol, una alternativa a FTP.</p>
+<p>Ets un estudiant d'informàtica o un professional ocupat que vols presentar-te a l' examen GATE 2025 ? Per descomptat, podeu obtenir una bona puntuació, però per obtenir la millor puntuació, el nostre GATE CS/IT 2025 - Curs de ritme autònom està disponible a GeeksforGeeks per ajudar-vos amb la seva preparació. Obteniu una cobertura completa de tots els temes de GATE , explicacions detallades i preguntes pràctiques per estudiar. Estudia al teu ritme. Mòduls flexibles i fàcils de seguir. Feu-ho bé a GATE per millorar les perspectives de la vostra carrera. Inscriu-te ara i comença el teu viatge cap a l'èxit!</p>
 <p>Document original <a href="https://www.geeksforgeeks.org/file-transfer-protocol-ftp-in-application-layer/">geeks for geeks</a></p>
               
             </div>
