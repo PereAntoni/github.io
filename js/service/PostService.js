@@ -1,4 +1,3 @@
-
 import { Post } from "../model/Post.js";
 export class PostService{
     #post
