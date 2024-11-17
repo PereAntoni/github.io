@@ -62,7 +62,9 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#utilitats-basiques">Utilitats bàsiques</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#funcionament-del-servei">Funcionament del servei</a>
+    <li class="toctree-l2"><a class="reference internal" href="#utilitzacio-del-servei">Utilització del servei</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#funcionament">Funcionament</a>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#com-funciona">Com funciona</a>
     </li>
@@ -151,7 +153,7 @@ FTP sobre SSL/TLS explícit (FTPES): FTPES ajuda a actualitzar la connexió FTP 
 <p><strong>Accés a fitxers públics</strong>: FTP anònim significa que tothom, independentment de la seva identitat, pot descarregar alguns fitxers sense necessitat de permisos.</p>
 </li>
 </ul>
-<h2 id="funcionament-del-servei">Funcionament del servei</h2>
+<h2 id="utilitzacio-del-servei">Utilització del servei</h2>
 <p>-<strong>Connectar-se al servidor FTP</strong>: es pot connectar al servidor mitjançant l'adreça, el nom d'usuari i la contrasenya mitjançant un client FTP o una interfície de línia d'ordres. És possible que la informació anònima no necessiti un nom d'usuari i una contrasenya.
 -<strong>Navegació als directoris</strong>: algunes ordres inclouen ls que s'utilitza per llistar directoris i cd que s'utilitza per canviar directoris.
 -<strong>Transferir fitxers</strong>: la transferència de fitxers es pot fer mitjançant les ordres com ara get per descarregar fitxers i put per carregar fitxers.
@@ -159,6 +161,15 @@ FTP sobre SSL/TLS explícit (FTPES): FTPES ajuda a actualitzar la connexió FTP 
 1. Eliminar fitxers
 2. canvi de nom (Canvi de nom) i la còpia (Copia) de fitxers.
 -<strong>Tancar la connexió</strong>: un cop s'hagi realitzat la transferència de fitxers, amb l'instrucció exit.</p>
+<h2 id="funcionament">Funcionament</h2>
+<p>FTP és un protocol de servidor client que té dos canals de comunicació, un canal d'ordres per al control de converses i un canal de dades per al contingut dels fitxers.</p>
+<p>A continuació s'esmenten els passos en què funciona FTP:</p>
+<ul>
+<li>Un usuari ha d'iniciar sessió al servidor FTP primer, pot haver-hi alguns servidors on podeu accedir al contingut sense iniciar sessió, coneguts com a FTP anònim.</li>
+<li>El client pot iniciar una conversa amb el servidor, després de sol·licitar descarregar un fitxer.</li>
+<li>L'usuari pot iniciar diferents funcions com carregar, esborrar, canviar el nom, copiar fitxers, etc. al servidor.</li>
+</ul>
+<p>FTP pot funcionar en diferents modes com els modes actiu i passiu.</p>
 <h2 id="com-funciona">Com funciona</h2>
 <p><a href="https://www.geeksforgeeks.org/file-transfer-protocol-ftp-in-application-layer/">llegeix l'explicació</a></p>
               
