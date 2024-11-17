@@ -127,7 +127,5 @@ export class PostService{
         console.log(this.traduccio)
         return this.traduccio; 
     }
-
-    
-    
+   
 }
