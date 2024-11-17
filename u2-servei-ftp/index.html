@@ -60,6 +60,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#tipus-dftp">Tipus d'FTP</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#utilitats-basiques">Utilitats bàsiques</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#com-funciona">Com funciona</a>
     </li>
     </ul>
@@ -111,6 +113,8 @@
                 <h1 id="servei-ftp">SERVEI FTP</h1>
 <h2 id="descripcio">Descripció</h2>
 <p>El protocol de transferència de fitxers o FTP (de l'anglès File Transfer Protocol) és un programari estandarditzat per enviar fitxers entre ordinadors amb qualsevol sistema operatiu. Forma part de la capa d'aplicació del model TCP/IP.</p>
+<p>FTP és un protocol de comunicació estàndard. Hi ha diversos altres protocols com HTTP que s'utilitzen per transferir fitxers entre ordinadors, però no tenen claredat i enfocament en comparació amb FTP. A més, els sistemes implicats en la connexió són heterogenis, és a dir, es diferencien en sistemes operatius, directoris, estructures, jocs de caràcters, etc. L'FTP protegeix l'usuari d'aquestes diferències i transfereix les dades de manera eficient i fiable. FTP pot transferir fitxers ASCII, EBCDIC o imatges. L'ASCII és el format de compartició de fitxers predeterminat, en aquest, cada caràcter està codificat per NVT ASCII. En ASCII o EBCDIC la destinació ha d'estar preparada per acceptar fitxers en aquest mode. El format de fitxer d'imatge és el format predeterminat per transformar fitxers binaris.</p>
+<p><img alt="" src="https://media.geeksforgeeks.org/wp-content/uploads/20240110113246/File-Transfer-Protocol-and-HTTPS-gif-2.gif" /></p>
 <p>FTP utilitza una connexió amb estat que manté el directori de treball actual i altres indicadors, i cada transferència de dades requereix una connexió addicional a la qual es transfereixen les dades.</p>
 <p>En mode "passiu", aquesta connexió addicional va del client al servidor, mentre que en mode "actiu", per defecte, aquesta connexió va del servidor al client. A causa de l'aparent inversió de rol en el mode actiu i dels números de port aleatoris per a totes les transferències de dades, els tallafocs i les passarel·les NAT tenen dificultats per gestionar FTP. HTTP és un protocol sense estat i multiplexa el control i la transferència de dades en una única connexió de client a servidor a través de números de port coneguts, cosa que facilita la travessa per passarel·les NAT i la gestió dels tallafocs.</p>
 <h2 id="per-a-que-serveix-ftp">Per a què serveix FTP?</h2>
@@ -133,6 +137,22 @@
 <p><strong>FTP Secure (FTPS)</strong>: També s'anomena FTP Secure Sockets Layer (FTP SSL). És una versió més segura de la transferència de dades FTP. Sempre que s'estableix una connexió FTP, s'habilita la seguretat de la capa de transport (TLS).
 FTP sobre SSL/TLS explícit (FTPES): FTPES ajuda a actualitzar la connexió FTP del port 21 a una connexió xifrada.</p>
 <p><strong>Secure FTP (SFTP)</strong>: SFTP no és un protocol FTP, però és un subconjunt del protocol Secure Shell, ja que funciona al port 22.</p>
+<h2 id="utilitats-basiques">Utilitats bàsiques</h2>
+<p>FTP és especialment útil per a:</p>
+<ul>
+<li>
+<p><strong>Transferència de fitxers grans</strong>: FTP pot transferir fitxers grans d'una sola vegada; per tant, és aplicable a l'allotjament de llocs web, a la còpia de seguretat de servidors o a l'ús compartit de fitxers en grans quantitats.</p>
+</li>
+<li>
+<p><strong>Gestió remota de fitxers</strong> : els fitxers d'un servidor remot es poden carregar, descarregar, suprimir, canviar el nom i copiar-se segons les eleccions dels usuaris.</p>
+</li>
+<li>
+<p><strong>Automatització de transferències de fitxers</strong>: FTP és un gran protocol per a l'execució de transferències de fitxers en scripts i ocupacions predefinits.</p>
+</li>
+<li>
+<p><strong>Accés a fitxers públics</strong>: FTP anònim significa que tothom, independentment de la seva identitat, pot descarregar alguns fitxers sense necessitat de permisos.</p>
+</li>
+</ul>
 <h2 id="com-funciona">Com funciona</h2>
 <p><a href="https://www.geeksforgeeks.org/file-transfer-protocol-ftp-in-application-layer/">llegeix l'explicació</a></p>
               
