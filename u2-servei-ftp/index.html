@@ -66,6 +66,14 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#com-funciona-lftp">Com funciona l'FTP?</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tipus-de-connexions-del-protocol-ftp">Tipus de connexions del protocol FTP</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#connexio-de-control">Connexió de Control</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#connexio-de-dades">Connexió de Dades</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -179,6 +187,17 @@ FTP sobre SSL/TLS explícit (FTPES): FTPES ajuda a actualitzar la connexió FTP 
 </ul>
 <p><img alt="" src="https://media.geeksforgeeks.org/wp-content/uploads/FTP.jpg" /></p>
 <p>FTP pot funcionar en diferents modes com els modes actiu i passiu, pots mirarl'explicació al <a href="https://www.geeksforgeeks.org/difference-between-active-and-passive-ftp/">link</a>.</p>
+<h2 id="tipus-de-connexions-del-protocol-ftp">Tipus de connexions del protocol FTP</h2>
+<ul>
+<li>Connexió de Control</li>
+<li>Connexió de dades</li>
+</ul>
+<h3 id="connexio-de-control">Connexió de Control</h3>
+<p>Per enviar informació de control com la identificació d'usuari, contrasenya, ordres per canviar el directori remot, ordres per recuperar i emmagatzemar fitxers, etc., FTP utilitza una connexió de control. La connexió de control s'inicia al port número 21. </p>
+<h3 id="connexio-de-dades">Connexió de Dades</h3>
+<p>Per enviar el fitxer real, FTP utilitza una connexió de dades. S'inicia una connexió de dades al port número 20. </p>
+<p>FTP envia la informació de control fora de banda, ja que utilitza una connexió de control independent. Alguns protocols envien les seves línies de capçalera de sol·licitud i resposta i les dades a la mateixa connexió TCP. Per aquest motiu, es diu que envien la seva informació de control en banda. HTTP i SMTP en són exemples. </p>
+<p><img alt="" src="https://media.geeksforgeeks.org/wp-content/uploads/20240103125657/FTP-Connections-660.png" /></p>
 <p>Document original <a href="https://www.geeksforgeeks.org/file-transfer-protocol-ftp-in-application-layer/">geeks for geeks</a></p>
               
             </div>
