@@ -78,6 +78,8 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6-usuari-amb-acces-a-una-carpeta-del-servidor">6. Usuari amb accés a una carpeta del servidor.</a>
+    </li>
     <li class="toctree-l2"><a class="reference internal" href="#6-crear-com-a-sftp">6. Crear com a sftp</a>
     </li>
     </ul>
@@ -210,6 +212,12 @@ les configuracions bàsiques del servidor.</p>
 <p>ENCAPSULACIONS DE DIRECTORI
 chroot_local_user=YES #ENCAPSULAM
 chroot_local_user=NO #VEIM TOTS ELS DIRECTORIS HOME</p>
+<h2 id="6-usuari-amb-acces-a-una-carpeta-del-servidor">6. Usuari amb accés a una carpeta del servidor.</h2>
+<p>Una vegada provat el funcionament de nous usuaris. Ara volem que un usuari tengui accés a la gestió (CRUD) sobre la carpeta pública de apache2.</p>
+<ul>
+<li>Per això hem de canviar el directori home de l'usuari.</li>
+</ul>
+<p>| usermod --home /var/www usuari |</p>
 <h2 id="6-crear-com-a-sftp">6. Crear com a sftp</h2>
 <p>Cercam el punt i seguim el <a href="https://ca.ubunlog.com/vsftpd-instal%c2%b7lar-un-servidor-ftp-Ubuntu/">tutorial</a></p>
               
