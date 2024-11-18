@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>(provaVue) - Serveis en Xarxa CFGM</title>
+    <title>4. SCRIPTING - Serveis en Xarxa CFGM</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "(provaVue)";
-        var mkdocs_page_input_path = "provaVue.md";
+        var mkdocs_page_name = "4. SCRIPTING";
+        var mkdocs_page_input_path = "u4-Scripting.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -71,16 +71,18 @@
                 <li class="toctree-l1"><a class="reference internal" href="../u3-servei-http/">3. SERVEI HTTP</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../u4-Scripting/">4. SCRIPTING</a>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">4. SCRIPTING</a>
+    <ul class="current">
+    </ul>
                 </li>
               </ul>
               <ul>
                 <li class="toctree-l1"><a class="reference internal" href="../errors-comuns/">Errors Comuns Apache</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">(provaVue)</a>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../provaVue/">(provaVue)</a>
                 </li>
               </ul>
       </div>
@@ -97,7 +99,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">(provaVue)</li>
+      <li class="breadcrumb-item active">4. SCRIPTING</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -106,57 +108,18 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EXAMEN TEST</title>
-</head>
-<body>
-    <header id="capsalera">
-        capsalera
-        <div class="titol"></div>
-    <header>
-    <main id="cos">
-        <div id="formulari">
-            part de formulari-v2       
-        </div>
-
-    </main>
-<script type="module">
-
-    console.log("som dins script")
-    function pintarCapsalera(model){
-        const titol = document.createElement("h1");
-        titol.innerHTML="MODEL EXAMEN " + model;
-        document.querySelector("#capsalera").appendChild(titol);
-        console.log("som dins pintar capsalera");
-    }
-
-    function prova(){
-        console.log("som dins prova, cridat de async");
-    }
-
-    (async()=>{
-        console.log("som dins async");
-        const url = new URL(document.location);
-        const idPost = url.searchParams.get("idPost");
-        console.log("URL: " + url);
-        console.log("idPost:" + idPost)
-        pintarCapsalera(idPost)
-        prova();
-    }
-    )()
-
-</script>   
-</body>
-</html>
+                <h1 id="unitat-4-scripts-son-guions">UNITAT 4. SCRIPTS SÓN GUIONS</h1>
+<p>Els scripts Són documents que contenen un guió d'execució d'instruccions. En aquest tema feim una aproximació als scripts del shell. Durant el tema farem pràctiques que olen ser útils per un administrador de sistems o developer.</p>
+<p>Els scripts solen contenir tasques repetitives com per exemple realitzar còpies de seguretat, creació d'usuaris, obertura de sessions, ... </p>
+<p>Com la majoria de llenguatges de programació els scripts també tenen variables, funcions, estructures de control, execucions d'entrada i sortida, estructures de dades, ... </p>
+<p>Per entendre el seu funcionament ho farem amb una sèrie d'exercicis bàsics, per tant ens disposam a començar. </p>
+<p>Per començar obrim un shell i dins del home nostre usuari feim una carpeta anomenada scripts.</p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../errors-comuns/" class="btn btn-neutral float-left" title="Errors Comuns Apache"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../u3-servei-http/" class="btn btn-neutral float-left" title="3. SERVEI HTTP"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../errors-comuns/" class="btn btn-neutral float-right" title="Errors Comuns Apache">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -179,8 +142,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../errors-comuns/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../u3-servei-http/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
+    
+      <span><a href="../errors-comuns/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
