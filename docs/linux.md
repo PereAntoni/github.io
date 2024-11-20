@@ -1,0 +1,2 @@
+# instruccions
+history | grep 

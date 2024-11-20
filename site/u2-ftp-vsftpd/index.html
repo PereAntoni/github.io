@@ -44,7 +44,7 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../u1-conceptes-xarxes/">1. Conceptes sobre xarxes</a>
+                <li class="toctree-l1"><a class="reference internal" href="../u1-conceptes-xarxes/">1. CONCEPTES SOBRE XARXES</a>
                 </li>
               </ul>
               <ul>
@@ -52,7 +52,7 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="" href="../u2-servei-ftp.md">2. Servei FTP</a>
+                <li class="toctree-l1"><a class="reference internal" href="../u2-servei-ftp/">2. SERVEI FTP</a>
                 </li>
               </ul>
               <ul>
@@ -66,27 +66,37 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#1-previa">1. Prèvia</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#2-installacio-i-primera-prova">2. Instal·lació i primera prova</a>
+    <li class="toctree-l2"><a class="reference internal" href="#2i3-installacio-i-primera-prova">2i3. Instal·lació i primera prova</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#3-donam-servei-dusuari-anonymous">3. Donam servei d'usuari anonymous.</a>
+    <li class="toctree-l2"><a class="reference internal" href="#3-copia-de-larxiu-de-configuracio">3. Còpia de l'arxiu de configuració.</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#4-creacio-usuari-anonim">4. Creació usuari anònim.</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#5-creacio-usuari-crud">5. Creació usuari CRUD</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#51-consideracions-dusuaris">5.1 Consideracions d'usuaris</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6-usuari-amb-acces-a-una-carpeta-del-servidor">6. Usuari amb accés a una carpeta del servidor.</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#usermod-home-varwww-usuari">| usermod --home /var/www usuari |</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#6-crear-com-a-sftp">6. Crear com a sftp</a>
     </li>
     </ul>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="" href="../u3-servei-http.md">3. SERVEI HTTP</a>
+                <li class="toctree-l1"><a class="reference internal" href="../u2-test-preguntes/">2.3 Preguntes test</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../u3-prt-apache2/">3.1 Practica servidor apache</a>
+                <li class="toctree-l1"><a class="reference internal" href="../u3-servei-http/">3. SERVEI HTTP</a>
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../dns/">4. Servei DNS</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="" href="../practica-dns.md">4.1 Pràctica servei DNS</a>
+                <li class="toctree-l1"><a class="reference internal" href="../u4-Scripting/">4. SCRIPTING</a>
                 </li>
               </ul>
               <ul>
@@ -94,11 +104,7 @@
                 </li>
               </ul>
               <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../curriculum/">Curriculum</a>
-                </li>
-              </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../contingut/">Contingut</a>
+                <li class="toctree-l1"><a class="reference internal" href="../provaVue/">(provaVue)</a>
                 </li>
               </ul>
       </div>
@@ -128,48 +134,119 @@
 <h2 id="caracteritiques-de-la-practica">Caracterítiques de la pràctica</h2>
 <p>Volem instal·lar un servidor FTP (File Transfer Protocol) sobre una màquina virtual.</p>
 <ol>
-<li>La maquina virtual ja conté el servidor http apache2.</li>
-<li>Instal·larem el servidor vsftpd</li>
-<li>Integrarem un usuari "gestorweb" tipus CRUD (create, read, update, delete) sobre la carpeta html d'Apache2.</li>
+<li><strong>Prèvia</strong>: La màquina virtual ja conté el servidor http apache2.</li>
+<li><strong>Instal·lació servei</strong>: Instal·lam el servidor vsftpd.</li>
+<li><strong>Prova</strong>: Provam l'usuari root del sistema operatiu</li>
+<li><strong>Primera configuració</strong>: Cream un usuari anònim</li>
+<li><strong>Integram un usuari</strong> "gestorweb" tipus CRUD (create, read, update, delete) sobre la carpeta html d'Apache2.</li>
 </ol>
+<p><a href="https://www.siteground.es/kb/errores-comunes-ftp/">LINK ERRORS COMUNS</a></p>
 <h2 id="1-previa">1. Prèvia</h2>
 <p>Abans de començar es molt convenient tenir l'escriptori preparat per poder executar el filezilla i dos CMD.</p>
-<pre><code>1. Sobre un cmd ens conectam a la nostra màquina virtual. 
-2. Entram a la carpeta on tenim la màquina.
-3. Feim un vagrant up per posar la màquina en marxa.
-4. Esperam i després ens connectam amb vagrant ssh. 
-5. Feim les actualitzacions del apt-get o apt
-    - sudo apt-get upgrade
-    - sudo apt-get update
-    - Comprovam que no hagi donat missatges d'error
-</code></pre>
-<h2 id="2-installacio-i-primera-prova">2. Instal·lació i primera prova</h2>
-<p>Després d'actualitzar el repositori apt ens disposam a fer l'instal·lació del servei FTP.
-    1. Executam la instal·lació
-        - sudo apt-get install vsftpd"
-    2. Posam en marxa el servidor ftp
-        - sudo service vsftpd start.
-        - sudo service vsftpd status.
-    3. Provam que funciona
-        - Desde el Filezilla que ja tenim obert posam:
-            - direcció 10.0.100.x+1 (on x= la teva posició dins l'aula * 10) 
-            - usuari: vagrant
-            - password: vagrant
-            - port: 21 (o el deixam per defecte)
-        - Ens avisa de que la connexió no es privada i li donam ok.</p>
+<p>La nostra màquina virtual ja té una ip de xarxa dins la xarxa local.</p>
+<ol>
+<li>Sobre un cmd ens conectam a la nostra màquina virtual. </li>
+<li>Entram a la carpeta on tenim la màquina.</li>
+<li>Feim un vagrant up per posar la màquina en marxa.</li>
+<li>Esperam i després ens connectam amb vagrant ssh. </li>
+<li>Feim les actualitzacions del apt-get o apt<ul>
+<li>sudo apt-get upgrade</li>
+<li>sudo apt-get update</li>
+<li>Comprovam que no hagi donat missatges d'error</li>
+</ul>
+</li>
+</ol>
+<h2 id="2i3-installacio-i-primera-prova">2i3. Instal·lació i primera prova</h2>
+<p>Després d'actualitzar el repositori apt ens disposam a fer l'instal·lació del servei FTP.</p>
+<ol>
+<li>Executam la instal·lació<ul>
+<li>sudo apt-get install vsftpd"</li>
+</ul>
+</li>
+<li>Posam en marxa el servidor ftp<ul>
+<li>sudo service vsftpd start.</li>
+<li>sudo service vsftpd status.</li>
+</ul>
+</li>
+<li>Provam que funciona<ul>
+<li>Desde el Filezilla que ja tenim obert posam:<ul>
+<li>direcció 10.0.100.x+1 (on x= la teva posició dins l'aula * 10) </li>
+<li>usuari: vagrant</li>
+<li>password: vagrant</li>
+<li>port: 21 (o el deixam per defecte)</li>
+</ul>
+</li>
+<li>Ens avisa de que la connexió no es privada i li donam ok.</li>
+</ul>
+</li>
+</ol>
 <p>|El vsftpd utilitza els usuaris del sistema on està allotjat, i en aquest cas, està allotjat a una màquina virtual que té l'usuari vagrant amb el password vagrant.|</p>
-<h2 id="3-donam-servei-dusuari-anonymous">3. Donam servei d'usuari anonymous.</h2>
-<p>Aquest primer exercici ens permet provar amb usuari que no necessita estar creat dins del sistema operatiu del servidor. És l'usuari anonymous.
-    1. Abans de tocar la configuració del sistema és MOLT CONVENIENT fer una còpia de l'arxiu de configuració inicial del vsftpd
-        - sudo cp /etc/vsftpd.conf /etc/vsftpd-conf-default
-    2. Ara podem editar el document fer servir l'editor nano:
-        - sudo /etc/vsftpd.conf</p>
+<h2 id="3-copia-de-larxiu-de-configuracio">3. Còpia de l'arxiu de configuració.</h2>
+<p>La primera tasca és fer una còpia de l'arxiu de configuració que es troba a /etc/vsftpd.conf</p>
+<p>El manual de configuració del vsftpd és a <a href="https://security.appspot.com/vsftpd.html">manualWeb</a> i hi podem trobar 
+les configuracions bàsiques del servidor.</p>
+<p>Per algunes tasques podem fer cerques al web.</p>
+<p>Aquest primer exercici ens permet provar amb usuari que no necessita estar creat dins del sistema operatiu del servidor. És l'usuari anonymous.</p>
+<pre><code>1. Abans de tocar la configuració del sistema és MOLT CONVENIENT fer una còpia de l'arxiu de configuració inicial del vsftpd
+
+    - sudo cp /etc/vsftpd.conf /etc/vsftpd-conf-default
+</code></pre>
+<h2 id="4-creacio-usuari-anonim">4. Creació usuari anònim.</h2>
+<p>Per activar l'usuari anònim ho feim dins la configuració que trobam a /etc/vsftpd.conf</p>
+<p>Editam el document fent servir l'editor nano:</p>
+<pre><code>    - sudo nano /etc/vsftpd.conf
+</code></pre>
+<p>Es fan les proves de funcionament.</p>
+<h2 id="5-creacio-usuari-crud">5. Creació usuari CRUD</h2>
+<p>Hem de crear un usuari amb privilegis sobre la carpeta d'apache2. Seguim el <a href="https://ca.ubunlog.com/vsftpd-instal%c2%b7lar-un-servidor-ftp-Ubuntu/">tutorial</a></p>
+<h3 id="51-consideracions-dusuaris">5.1 Consideracions d'usuaris</h3>
+<p>Volem saber com gestiona el SO un usuari. </p>
+<p>Miram el <a href="https://www.hostinger.es/tutoriales/como-ver-usuarios-en-linux#Requisitos_previos_para_ver_usuarios_de_Linux">manual</a> i contestam les preguntes sobre el nostre arxiu html, document de text o paper.</p>
+<pre><code>1. Quina instrucció mostra tots els usuaris del sistema?
+2. Volem veure la línia que té l'usuari vagrant, quina instrucció empram?
+3. Volem veure la línia que té l'usuari gestor, quina instrucció empram?
+4. Com llistam amb getent? Que fa aquesta instrucció?
+5. Som es llisten els grups amb getent?
+6. Quines utilitats podem emprar per tenir un GUI del sistema? 
+7. Posa la direcció i fes un comentari d'una GUI de les anteriors.
+8. Quina opció mostra sols el nom quan llistam usuaris?
+9. Podem ordenar alfabeticament els usuaris del sistema?
+10. Quins són els quatre consells per gestionar usuaris de forma segura?
+11. On podem trobar les carpetes dels usuaris?
+</code></pre>
+<p>Significat de cada línia<a href="https://e-mc2.net/blog/sobre-el-archivo-etcpasswd/">web</a></p>
+<h2 id="6-usuari-amb-acces-a-una-carpeta-del-servidor">6. Usuari amb accés a una carpeta del servidor.</h2>
+<p>Una vegada provat el funcionament de nous usuaris. Ara volem que un usuari tengui accés a la gestió (CRUD) sobre la carpeta pública de apache2.</p>
+<ul>
+<li>Per això hem de canviar el directori home de l'usuari.</li>
+</ul>
+<h2 id="usermod-home-varwww-usuari">| usermod --home /var/www usuari |</h2>
+<ul>
+<li>
+<p>Podem comprovar que l'ha canviat correctament amb l'instrucció <code>cat /etc/passwd | grep usuari</code> (on usuari és el nom d'usuari que volem comprovar).</p>
+</li>
+<li>
+<p>Per veure si funciona podem provar desde un programa ftp i ens conectam. </p>
+</li>
+<li>
+<p>En cas de veure tot el sistema de fitxers del sistema operatiu del servidor: encapsulam els usuaris al <code>/etc/vsftpd.conf</code>
+<code>chroot_local_user=YES #ENCAPSULAM ´</code> chroot_local_user=NO #VEIM TOTS ELS DIRECTORIS HOME ´</p>
+</li>
+<li>
+<p>Al ftxer <code>/etc/vsftpd.conf</code> hem d'afegir la línia <code>allow_writeable_chroot=YES</code>.</p>
+</li>
+<li>
+<p>I donar permisos d'escriptura i lectura al seu grup.</p>
+</li>
+</ul>
+<h2 id="6-crear-com-a-sftp">6. Crear com a sftp</h2>
+<p>Cercam el punt i seguim el <a href="https://ca.ubunlog.com/vsftpd-instal%c2%b7lar-un-servidor-ftp-Ubuntu/">tutorial</a></p>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../preguntes-test/" class="btn btn-neutral float-left" title="2.1 Preguntes exemple"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../u3-prt-apache2/" class="btn btn-neutral float-right" title="3.1 Practica servidor apache">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../u2-test-preguntes/" class="btn btn-neutral float-right" title="2.3 Preguntes test">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -195,7 +272,7 @@
       <span><a href="../preguntes-test/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../u3-prt-apache2/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../u2-test-preguntes/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

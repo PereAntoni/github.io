@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>3. SERVEI HTTP - Serveis en Xarxa CFGM</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "3. SERVEI HTTP";
+        var mkdocs_page_input_path = "u3-servei-http.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Serveis en Xarxa CFGM
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">SERVEIS EN XARXA CFGM</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u1-conceptes-xarxes/">1. CONCEPTES SOBRE XARXES</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../exercicis-ipv4/">1.1. Exercicis ipv4</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u2-servei-ftp/">2. SERVEI FTP</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../preguntes-test/">2.1 Preguntes exemple</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u2-ftp-vsftpd/">2.2 Instal.lació vsFTPd</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u2-test-preguntes/">2.3 Preguntes test</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">3. SERVEI HTTP</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#caracteristiques-de-la-practica">Característiques de la pràctica</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#instruccions-per-realitzar-la-practica">Instruccions per realitzar la pràctica</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#entrega-de-la-practica">Entrega de la pràctica</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#format-dentrega">Format d'entrega</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercicis">EXERCICIS</a>
+    </li>
+        </ul>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u4-Scripting/">4. SCRIPTING</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../errors-comuns/">Errors Comuns Apache</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../provaVue/">(provaVue)</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Serveis en Xarxa CFGM</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">3. SERVEI HTTP</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="practica-instalacio-dun-serveidor-apache-sobre-una-maquina-virtual">PRÀCTICA: INSTALACIÓ D'UN SERVEIDOR APACHE SOBRE UNA MÀQUINA VIRTUAL.</h1>
+<h2 id="caracteristiques-de-la-practica">Característiques de la pràctica</h2>
+<p>Volem instalar un servidor de http sobre la màquina virtual del nostre ordinador. Tendrà les característiques:
+1. El servidor és un apache2
+2. Està muntat sobre una maquina virtual al virtual box
+3. Ha de ser accessible dins la xarxa d'aula. Actualment hem fet una distribució de 10.0.100.X+1/16
+4. Cream les màquines usant [vagrant]https://developer.hashicorp.com/vagrant/docs.</p>
+<h2 id="instruccions-per-realitzar-la-practica">Instruccions per realitzar la pràctica</h2>
+<p>Per fer l'instal·lació seguim el manual de [devopscube]https://devopscube.com/vagrant-tutorial-beginners/.</p>
+<p>S'ha triat aquest manual per que conté les proves d'instal·lació i comprovació pas a pas, desde local fins a fora de la xarxa.</p>
+<ul>
+<li>Sols s'ha de fer fins a l'instal·lació d'apache i proves.</li>
+</ul>
+<h2 id="entrega-de-la-practica">Entrega de la pràctica</h2>
+<p>S'ha de crear un html que amb les pràctiques anteriors i aquesta, on s'han de respondre les preguntes de l'[arxiu] https://docs.google.com/document/d/1cy9ntr3vyZx_EKqyOVfURuP5bXZ8gHDu4ClTY3JtNE8/edit?usp=sharing</p>
+<h3 id="format-dentrega">Format d'entrega</h3>
+<p>L'HTML és el llenguatge de marques que empren el navegadors. Per entregar les pràctiques aprendrem i usarem  aquest llenguatge.Hi ha molt de material per aprendre a la xarxa, la pàgina https://www.w3schools.com/ és la de referència.</p>
+<p>Un  document html té un esquema bàsic, pas un exemple per que el modifiqueu i poseu les pràctiques.</p>
+<p>Sobre [aquest]https://drive.google.com/file/d/1tIpNRhY9TGHBg0R1HMXjr09ER6tJbBT1/view?usp=sharing esquelet de html documentam les pràctiques.</p>
+<p>Consulta i aprèn a la web de referència [w3schools]https://www.w3schools.com/html/. </p>
+<h3 id="exercicis">EXERCICIS</h3>
+<p>manual sencer apache2 (versio httpd) https://www.dedoimedo.com/computers/www.dedoimedo.com-apache-web-server-lm.pdf</p>
+<p>| Rule no. 1: don’t panic! The list before you might seem intimidating at the moment, but that is simply because you are not yet familiar with Apache. |</p>
+<p>Cerca al manual  apache2 (versio httpd) https://www.dedoimedo.com/computers/www.dedoimedo.com-apache-web-server-lm.pdf la taula de localitzacions del </p>
+<ol>
+<li>
+<p>En quina carpeta es troben els logs?</p>
+</li>
+<li>
+<p>Quins tipus de fitxer log trobam dins la carpeta anterior.</p>
+</li>
+<li>
+<p>Volem saber les vegades que s’ha accedit desde una ip del vostre ordinador d’aula.Quina instrucció usarem. </p>
+</li>
+<li>
+<p>Ves a la carpeta del server.pid i quin pid té el servidor. Posa les instruccions</p>
+</li>
+<li>
+<p>Quines instruccions s’usen per posar el servidor en marxa, per aturar, per sabetr l'estat i per reiniciar?</p>
+</li>
+<li>
+<p>Fer una copia de l’index.html del servidor, posali nom index-copia.html      </p>
+</li>
+<li>
+<p>Edita un document index.html i posa el teu nom.</p>
+</li>
+</ol>
+<h1 id="preguntes-per-provar-i-valorar-els-coneixements">PREGUNTES PER PROVAR I VALORAR ELS CONEIXEMENTS</h1>
+<h1 id="tipus-test-interactiu-shell-i-comandes">Tipus Test Interactiu - Shell i Comandes</h1>
+<script>
+let score = 0;
+function checkAnswer(button, isCorrect) {
+  // Restableix tots els botons al seu estat inicial
+  const buttons = button.parentNode.querySelectorAll('button');
+  buttons.forEach(btn => {
+    btn.style.backgroundColor = '';
+    btn.style.color = '';
+    btn.disabled = false; // Permet tornar a provar
+  });
+
+  if (isCorrect) {
+    // Marca el botó correcte i incrementa l'encert
+    button.style.backgroundColor = '#d4edda';
+    button.style.color = '#155724';
+    button.textContent = button.textContent.replace(" ✅ Correcte!", "") + " ✅ Correcte!";
+    updateScore(1);
+  } else {
+    // Marca el botó incorrecte
+    button.style.backgroundColor = '#f8d7da';
+    button.style.color = '#721c24';
+    button.textContent = button.textContent.replace(" ❌ Incorrecte!", "") + " ❌ Incorrecte!";
+  }
+}
+
+function updateScore(value) {
+  // Actualitza el marcador d'encerts
+  score += value;
+  document.getElementById('score').textContent = score;
+}
+</script>
+<style>
+    button {
+        display: grid;
+        margin: 2px
+        }
+</style>
+
+<h2 id="encerts-0"><strong>Encerts: <span id="score">0</span></strong></h2>
+<h3 id="pregunta-1-que-fa-la-instruccio-ls">Pregunta 1: Què fa la instrucció <code>ls</code>?</h3>
+<div id="q1">
+<button onclick="checkAnswer(this, true)">a) Llista els fitxers i directoris</button>
+<button onclick="checkAnswer(this, false)">b) Mostra el contingut d'un fitxer</button>
+<button onclick="checkAnswer(this, false)">c) Crea un nou fitxer</button>
+<button onclick="checkAnswer(this, false)">d) Esborra un fitxer</button>
+</div>
+
+<hr />
+<h3 id="pregunta-2-quina-comanda-mostra-el-directori-actual">Pregunta 2: Quina comanda mostra el directori actual?</h3>
+<div id="q2">
+<button onclick="checkAnswer(this, false)">a) `ls`</button>
+<button onclick="checkAnswer(this, true)">b) `pwd`</button>
+<button onclick="checkAnswer(this, false)">c) `cd`</button>
+<button onclick="checkAnswer(this, false)">d) `chmod`</button>
+</div>
+
+<hr />
+<h3 id="pregunta-3-com-pots-cercar-un-fitxer-amb-la-paraula-document-al-seu-nom">Pregunta 3: Com pots cercar un fitxer amb la paraula "document" al seu nom?</h3>
+<div id="q3">
+<button onclick="checkAnswer(this, true)">a) `ls | grep "document"`</button>
+<button onclick="checkAnswer(this, false)">b) `cat | grep "document"`</button>
+<button onclick="checkAnswer(this, false)">c) `pwd "document"`</button>
+<button onclick="checkAnswer(this, false)">d) `chmod "document"`</button>
+</div>
+
+<hr />
+<h3 id="pregunta-4-que-fa-la-comanda-cd">Pregunta 4: Què fa la comanda <code>cd ..</code>?</h3>
+<div id="q4">
+<button onclick="checkAnswer(this, true)">a) Puja un nivell en la jerarquia de directoris</button>
+<button onclick="checkAnswer(this, false)">b) Canvia al directori arrel</button>
+<button onclick="checkAnswer(this, false)">c) Llista els fitxers del directori anterior</button>
+<button onclick="checkAnswer(this, false)">d) Reseteja el terminal</button>
+</div>
+
+<hr />
+<h3 id="pregunta-5-quina-comanda-es-fa-servir-per-canviar-els-permisos-dun-fitxer">Pregunta 5: Quina comanda es fa servir per canviar els permisos d’un fitxer?</h3>
+<div id="q5">
+<button onclick="checkAnswer(this, false)">a) `ls -l`</button>
+<button onclick="checkAnswer(this, true)">b) `chmod`</button>
+<button onclick="checkAnswer(this, false)">c) `cd`</button>
+<button onclick="checkAnswer(this, false)">d) `pwd`</button>
+</div>
+
+<hr />
+<h3 id="pregunta-6-com-pots-redirigir-la-sortida-dun-comandament-a-un-fitxer">Pregunta 6: Com pots redirigir la sortida d’un comandament a un fitxer?</h3>
+<div id="q6">
+<button onclick="checkAnswer(this, false)">a) `ls | fitxer.txt`</button>
+<button onclick="checkAnswer(this, true)">b) `ls > fitxer.txt`</button>
+<button onclick="checkAnswer(this, false)">c) `ls >> fitxer.txt`</button>
+<button onclick="checkAnswer(this, false)">d) `ls < fitxer.txt`</button>
+</div>
+
+<hr />
+<h3 id="pregunta-7-que-fa-la-comanda-grep">Pregunta 7: Què fa la comanda <code>grep</code>?</h3>
+<div id="q7">
+<button onclick="checkAnswer(this, false)">a) Mostra els permisos d’un fitxer</button>
+<button onclick="checkAnswer(this, false)">b) Canvia a un altre directori</button>
+<button onclick="checkAnswer(this, true)">c) Cerca patrons dins d’un fitxer</button>
+<button onclick="checkAnswer(this, false)">d) Esborra un fitxer</button>
+</div>
+
+<hr />
+<h3 id="pregunta-8-quin-es-el-significat-del-simbol-pipe">Pregunta 8: Quin és el significat del símbol <code>|</code> (pipe)?</h3>
+<div id="q8">
+<button onclick="checkAnswer(this, true)">a) Redirigeix la sortida d’un comandament com a entrada per a un altre</button>
+<button onclick="checkAnswer(this, false)">b) Indica un directori</button>
+<button onclick="checkAnswer(this, false)">c) Crea un fitxer nou</button>
+<button onclick="checkAnswer(this, false)">d) Canvia els permisos d’un fitxer</button>
+</div>
+
+<hr />
+<h3 id="pregunta-9-com-pots-mostrar-el-contingut-dun-fitxer">Pregunta 9: Com pots mostrar el contingut d’un fitxer?</h3>
+<div id="q9">
+<button onclick="checkAnswer(this, false)">a) `ls`</button>
+<button onclick="checkAnswer(this, true)">b) `cat`</button>
+<button onclick="checkAnswer(this, false)">c) `chmod`</button>
+<button onclick="checkAnswer(this, false)">d) `pwd`</button>
+</div>
+
+<hr />
+<h3 id="pregunta-10-que-indica-el-directori">Pregunta 10: Què indica el directori <code>/</code>?</h3>
+<div id="q10">
+<button onclick="checkAnswer(this, true)">a) El directori arrel</button>
+<button onclick="checkAnswer(this, false)">b) El directori personal</button>
+<button onclick="checkAnswer(this, false)">c) Un directori buit</button>
+<button onclick="checkAnswer(this, false)">d) Un fitxer executat recentment</button>
+</div>
+
+<h3 id="contingut-de-usuaristxt">Contingut de usuaris.txt</h3>
+<pre><code>user1:x:1001:1001:Usuari 1:/home/user1:/bin/bash
+user2:x:1002:1002:Usuari 2:/home/user2:/bin/bash
+admin:x:0:0:Administrador:/root:/bin/bash
+guest:x:1003:1003:Usuari Convidat:/home/guest:/bin/false
+backup:x:1004:1004:Usuari Còpies:/var/backups:/bin/bash
+</code></pre>
+<h3 id="pregunta-11-que-fa-la-comanda-cat-usuaristxt">Pregunta 11: Què fa la comanda cat usuaris.txt?</h3>
+<div id="q11">
+<button onclick="checkAnswer(this, true)">a) Mostra el contingut del fitxer a la consola</button>
+<button onclick="checkAnswer(this, false)">b) Crea un nou fitxer amb el nom usuaris.txt</button>
+<button onclick="checkAnswer(this, false)">c) Esborra el fitxer usuaris.txt</button>
+<button onclick="checkAnswer(this, false)">d) Canvia els permisos del fitxer usuaris.tx</button>
+</div>
+
+<h3 id="pregunta-12-com-cercaries-al-fitxer-usuaristxt-els-usuaris-que-tenen-binbash-com-a-shell">Pregunta    12  .   Com cercaries al fitxer usuaris.txt els usuaris que tenen /bin/bash com a shell?</h3>
+<div id='q12'>          
+<button onclick='checkAnswer(this, true)'   >       a) grep "/bin/bash" usuaris.txt </button>
+<button onclick='checkAnswer(this, false)'  >       b) grep "bash" usuaris.txt  </button>
+<button onclick='checkAnswer(this, false)'  >       c) ls -l /bin/bash usuaris.txt  </button>
+<button onclick='checkAnswer(this, false)'  >       d) cat bash | usuaris.txt   </button>
+</div>
+
+<pre><code>
+</code></pre>
+<h3 id="pregunta-13-quina-comanda-mostra-nomes-els-usuaris-administradors-amb-uid-0">Pregunta    13      Quina comanda mostra només els usuaris administradors (amb UID 0)?</h3>
+<div id='q13'>          
+<button onclick='checkAnswer(this, true)'   >       a) grep ":0:" usuaris.txt   </button>
+<button onclick='checkAnswer(this, false)'  >       b) grep "admin" usuaris.txt </button>
+<button onclick='checkAnswer(this, false)'  >       c) grep "/root" usuaris.txt </button>
+<button onclick='checkAnswer(this, false)'  >       d) grep "x:0:" usuaris.txt  </button>
+</div>
+
+<pre><code>
+</code></pre>
+<h3 id="pregunta-14-com-pots-comptar-quants-usuaris-hi-ha-al-fitxer-usuaristxt">Pregunta    14      Com pots comptar quants usuaris hi ha al fitxer usuaris.txt?</h3>
+<div id='q14'>          
+<button onclick='checkAnswer(this, true)'   >       a) cat usuaris.txt | wc -l  </button>
+<button onclick='checkAnswer(this, false)'  >       b) grep "user" usuaris.txt | wc -l  </button>
+<button onclick='checkAnswer(this, false)'  >       c) ls usuaris.txt | wc -l   </button>
+<button onclick='checkAnswer(this, false)'  >       d) grep "x:" usuaris.txt | wc -c    </button>
+</div>
+
+<pre><code>
+</code></pre>
+<h3 id="pregunta-15-quin-comandament-llistara-nomes-els-usuaris-convidats">Pregunta    15      Quin comandament llistarà només els usuaris convidats?</h3>
+<div id='q15'>          
+<button onclick='checkAnswer(this, false)'  >       a) grep "guest" usuaris.txt </button>
+<button onclick='checkAnswer(this, false)'  >       b) grep "Usuari" usuaris.txt    </button>
+<button onclick='checkAnswer(this, true)'   >       c) cat usuaris.txt | grep "/home/guest" </button>
+<button onclick='checkAnswer(this, false)'  >       d) ls | grep "guest"    </button>
+</div>
+
+<pre><code>
+</code></pre>
+<h3 id="pregunta-16-que-fa-la-comanda-sortidatxt-despres-dexecutar-un-comandament">Pregunta    16      Què fa la comanda &gt; sortida.txt després d'executar un comandament?</h3>
+<div id='q16'>          
+<button onclick='checkAnswer(this, true)'   >       a) Sobreescriu el fitxer sortida.txt amb la sortida del comandament </button>
+<button onclick='checkAnswer(this, false)'  >       b) Afegeix la sortida del comandament al fitxer sortida.txt </button>
+<button onclick='checkAnswer(this, false)'  >       c) Crea un nou fitxer buit  </button>
+<button onclick='checkAnswer(this, false)'  >       d) No fa res, només redirigeix errors   </button>
+</div>
+
+<pre><code>
+</code></pre>
+<h3 id="pregunta-17-quina-diferencia-hi-ha-entre-grep-bash-usuaristxt-resultattxt-i-grep-bash-usuaristxt-resultattxt">Pregunta    17      Quina diferència hi ha entre grep "bash" usuaris.txt &gt; resultat.txt i grep "bash" usuaris.txt &gt;&gt; resultat.txt?</h3>
+<div id='q17'>          
+<button onclick='checkAnswer(this, true)'   >       a) > sobreescriu el fitxer i >> afegeix contingut al fitxer </button>
+<button onclick='checkAnswer(this, false)'  >       b) > crea un fitxer nou i >> només llista resultats </button>
+<button onclick='checkAnswer(this, false)'  >       c) No hi ha cap diferència  </button>
+<button onclick='checkAnswer(this, false)'  >       d) > mostra errors i >> només mostra resultats  </button>
+</div>
+
+<pre><code>
+</code></pre>
+<h3 id="pregunta-18-que-fa-la-comanda-ls-l">Pregunta    18      Què fa la comanda /ls -l ?</h3>
+<div id='q18'>          
+<button onclick='checkAnswer(this, true)'   >       a) Mostra el contingut del directori arrel en format detallat   </button>
+<button onclick='checkAnswer(this, false)'  >       b) Llista tots els fitxers de manera recursiva  </button>
+<button onclick='checkAnswer(this, false)'  >       c) Mostra els permisos d'un fitxer específic    </button>
+<button onclick='checkAnswer(this, false)'  >       d) Accedeix al directori arrel  </button>
+</div>
+<pre><code>
+</code></pre>
+<div id='c18'>[dubte](https://es.stackoverflow.com/questions/456445/que-significa-2-en-bash)</div>
+<pre><code>
+</code></pre>
+<h3 id="pregunta-19-per-a-que-serveix-la-comanda-cd-home">Pregunta    19      Per a què serveix la comanda cd /home?</h3>
+<div id='q19'>          
+<button onclick='checkAnswer(this, true)'   >       a) Canvia al directori /home    </button>
+<button onclick='checkAnswer(this, false)'  >       b) Llista el contingut del directori /home  </button>
+<button onclick='checkAnswer(this, false)'  >       c) Esborra el directori /home   </button>
+<button onclick='checkAnswer(this, false)'  >       d) Mostra la ruta completa del directori /home  </button>
+</div>
+
+<pre><code>
+</code></pre>
+<h3 id="pregunta-20-com-pots-redirigir-la-sortida-dun-error-a-un-fitxer-especific">Pregunta    20      Com pots redirigir la sortida d'un error a un fitxer específic?</h3>
+<div id='q20'>          
+<button onclick='checkAnswer(this, true)'   >       a) comandament 2> error.txt </button>
+<button onclick='checkAnswer(this, false)'  >       b) comandament > error.txt  </button>
+<button onclick='checkAnswer(this, false)'  >       c) comandament >> error.txt </button>
+<button onclick='checkAnswer(this, false)'  >       d) comandament | error.txt  </button>
+</div>
+
+<pre><code>
+</code></pre>
+<h3 id="pregunta-21-quin-comandament-utilitzaries-per-combinar-la-sortida-de-dos-fitxers-en-un-sol-fitxer">Pregunta    21      Quin comandament utilitzaries per combinar la sortida de dos fitxers en un sol fitxer?</h3>
+<div id='q21'>          
+<button onclick='checkAnswer(this, true)'   >       a) cat fitxer1 fitxer2 > combinat.txt   </button>
+<button onclick='checkAnswer(this, false)'  >       b) grep fitxer1 fitxer2 > combinat.txt  </button>
+<button onclick='checkAnswer(this, false)'  >       c) ls fitxer1 fitxer2 > combinat.txt    </button>
+<button onclick='checkAnswer(this, false)'  >       d) pwd fitxer1 fitxer2 > combinat.txt   </button>
+</div>
+
+<pre><code>
+</code></pre>
+<h3 id="pregunta-22-com-pots-buscar-de-manera-insensible-a-majuscules-i-minuscules-amb-grep">Pregunta    22      Com pots buscar de manera insensible a majúscules i minúscules amb grep?</h3>
+<div id='q22'>          
+<button onclick='checkAnswer(this, true)'   >       a) grep -i "text" fitxer    </button>
+<button onclick='checkAnswer(this, false)'  >       b) grep -c "text" fitxer    </button>
+<button onclick='checkAnswer(this, false)'  >       c) grep -v "text" fitxer    </button>
+<button onclick='checkAnswer(this, false)'  >       d) grep "text" fitxer   </button>
+</div>
+
+<pre><code>
+</code></pre>
+<h3 id="pregunta-23-que-fa-ls-l-grep-test">Pregunta    23      Què fa ls -l | grep "test"?</h3>
+<div id='q23'>          
+<button onclick='checkAnswer(this, true)'   >       a) Llista els fitxers del directori que contenen la paraula "test"  </button>
+<button onclick='checkAnswer(this, false)'  >       b) Esborra els fitxers que contenen la paraula "test"   </button>
+<button onclick='checkAnswer(this, false)'  >       c) Mostra només els directoris que contenen "test"  </button>
+<button onclick='checkAnswer(this, false)'  >       d) Redirigeix la sortida al fitxer "test"   </button>
+</div>
+
+<pre><code>
+</code></pre>
+<h3 id="pregunta-24-quina-instruccio-mostra-el-nombre-total-de-linies-dun-fitxer">Pregunta    24      Quina instrucció mostra el nombre total de línies d'un fitxer?</h3>
+<div id='q24'>          
+<button onclick='checkAnswer(this, true)'   >       a) wc -l fitxer </button>
+<button onclick='checkAnswer(this, false)'  >       b) ls -l fitxer </button>
+<button onclick='checkAnswer(this, false)'  >       c) grep -l fitxer   </button>
+<button onclick='checkAnswer(this, false)'  >       d) pwd -l fitxer    </button>
+</div>
+
+<pre><code>
+</code></pre>
+<h3 id="pregunta-25-per-que-sutilitza-chmod-755-fitxer">Pregunta    25      Per què s'utilitza chmod 755 fitxer?</h3>
+<div id='q25'>          
+<button onclick='checkAnswer(this, true)'   >       a) Per canviar els permisos del fitxer  </button>
+<button onclick='checkAnswer(this, false)'  >       b) Per mostrar el contingut del fitxer  </button>
+<button onclick='checkAnswer(this, false)'  >       c) Per moure el fitxer  </button>
+<button onclick='checkAnswer(this, false)'  >       d) Per redirigir el fitxer  </button>
+</div>
+
+<pre><code>
+</code></pre>
+<h3 id="pregunta-26-que-fa-la-comanda-grep-v-bash-usuaristxt">Pregunta    26      Què fa la comanda grep -v "bash" usuaris.txt?</h3>
+<div id='q26'>          
+<button onclick='checkAnswer(this, true)'   >       a) Mostra les línies que no contenen "bash" </button>
+<button onclick='checkAnswer(this, false)'  >       b) Mostra les línies que contenen "bash"    </button>
+<button onclick='checkAnswer(this, false)'  >       c) Redirigeix la sortida al fitxer "usuaris.txt"    </button>
+<button onclick='checkAnswer(this, false)'  >       d) Llista tots els usuaris que tenen "bash" </button>
+</div>
+
+<pre><code>
+</code></pre>
+<h3 id="pregunta-27-com-pots-mostrar-els-permisos-dun-fitxer">Pregunta    27      Com pots mostrar els permisos d'un fitxer?</h3>
+<div id='q27'>          
+<button onclick='checkAnswer(this, true)'   >       a) ls -l fitxer </button>
+<button onclick='checkAnswer(this, false)'  >       b) chmod fitxer </button>
+<button onclick='checkAnswer(this, false)'  >       c) grep fitxer  </button>
+<button onclick='checkAnswer(this, false)'  >       d) pwd fitxer   </button>
+</div>
+
+<pre><code>
+</code></pre>
+<h3 id="pregunta-28-com-es-pot-combinar-la-sortida-dun-comandament-amb-lentrada-dun-altre">Pregunta    28      Com es pot combinar la sortida d'un comandament amb l'entrada d'un altre?</h3>
+<div id='q28'>          
+<button onclick='checkAnswer(this, false)'  >       a) Amb cat |    </button>
+<button onclick='checkAnswer(this, false)'  >       b) Amb >>   </button>
+<button onclick='checkAnswer(this, false)'  >       c) Amb >    </button>
+<button onclick='checkAnswer(this, true)'   >       d) Amb |    </button>
+</div>
+
+<pre><code>
+</code></pre>
+<h3 id="pregunta-29-que-indica-el-simbol-en-la-jerarquia-de-directoris">Pregunta    29      Què indica el símbol / en la jerarquia de directoris?</h3>
+<div id='q29'>          
+    <button onclick='checkAnswer(this, false)'  >       a) Directori actual </button>
+    <button onclick='checkAnswer(this, true)'   >       b) Directori arrel  </button>
+    <button onclick='checkAnswer(this, false)'  >       c) Directori anterior   </button>
+    <button onclick='checkAnswer(this, false)'  >       d) Directori home   </button>
+</div>
+
+<pre><code>
+</code></pre>
+<h3 id="pregunta-30-com-pots-saber-quina-es-la-teva-ubicacio-actual-en-el-sistema">Pregunta    30      Com pots saber quina és la teva ubicació actual en el sistema?</h3>
+<div id='q30'>          
+    <button onclick='checkAnswer(this, false)'  >       a) cd   </button>
+    <button onclick='checkAnswer(this, false)'  >       b) ls -l    </button>
+    <button onclick='checkAnswer(this, true)'   >       c) pwd  </button>
+    <button onclick='checkAnswer(this, false)'  >       d) chmod    </button>
+</div>
+
+<p>Test Tipus - Shell Instruccions
+Preguntes</p>
+<ol>
+<li>Què fa la instrucció ls?
+a. Mostra el contingut d'un fitxer
+b. Llista els fitxers i directoris
+c. Crea un nou fitxer
+d. Esborra un fitxer
+Resposta correcta: b</li>
+</ol>
+<p>Què afegeix l'opció -l a la instrucció ls?</p>
+<p>a) Mostra informació detallada sobre els fitxers
+b) Esborra els fitxers llistats
+c) Llista només els directoris
+d) Copia els fitxers a un altre lloc
+Resposta correcta: a</p>
+<p>Quin és l'efecte de l'ordre chmod?</p>
+<p>a) Mostra les propietats d'un fitxer
+b) Canvia els permisos d'un fitxer o directori
+c) Mou fitxers entre directoris
+d) Llista els processos actius al sistema
+Resposta correcta: b</p>
+<p>Com es pot buscar una paraula específica dins d’un fitxer amb grep?</p>
+<p>a) grep paraula fitxer
+b) grep fitxer paraula
+c) ls paraula | fitxer
+d) chmod paraula fitxer
+Resposta correcta: a</p>
+<p>Quina diferència hi ha entre &gt; i &gt;&gt;?</p>
+<p>a) &gt; sobreescriu el contingut i &gt;&gt; afegeix contingut
+b) &gt; copia fitxers i &gt;&gt; els mou
+c) &gt; crea directoris i &gt;&gt; els esborra
+d) Cap diferència, són equivalents
+Resposta correcta: a</p>
+<p>Per a què serveixen les "tuberies" (|) en Shell?</p>
+<p>a) Connectar la sortida d'un comandament amb l'entrada d'un altre
+b) Redirigir la sortida a un fitxer
+c) Especificar permisos
+d) Ordenar directoris
+Resposta correcta: a</p>
+<p>Quina instrucció mostra el directori actual?</p>
+<p>a) pwd
+b) ls -l
+c) cd ..
+d) chmod
+Resposta correcta: a</p>
+<p>Com pots crear un fitxer buit amb Shell?</p>
+<p>a) touch fitxer
+b) ls fitxer
+c) chmod fitxer
+d) pwd fitxer
+Resposta correcta: a</p>
+<p>Quina instrucció permet canviar de directori?</p>
+<p>a) cd
+b) ls
+c) pwd
+d) chmod
+Resposta correcta: a</p>
+<p>Per a què serveix / en el Shell?</p>
+<p>a) Indica el directori arrel
+b) Especifica un permís
+c) Mostra el contingut d'un fitxer
+d) Reanomena un fitxer
+Resposta correcta: a</p>
+<p>Preguntes addicionals
+Quin comandament utilitzaries per veure fitxers ocults?</p>
+<p>a) ls -a
+b) ls -l
+c) cd ..
+d) chmod
+Resposta correcta: a</p>
+<p>Com esborres un fitxer amb Shell?</p>
+<p>a) rm fitxer
+b) ls -l fitxer
+c) cd fitxer
+d) chmod fitxer
+Resposta correcta: a</p>
+<p>Quin és l'efecte de ls /?</p>
+<p>a) Llista els fitxers del directori arrel
+b) Mostra els permisos del directori arrel
+c) Canvia al directori arrel
+d) Esborra el directori arrel
+Resposta correcta: a</p>
+<p>Què fa el comandament cd ..?</p>
+<p>a) Canvia al directori superior
+b) Esborra el directori actual
+c) Llista el contingut del directori actual
+d) Reanomena el directori actual
+Resposta correcta: a</p>
+<p>Per redirigir la sortida d'un comandament a un fitxer utilitzaries:</p>
+<p>a) &gt;
+b) &gt;&gt;
+c) |
+d) Totes són correctes
+Resposta correcta: d</p>
+<p>Com s'afegeix contingut a un fitxer existent sense sobreescriure’l?</p>
+<p>a) &gt;&gt; fitxer
+b) &gt; fitxer
+c) | fitxer
+d) chmod fitxer
+Resposta correcta: a</p>
+<p>Quina ordre permet veure l'ús d'un directori específic?</p>
+<p>a) du
+b) ls
+c) pwd
+d) chmod
+Resposta correcta: a</p>
+<p>Com mostres només les línies que contenen una paraula específica en un fitxer?</p>
+<p>a) grep "paraula" fitxer
+b) ls "paraula" fitxer
+c) chmod "paraula" fitxer
+d) pwd "paraula" fitxer
+Resposta correcta: a</p>
+<p>Per a què serveix el comandament mv?</p>
+<p>a) Mou o reanomena fitxers i directoris
+b) Llista els fitxers d'un directori
+c) Redirigeix la sortida a un fitxer
+d) Esborra un fitxer
+Resposta correcta: a</p>
+<p>Com mostres els processos actius al sistema?</p>
+<p>a) ps
+b) ls -l
+c) pwd
+d) grep
+Resposta correcta: a</p>
+<h3 id="pregunta-12-com-cercaries-al-fitxer-usuaristxt-els-usuaris-que-tenen-binbash-com-a-shell_1">Pregunta 12: Com cercaries al fitxer usuaris.txt els usuaris que tenen /bin/bash com a shell?</h3>
+<p>a) grep "/bin/bash" usuaris.txt
+b) grep "bash" usuaris.txt
+c) ls -l /bin/bash usuaris.txt
+d) cat bash | usuaris.txt
+Resposta correcta: a</p>
+<p>Quina comanda mostra només els usuaris administradors (amb UID 0)?</p>
+<p>a) grep ":0:" usuaris.txt
+b) grep "admin" usuaris.txt
+c) grep "/root" usuaris.txt
+d) grep "x:0:" usuaris.txt
+Resposta correcta: a</p>
+<p>Com pots comptar quants usuaris hi ha al fitxer usuaris.txt?</p>
+<p>a) cat usuaris.txt | wc -l
+b) grep "user" usuaris.txt | wc -l
+c) ls usuaris.txt | wc -l
+d) grep "x:" usuaris.txt | wc -c
+Resposta correcta: a</p>
+<p>Quin comandament llistarà només els usuaris convidats?</p>
+<p>a) grep "guest" usuaris.txt
+b) grep "Usuari" usuaris.txt
+c) cat usuaris.txt | grep "/home/guest"
+d) ls | grep "guest"
+Resposta correcta: c</p>
+<p>Què fa la comanda &gt; sortida.txt després d'executar un comandament?</p>
+<p>a) Sobreescriu el fitxer sortida.txt amb la sortida del comandament
+b) Afegeix la sortida del comandament al fitxer sortida.txt
+c) Crea un nou fitxer buit
+d) No fa res, només redirigeix errors
+Resposta correcta: a</p>
+<p>Quina diferència hi ha entre grep "bash" usuaris.txt &gt; resultat.txt i grep "bash" usuaris.txt &gt;&gt; resultat.txt?</p>
+<p>a) &gt; sobreescriu el fitxer i &gt;&gt; afegeix contingut al fitxer
+b) &gt; crea un fitxer nou i &gt;&gt; només llista resultats
+c) No hi ha cap diferència
+d) &gt; mostra errors i &gt;&gt; només mostra resultats
+Resposta correcta: a</p>
+<p>Què fa la comanda ls -l /?</p>
+<p>a) Mostra el contingut del directori arrel en format detallat
+b) Llista tots els fitxers de manera recursiva
+c) Mostra els permisos d'un fitxer específic
+d) Accedeix al directori arrel
+Resposta correcta: a</p>
+<p>Per a què serveix la comanda cd /home?</p>
+<p>a) Canvia al directori /home
+b) Llista el contingut del directori /home
+c) Esborra el directori /home
+d) Mostra la ruta completa del directori /home
+Resposta correcta: a</p>
+<p>Com pots redirigir la sortida d'un error a un fitxer específic?</p>
+<p>a) comandament 2&gt; error.txt
+b) comandament &gt; error.txt
+c) comandament &gt;&gt; error.txt
+d) comandament | error.txt
+Resposta correcta: a</p>
+<p>Quin comandament utilitzaries per combinar la sortida de dos fitxers en un sol fitxer?</p>
+<p>a) cat fitxer1 fitxer2 &gt; combinat.txt
+b) grep fitxer1 fitxer2 &gt; combinat.txt
+c) ls fitxer1 fitxer2 &gt; combinat.txt
+d) pwd fitxer1 fitxer2 &gt; combinat.txt
+Resposta correcta: a</p>
+<p>Com pots buscar de manera insensible a majúscules i minúscules amb grep?</p>
+<p>a) grep -i "text" fitxer
+b) grep -c "text" fitxer
+c) grep -v "text" fitxer
+d) grep "text" fitxer
+Resposta correcta: a</p>
+<p>Què fa ls -l | grep "test"?</p>
+<p>a) Llista els fitxers del directori que contenen la paraula "test"
+b) Esborra els fitxers que contenen la paraula "test"
+c) Mostra només els directoris que contenen "test"
+d) Redirigeix la sortida al fitxer "test"
+Resposta correcta: a</p>
+<p>Quina instrucció mostra el nombre total de línies d'un fitxer?</p>
+<p>a) wc -l fitxer
+b) ls -l fitxer
+c) grep -l fitxer
+d) pwd -l fitxer
+Resposta correcta: a</p>
+<p>Per què s'utilitza chmod 755 fitxer?</p>
+<p>a) Per canviar els permisos del fitxer
+b) Per mostrar el contingut del fitxer
+c) Per moure el fitxer
+d) Per redirigir el fitxer
+Resposta correcta: a</p>
+<p>Què fa la comanda grep -v "bash" usuaris.txt?</p>
+<p>a) Mostra les línies que no contenen "bash"
+b) Mostra les línies que contenen "bash"
+c) Redirigeix la sortida al fitxer "usuaris.txt"
+d) Llista tots els usuaris que tenen "bash"
+Resposta correcta: a</p>
+<p>Com pots mostrar els permisos d'un fitxer?</p>
+<p>a) ls -l fitxer
+b) chmod fitxer
+c) grep fitxer
+d) pwd fitxer
+Resposta correcta: a</p>
+<p>Com es pot combinar la sortida d'un comandament amb l'entrada d'un altre?</p>
+<p>a) Mitjançant |
+b) Amb &gt;&gt;
+c) Amb &gt;
+d) Amb cat
+Resposta correcta: a</p>
+<p>Què indica el símbol / en la jerarquia de directoris?</p>
+<p>a) Directori arrel
+b) Directori actual
+c) Directori anterior
+d) Directori home
+Resposta correcta: a</p>
+<p>Com pots saber quina és la teva ubicació actual en el sistema?</p>
+<p>a) pwd
+b) ls -l
+c) cd
+d) chmod
+Resposta correcta: a</p>
+<p><a href="https://mybinder.org/v2/gh/USERNAME/REPOSITORY/BRANCH"><img alt="Binder" src="https://mybinder.org/badge_logo.svg" /></a></p>
+<h1 id="tipus-test-interactiu-shell">Tipus Test Interactiu - Shell</h1>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../u2-test-preguntes/" class="btn btn-neutral float-left" title="2.3 Preguntes test"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../u4-Scripting/" class="btn btn-neutral float-right" title="4. SCRIPTING">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../u2-test-preguntes/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../u4-Scripting/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>(provaVue) - Serveis en Xarxa CFGM</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "(provaVue)";
+        var mkdocs_page_input_path = "provaVue.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Serveis en Xarxa CFGM
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">SERVEIS EN XARXA CFGM</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u1-conceptes-xarxes/">1. CONCEPTES SOBRE XARXES</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../exercicis-ipv4/">1.1. Exercicis ipv4</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u2-servei-ftp/">2. SERVEI FTP</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../preguntes-test/">2.1 Preguntes exemple</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u2-ftp-vsftpd/">2.2 Instal.lació vsFTPd</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u2-test-preguntes/">2.3 Preguntes test</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u3-servei-http/">3. SERVEI HTTP</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u4-Scripting/">4. SCRIPTING</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../errors-comuns/">Errors Comuns Apache</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">(provaVue)</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Serveis en Xarxa CFGM</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">(provaVue)</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXAMEN TEST</title>
+</head>
+<body>
+    <header id="capsalera">
+        capsalera
+        <div class="titol"></div>
+    <header>
+    <main id="cos">
+        <div id="formulari">
+            part de formulari-v2       
+        </div>
+
+    </main>
+<script type="module">
+    import {idPostService} from './js/service/idPostService.js'
+
+    console.log("som dins script")
+    function pintarCapsalera(model){
+        const titol = document.createElement("h1");
+        titol.innerHTML="MODEL EXAMEN " + model;
+        document.querySelector("#capsalera").appendChild(titol);
+        console.log("som dins pintar capsalera");
+    }
+
+    function prova(){
+        console.log("som dins prova, cridat de async");
+    }
+async function llistatPosts(){
+        const  lPosts =  new idPostService();
+        let llista = await lPosts.getPosts();
+        console.log("llista: " + llista.length)
+        //console.log(llistatPosts.mostra())
+        //llistatPosts.deletePost(1);
+        //console.log("llPosts: " + llistatPosts.getLlistat)
+
+
+
+        const anterior = document.querySelector("table");
+        if(anterior){anterior.remove()}
+
+        const anteriorEsquerra = document.querySelector("#costatEsquerra");
+        if(anteriorEsquerra){anteriorEsquerra.remove()}
+
+        const anteriorDreta = document.querySelector("#costatDreta");
+        if(anteriorDreta){anteriorDreta.remove()}
+
+
+
+        const costatEsquerra = document.createElement("div");
+
+        costatEsquerra.id= "costatEsquerra";
+        document.querySelector("#cos").appendChild(costatEsquerra);
+
+
+        const taula = document.createElement("table");
+        const trHeader = taula.insertRow(0);
+        taula.id="llistatPosts"
+        /*const thId = trHeader.insertCell(0);
+        thId.appendChild(document.createTextNode('id'));
+        trHeader.appendChild(thId);*/
+
+        const thTitol = trHeader.insertCell(0);
+        thTitol.appendChild(document.createTextNode('títol'));
+        trHeader.appendChild(thTitol);
+
+        const thUrl = trHeader.insertCell(1);
+        thUrl.appendChild(document.createTextNode('url'));
+        trHeader.appendChild(thUrl);
+
+        /*const thData = trHeader.insertCell(2);
+        thData.appendChild(document.createTextNode('data Creació'));
+        trHeader.appendChild(thData);*/
+
+        const thEdita = trHeader.insertCell(2);
+        thEdita.appendChild(document.createTextNode('Editar'));
+        trHeader.appendChild(thEdita);
+
+        const thEsborra = trHeader.insertCell(2);
+        thEsborra.appendChild(document.createTextNode('Esborrar'));
+        trHeader.appendChild(thEsborra);
+
+
+
+        for(const post of llista){
+            const trHeader = taula.insertRow(-1);
+
+            /*const trId = trHeader.insertCell(0);
+            trId.appendChild(document.createTextNode(post.id));
+            trHeader.appendChild(trId);*/
+
+            const trTitol = trHeader.insertCell(0);
+            trTitol.appendChild(document.createTextNode(post.titol));
+            trHeader.appendChild(trTitol);
+
+            const trUrl = trHeader.insertCell(1);
+            const linkUrl = document.createElement("a");
+            linkUrl.setAttribute("href",post.url);
+            linkUrl.appendChild(document.createTextNode(post.url));
+            trUrl.appendChild(linkUrl);
+            trHeader.appendChild(trUrl);
+
+           /* const trData = trHeader.insertCell(3);
+            trData.appendChild(document.createTextNode(post.data));
+            trHeader.appendChild(trData);*/
+
+            const trEditar = trHeader.insertCell(2);
+            const botoEditar = document.createElement("button");
+            botoEditar.appendChild(document.createTextNode("Editar"));
+            botoEditar.addEventListener('click',function(){
+                window.open("bloggerForm.html?idPost="+post.id);
+            })
+            trEditar.appendChild(botoEditar);
+
+
+
+            const trEsborrar = trHeader.insertCell(3);
+            const botoEsborrar = document.createElement("button");
+            botoEsborrar.appendChild(document.createTextNode("Esborrar"));
+            botoEsborrar.addEventListener('click',function(){
+                if (confirm("Vols esborrar el post " + post.id + "," + post.titol )){
+                    console.log(post.id)
+                    borraActualitza(lPosts,post)
+                }else{
+                    alert("No")
+                }
+            })
+            trEsborrar.appendChild(botoEsborrar);
+        }
+            document.querySelector("#cos").appendChild(taula);
+
+            const costatDreta = document.createElement("div");
+            costatDreta.id= "costatDreta";
+            document.querySelector("#cos").appendChild(costatDreta);
+
+    }
+
+
+    (async()=>{
+        console.log("som dins async");
+        const url = new URL(document.location);
+        const idPost = url.searchParams.get("idPost");
+        console.log("URL: " + url);
+        console.log("idPost:" + idPost)
+        pintarCapsalera(idPost)
+        prova();
+        await llistatPosts(); 
+    }
+    )()
+
+</script>   
+</body>
+</html>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../errors-comuns/" class="btn btn-neutral float-left" title="Errors Comuns Apache"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../errors-comuns/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

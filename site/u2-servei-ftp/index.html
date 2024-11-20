@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>2. SERVEI FTP - Serveis en Xarxa CFGM</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "2. SERVEI FTP";
+        var mkdocs_page_input_path = "u2-servei-ftp.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Serveis en Xarxa CFGM
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">SERVEIS EN XARXA CFGM</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u1-conceptes-xarxes/">1. CONCEPTES SOBRE XARXES</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../exercicis-ipv4/">1.1. Exercicis ipv4</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">2. SERVEI FTP</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#descripcio">Descripció</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#per-a-que-serveix-ftp">Per a què serveix FTP?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tipus-dftp">Tipus d'FTP</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#utilitats-basiques">Utilitats bàsiques</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#utilitzacio-del-servei">Utilització del servei</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#com-funciona-lftp">Com funciona l'FTP?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tipus-de-connexions-del-protocol-ftp">Tipus de connexions del protocol FTP</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#connexio-de-control">Connexió de Control</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#connexio-de-dades">Connexió de Dades</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#sessio-ftp">Sessió FTP</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#clients-ftp">Clients FTP</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#tipus-de-dades-ftp">Tipus de dades FTP</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#ascii">ASCII:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#ebcdic">EBCDIC:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#imatge">Imatge:</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#local">Local:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#respostes-protocol-ftp">Respostes protocol FTP</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#caracteristiques-de-tftp">Característiques de TFTP</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#problemes-de-seguretat-de-ftp">Problemes de seguretat de FTP</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#ports-ftp">Ports FTP?</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#com-canviar-els-numeros-de-port-ftp">Com canviar els números de port FTP</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#avantatges-de-ftp">Avantatges de FTP</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#inconvenients-de-ftp">Inconvenients de FTP</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#diferencia-entre-ftp-i-sftp">Diferència entre FTP i SFTP</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#reptes-de-seguretat-ftp">Reptes de seguretat FTP</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#conclusio">Conclusió</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#preguntes-frequents-sobre-ftp">Preguntes freqüents sobre FTP</a>
+    </li>
+    </ul>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../preguntes-test/">2.1 Preguntes exemple</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u2-ftp-vsftpd/">2.2 Instal.lació vsFTPd</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u2-test-preguntes/">2.3 Preguntes test</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u3-servei-http/">3. SERVEI HTTP</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u4-Scripting/">4. SCRIPTING</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../errors-comuns/">Errors Comuns Apache</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../provaVue/">(provaVue)</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Serveis en Xarxa CFGM</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">2. SERVEI FTP</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <h1 id="servei-ftp">SERVEI FTP</h1>
+<blockquote>
+<p>El protocol de transferència de fitxers o FTP (de l'anglès File Transfer Protocol) és un programari estandarditzat per enviar fitxers entre ordinadors amb qualsevol sistema operatiu. Forma part de la capa d'aplicació del model TCP/IP.</p>
+</blockquote>
+<h2 id="descripcio">Descripció</h2>
+<p>FTP és un protocol de comunicació estàndard. Hi ha diversos altres protocols com HTTP 
+que s'utilitzen per transferir fitxers entre ordinadors, però no tenen claredat i 
+enfocament en comparació amb FTP. A més, els sistemes implicats en la connexió són heterogenis,
+ és a dir, es diferencien en sistemes operatius, directoris, estructures, 
+ jocs de caràcters, etc. L'FTP protegeix l'usuari d'aquestes diferències i 
+ transfereix les dades de manera eficient i fiable. </p>
+<p>FTP pot transferir fitxers ASCII, EBCDIC o imatges. L'ASCII és el format de compartició de fitxers predeterminat, en aquest, cada caràcter està codificat per NVT ASCII. En ASCII o EBCDIC la destinació ha d'estar preparada per acceptar fitxers en aquest mode. El format de fitxer d'imatge és el format predeterminat per transformar fitxers binaris.</p>
+<p><img alt="" src="https://media.geeksforgeeks.org/wp-content/uploads/20240110113246/File-Transfer-Protocol-and-HTTPS-gif-2.gif" /></p>
+<p>FTP utilitza una connexió amb estat que manté el directori de treball actual i altres indicadors, i cada transferència de dades requereix una connexió addicional a la qual es transfereixen les dades.</p>
+<p>En mode "passiu", aquesta connexió addicional va del client al servidor, mentre que en mode "actiu", per defecte, aquesta connexió va del servidor al client. A causa de l'aparent inversió de rol en el mode actiu i dels números de port aleatoris per a totes les transferències de dades, els tallafocs i les passarel·les NAT tenen dificultats per gestionar FTP. HTTP és un protocol sense estat i multiplexa el control i la transferència de dades en una única connexió de client a servidor a través de números de port coneguts, cosa que facilita la travessa per passarel·les NAT i la gestió dels tallafocs.</p>
+<h2 id="per-a-que-serveix-ftp">Per a què serveix FTP?</h2>
+<p>FTP és especialment útil per a:</p>
+<ul>
+<li><strong>Transferència de fitxers grans</strong>: FTP pot transferir fitxers grans d'una sola vegada; per tant, és aplicable a l'allotjament de llocs web, a la còpia de seguretat de servidors o a l'ús compartit de fitxers en grans quantitats.</li>
+<li><strong>Gestió remota de fitxers</strong> : els fitxers d'un servidor remot es poden carregar, descarregar, suprimir, canviar el nom i copiar-se segons les eleccions dels usuaris.</li>
+<li><strong>Automatització de transferències de fitxers</strong> : FTP és un gran protocol per a l'execució de transferències de fitxers en scripts i ocupacions predefinits.</li>
+<li><strong>Accés a fitxers públics</strong>: FTP anònim significa que tothom, independentment de la seva identitat, pot descarregar alguns fitxers sense necessitat de permisos.</li>
+</ul>
+<h2 id="tipus-dftp">Tipus d'FTP</h2>
+<p>Hi ha diferents maneres mitjançant les quals un servidor i un client fan una transferència de fitxers mitjançant FTP. Alguns d'ells s'esmenten a continuació:</p>
+<p><strong>FTP anònim</strong>: l'FTP anònim està habilitat en alguns llocs els fitxers dels quals estan disponibles per a l'accés públic. Un usuari pot accedir a aquests fitxers sense tenir cap nom d'usuari o contrasenya. En lloc d'això, el nom d'usuari s'estableix com a anònim i la contrasenya és per al convidat per defecte. Aquí, l'accés dels usuaris és molt limitat. </p>
+<p>Per exemple, es pot permetre a l'usuari copiar els fitxers però no navegar pels directoris.</p>
+<p><strong>FTP protegit amb contrasenya</strong>: aquest tipus d'FTP és similar a l'anterior, però el canvi és l'ús del nom d'usuari i la contrasenya.</p>
+<p><strong>FTP Secure (FTPS)</strong>: També s'anomena FTP Secure Sockets Layer (FTP SSL). És una versió més segura de la transferència de dades FTP. Sempre que s'estableix una connexió FTP, s'habilita la seguretat de la capa de transport (TLS).
+FTP sobre SSL/TLS explícit (FTPES): FTPES ajuda a actualitzar la connexió FTP del port 21 a una connexió xifrada.</p>
+<p><strong>Secure FTP (SFTP)</strong>: SFTP no és un protocol FTP, però és un subconjunt del protocol Secure Shell, ja que funciona al port 22.</p>
+<h2 id="utilitats-basiques">Utilitats bàsiques</h2>
+<p>FTP és especialment útil per a:</p>
+<ul>
+<li>
+<p><strong>Transferència de fitxers grans</strong>: FTP pot transferir fitxers grans d'una sola vegada; per tant, és aplicable a l'allotjament de llocs web, a la còpia de seguretat de servidors o a l'ús compartit de fitxers en grans quantitats.</p>
+</li>
+<li>
+<p><strong>Gestió remota de fitxers</strong> : els fitxers d'un servidor remot es poden carregar, descarregar, suprimir, canviar el nom i copiar-se segons les eleccions dels usuaris.</p>
+</li>
+<li>
+<p><strong>Automatització de transferències de fitxers</strong>: FTP és un gran protocol per a l'execució de transferències de fitxers en scripts i ocupacions predefinits.</p>
+</li>
+<li>
+<p><strong>Accés a fitxers públics</strong>: FTP anònim significa que tothom, independentment de la seva identitat, pot descarregar alguns fitxers sense necessitat de permisos.</p>
+</li>
+</ul>
+<h2 id="utilitzacio-del-servei">Utilització del servei</h2>
+<ul>
+<li>
+<p><strong>Connectar-se al servidor FTP</strong>: es pot connectar al servidor mitjançant l'adreça, el nom d'usuari i la contrasenya mitjançant un client FTP o una interfície de línia d'ordres. És possible que la informació anònima no necessiti un nom d'usuari i una contrasenya.</p>
+</li>
+<li>
+<p><strong>Navegació als directoris</strong>: algunes ordres inclouen ls que s'utilitza per llistar directoris i cd que s'utilitza per canviar directoris.</p>
+</li>
+<li><strong>Transferir fitxers</strong>: la transferència de fitxers es pot fer mitjançant les ordres com ara get per descarregar fitxers i put per carregar fitxers.</li>
+<li><strong>Gestionar fitxers</strong>: <ol>
+<li>Eliminar fitxers</li>
+<li>canvi de nom (Canvi de nom) i la còpia (Copia) de fitxers.</li>
+</ol>
+</li>
+<li><strong>Tancar la connexió</strong>: un cop s'hagi realitzat la transferència de fitxers, amb l'instrucció exit.</li>
+</ul>
+<h2 id="com-funciona-lftp">Com funciona l'FTP?</h2>
+<p>FTP és un protocol de servidor client que té dos canals de comunicació, un canal d'ordres per al control de converses i un canal de dades per al contingut dels fitxers.</p>
+<p>A continuació s'esmenten els passos en què funciona FTP:</p>
+<ul>
+<li>Un usuari ha d'iniciar sessió al servidor FTP primer, pot haver-hi alguns servidors on podeu accedir al contingut sense iniciar sessió, coneguts com a FTP anònim.</li>
+<li>El client pot iniciar una conversa amb el servidor, després de sol·licitar descarregar un fitxer.</li>
+<li>L'usuari pot iniciar diferents funcions com carregar, esborrar, canviar el nom, copiar fitxers, etc. al servidor.</li>
+</ul>
+<p><img alt="" src="https://media.geeksforgeeks.org/wp-content/uploads/FTP.jpg" /></p>
+<p>FTP pot funcionar en diferents modes com els modes actiu i passiu, pots mirarl'explicació al <a href="https://www.geeksforgeeks.org/difference-between-active-and-passive-ftp/">link</a>.</p>
+<h2 id="tipus-de-connexions-del-protocol-ftp">Tipus de connexions del protocol FTP</h2>
+<ul>
+<li>Connexió de Control</li>
+<li>Connexió de dades</li>
+</ul>
+<h3 id="connexio-de-control">Connexió de Control</h3>
+<p>Per enviar informació de control com la identificació d'usuari, contrasenya, ordres per canviar el directori remot, ordres per recuperar i emmagatzemar fitxers, etc., FTP utilitza una connexió de control. La connexió de control s'inicia al port número 21. </p>
+<h3 id="connexio-de-dades">Connexió de Dades</h3>
+<p>Per enviar el fitxer real, FTP utilitza una connexió de dades. S'inicia una connexió de dades al port número 20. </p>
+<p>FTP envia la informació de control fora de banda, ja que utilitza una connexió de control independent. Alguns protocols envien les seves línies de capçalera de sol·licitud i resposta i les dades a la mateixa connexió TCP. Per aquest motiu, es diu que envien la seva informació de control en banda. HTTP i SMTP en són exemples. </p>
+<p><img alt="" src="https://media.geeksforgeeks.org/wp-content/uploads/20240103125657/FTP-Connections-660.png" /></p>
+<h2 id="sessio-ftp">Sessió FTP</h2>
+<p>Quan s'inicia una sessió FTP entre un client i un servidor, el <strong>client inicia una connexió TCP de control</strong> amb el costat del servidor. El <strong>client envia informació de control</strong>. Quan el <strong>servidor ho rep</strong>, inicia una connexió de dades al costat del client. </p>
+<p>Però la connexió de control roman activa durant tota la sessió de l'usuari. Com sabem, HTTP és sense estat. Però FTP ha de mantenir un estat sobre el seu usuari durant tota la sessió. </p>
+<h2 id="clients-ftp">Clients FTP</h2>
+<p>FTP funciona en un model <strong>client-servidor</strong> . El client FTP és un programa que s'executa a l'ordinador de l'usuari per permetre a l'usuari parlar i obtenir fitxers d'ordinadors remots. És un conjunt d'ordres que estableix la connexió entre dos hosts, ajuda a transferir els fitxers i després tanca la connexió. </p>
+<p>Algunes de les ordres són: 
+- obtenir el nom del fitxer (recuperar el fitxer del servidor)
+- canviar el nom del fitxer (recuperar diversos fitxers del servidor)
+- pujar o baixar fitxer </p>
+<h2 id="tipus-de-dades-ftp">Tipus de dades FTP</h2>
+<p>El tipus de dades d'un fitxer, que determina com es representa el fitxer en general, és la primera informació que es pot proporcionar al respecte. L'estàndard FTP especifica les quatre categories següents de dades:</p>
+<h3 id="ascii">ASCII:</h3>
+<p>Descriu un fitxer de text ASCII en el qual cada línia s'indica amb el tipus de marcador de final de línia esmentat anteriorment.</p>
+<h3 id="ebcdic">EBCDIC:</h3>
+<p>per als fitxers que utilitzen el conjunt de caràcters EBCDIC d'IBM, aquest tipus és conceptualment idèntic a ASCII.</p>
+<h3 id="imatge">Imatge:</h3>
+<p>aquest és el mode "caixa negra" que vaig descriure anteriorment; el fitxer no té una estructura interna formal i es transfereix un byte alhora sense cap processament.</p>
+<h3 id="local">Local:</h3>
+<p>els fitxers que contenen dades en bytes lògics amb un nombre de bits diferent de vuit es poden gestionar amb aquest tipus de dades.</p>
+<h2 id="respostes-protocol-ftp">Respostes protocol FTP</h2>
+<p>Algunes de les respostes FTP són:</p>
+<ul>
+<li>200 - Comandament d'acord.</li>
+<li>530 - No s'ha iniciat sessió.</li>
+<li>331: el nom d'usuari està bé, cal una contrasenya.</li>
+<li>221 – Connexió de control de tancament del servei.</li>
+<li>551 – Acció sol·licitada avortada: tipus de pàgina desconegut.</li>
+<li>502 - L'ordre no s'ha implementat.</li>
+<li>503 – Mala seqüència d'ordres.</li>
+<li>504: l'ordre no s'ha implementat per a aquest paràmetre.</li>
+</ul>
+<h2 id="caracteristiques-de-tftp">Característiques de TFTP</h2>
+<ul>
+<li>FTP utilitza TCP com a protocol de capa de transport.</li>
+<li>És bo per a transferències de fitxers senzilles, com ara durant el temps d'arrencada.</li>
+<li>Els errors en la transmissió (paquets perduts, errors de suma de verificació) han de ser gestionats pel servidor TFTP.</li>
+<li>Només utilitza una connexió a través del conegut port 69.</li>
+<li>TFTP utilitza un protocol de pas de bloqueig senzill (cal reconèixer cada paquet de dades). Per tant, el rendiment és limitat.</li>
+</ul>
+<h2 id="problemes-de-seguretat-de-ftp">Problemes de seguretat de FTP</h2>
+<ul>
+<li>
+<p>La informació no podia passar per un túnel segur ja que FTP no estava pensat per fer-ho. Per tant, el xifratge no està present. Un pirata informàtic no hauria de lluitar amb el xifratge per accedir o alterar les dades que es puguin utilitzar si pogués interceptar una transacció FTP.</p>
+</li>
+<li>
+<p>Fins i tot amb l'emmagatzematge al núvol FTP, les dades encara es poden interceptar i fer-ne un mal ús si el sistema del proveïdor de serveis és atacat.</p>
+</li>
+<li>
+<p>Com a resultat, les dades enviades mitjançant FTP són un objectiu per a la falsificació, l'sniffing, la força bruta i altres tipus d'atacs que es mouen una mica lentament. Un pirata informàtic pot examinar una transmissió FTP i intentar aprofitar qualsevol defecte simplement escanejant ports.</p>
+</li>
+<li>
+<p>El fet que FTP utilitzi contrasenyes de text clar (contrasenyes que no s'han xifrat) és un dels seus principals errors de seguretat. Dit d'una altra manera, "Jerry1992" apareix exactament com "Jerry1992". La contrasenya real s'amaga mitjançant un algorisme en protocols més segurs. Com a resultat, "Jerry1992" pot aparèixer com "dj18387saksng8937d9d8d7s6a8d89".  - Contrasenyes com aquesta no estan assegurades per FTP, la qual cosa fa que els actors maliciosos puguin trencar-les amb més facilitat.</p>
+</li>
+</ul>
+<h2 id="ports-ftp">Ports FTP?</h2>
+<p>FTP funciona amb dos ports:</p>
+<ul>
+<li><strong>Port 21</strong>: Com s'ha esmentat anteriorment, aquí és on s'emeten les ordres.</li>
+<li><strong>Port 20</strong>: Aquest és el port especial necessari per a la connexió de dades on es fa la transferència real del fitxer.</li>
+</ul>
+<h2 id="com-canviar-els-numeros-de-port-ftp">Com canviar els números de port FTP</h2>
+<p>Per canviar els números de port FTP predeterminats, seguiu aquests passos:</p>
+<ul>
+<li>Configuració del servidor d'accés: connecteu el tauler de control del vostre servidor FTP així com el fitxer de configuració del servidor FTP utilitzat.</li>
+<li>Modificar el número de port: esbrineu la configuració del port possible des del fitxer de configuració. Altereu el port de control, el port predeterminat és 21 i el de les dades és 20.</li>
+<li>Reinicieu el servei FTP: Finalment, un cop hàgiu desat els vostres canvis, heu d'aturar i reiniciar el servei FTP perquè es pugui implementar la nova configuració del port.</li>
+<li>Actualitza la configuració del client: assegureu-vos que tots els clients FTP que es connecten amb el servidor rebin els nous números de port.</li>
+</ul>
+<h2 id="avantatges-de-ftp">Avantatges de FTP</h2>
+<ul>
+<li>L'ús compartit de fitxers també entra en la categoria dels avantatges de l'FTP, ja que els fitxers entre dues màquines es poden compartir a la xarxa.</li>
+<li>La velocitat és un dels principals avantatges de l'FTP.</li>
+<li>Com que no hem d'acabar totes les operacions per obtenir el fitxer sencer, és més eficient.
+Utilitzant el nom d'usuari i la contrasenya, hem d'iniciar sessió al servidor FTP. Com a resultat, FTP es podria considerar més segur.</li>
+<li>Podem moure els fitxers d'anada i tornada mitjançant FTP. Suposem que sou el gerent de l'empresa i proporcioneu informació a tots els empleats, i tots responen al mateix servidor.</li>
+</ul>
+<h2 id="inconvenients-de-ftp">Inconvenients de FTP</h2>
+<ul>
+<li>El límit de mida dels fitxers és l'inconvenient de l'FTP, només es poden transferir fitxers de 2 GB.</li>
+<li>Més d'un receptor no és compatible amb FTP.</li>
+<li>L'FTP no xifra les dades, aquest és un dels majors inconvenients de l'FTP.</li>
+<li>FTP no està segur, utilitzem identificadors d'inici de sessió i contrasenyes que el fan segur, però els pirates informàtics poden atacar-los.</li>
+</ul>
+<h2 id="diferencia-entre-ftp-i-sftp">Diferència entre FTP i SFTP</h2>
+<table>
+<thead>
+<tr>
+<th>FTP</th>
+<th>SFTP</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Significa Protocol de transferència de fitxers.</td>
+<td>Significa Secure File Transfer Protocol.</td>
+</tr>
+<tr>
+<td>A FTP, no es proporciona un canal segur per transferir els fitxers entre els amfitrions.</td>
+<td>A SFTP, es proporciona un canal segur per transferir els fitxers entre els amfitrions.</td>
+</tr>
+<tr>
+<td>Normalment funciona al port no-21.</td>
+<td>Normalment funciona al port no-22.</td>
+</tr>
+<tr>
+<td>No xifra les dades abans d'enviar-les</td>
+<td>Ha xifrat les dades abans d'enviar-les.</td>
+</tr>
+<tr>
+<td>Fa la càrrega i descàrrega d'arxius sense cap seguretat.</td>
+<td>Manté la seguretat total de les dades mitjançant l'ús de <a href="https://www.geeksforgeeks.org/introduction-to-ssh-secure-shell-keys/">claus SSH</a> .</td>
+</tr>
+</tbody>
+</table>
+<h2 id="reptes-de-seguretat-ftp">Reptes de seguretat FTP</h2>
+<p>L'FTP no s'ha dissenyat tenint en compte la seguretat, la qual cosa comporta diverses vulnerabilitats:</p>
+<ul>
+<li>
+<p>Manca de xifratge: Això es deu al fet que les dades com ara els noms d'usuari i les contrasenyes es transmeten sense xifratge i, per tant, són fàcilment vulnerables a diferents atacs.</p>
+</li>
+<li>
+<p>Vulnerabilitats als atacs: les transmissions FTP són vulnerables a atacs com ara la falsificació, l'sniffing, la força bruta i altres atacs lents. Van suggerir que les dades poden ser interceptades i canviades fàcilment pels pirates informàtics .</p>
+</li>
+<li>Contrasenyes de text clar: malauradament, l'autenticació del client FTP utilitza contrasenyes no xifrades, cosa que les fa vulnerables a la pirateria.</li>
+</ul>
+<h2 id="conclusio">Conclusió</h2>
+<p>FTP segueix sent un mètode potent i eficaç per transferir fitxers entre sistemes i encara preval en els casos de transferència de fitxers grans i en el curs de sistemes automatitzats. No obstant això, no inclou millores de seguretat que el fan bastant inadequat per a l'intercanvi d'informació sensible. En el cas de les transferències, s'han de fomentar els modes més segurs com SFTP o FTPS, ja que fan que les transferències siguin segures. Per tant, malgrat aquests inconvenients, FTP segueix sent útil fins als nostres dies, ja que és senzill i estabilitzat.</p>
+<h2 id="preguntes-frequents-sobre-ftp">Preguntes freqüents sobre FTP</h2>
+<ul>
+<li>
+<p>Diferenciar entre FTP i SFTP?</p>
+</li>
+<li>
+<p>FTP és un mètode insegur i transfereix les dades en text sense format, mentre que SFTP és un mètode segur que transfereix les dades en text xifrat.</p>
+</li>
+<li>
+<p>Què és la connexió FTP passiva?</p>
+</li>
+<li>
+<p>En FTP passiu, el client inicia tant les connexions de control com de dades al servidor.</p>
+</li>
+<li>
+<p>Quin és el port predeterminat per a FTP?</p>
+</li>
+<li>
+<p>El port predeterminat per a FTP és 21. El port predeterminat s'utilitza per a la connexió de control quan la transferència de dades es produeix a altres ports.</p>
+</li>
+<li>
+<p>Anomeneu els dos modes de transferència de dades FTP?</p>
+</li>
+<li>
+<p>Mode actiu</p>
+</li>
+<li>
+<p>Mode passiu</p>
+</li>
+<li>
+<p>Quina diferència hi ha entre FTP i SFTP?</p>
+</li>
+<li>
+<p>El protocol de transmissió de fitxers convencional s'anomena FTP. És un mètode senzill per compartir fitxers a través d'Internet. S'afegeix un grau addicional de seguretat a les transferències de fitxers amb SFTP, o Secure File Transfer Protocol, una alternativa a FTP.</p>
+</li>
+</ul>
+<p>Document original <a href="https://www.geeksforgeeks.org/file-transfer-protocol-ftp-in-application-layer/">geeks for geeks</a></p>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../exercicis-ipv4/" class="btn btn-neutral float-left" title="1.1. Exercicis ipv4"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../preguntes-test/" class="btn btn-neutral float-right" title="2.1 Preguntes exemple">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../exercicis-ipv4/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../preguntes-test/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>

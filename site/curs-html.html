@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="ca">
+<script src="https://accounts.google.com/gsi/client" async defer></script>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Asbaprin Blogger API</title>
+    <link rel="stylesheet" href="assets/css/blogger.css">
+
+</head>
+
+<body>
+    <header id="capsalera">
+        <div class="g_id_signin" data-locale="fr">
+        </div>
+    </header>
+    <main id="cos">
+        <div id="formulari">
++
+        </div>
+        
+    </main>
+<script src="https://accounts.google.com/gsi/client?hl=fr" async></script>
+<script type="module">
+    import {PostService} from './js/service/PostService.js'
+    //import {idPostService} from './js/service/idPostService.js'
+    //const  llistatPosts =  new idPostService();
+
+    function pintarCapsalera(){
+        const titol = document.createElement("h1");
+        titol.innerHTML="CURS ASBAPRIN API BLOGGER";
+        document.querySelector("#capsalera").appendChild(titol);
+
+        const subTitol = document.createElement("h2");
+        subTitol.innerHTML="LLISTAT BLOGGER";
+        document.querySelector("#capsalera").appendChild(subTitol);
+        
+        const botoGoogle = document.createElement("button");
+        botoGoogle.innerHTML="D=: API GOOGLE";
+        botoGoogle.addEventListener('click',initGoogle);
+        document.querySelector("#capsalera").appendChild(botoGoogle);
+
+        const botoBlogger = document.createElement("button");
+        botoBlogger.innerHTML="D=: API BLOGGER";
+        botoBlogger.addEventListener('click',initBlogger);
+        document.querySelector("#capsalera").appendChild(botoBlogger);
+    
+        const botoLlistatBlogger = document.createElement("button");
+        botoLlistatBlogger.innerHTML="D=: LLISTAT BLOGGER";
+        botoLlistatBlogger.addEventListener('click',function(){
+            window.location.href='bloggerList.html';
+        });
+        document.querySelector("#capsalera").appendChild(botoLlistatBlogger);
+
+        const botoInsertaPost = document.createElement("button");
+        botoInsertaPost.innerHTML="D=: INSPOST";
+        botoInsertaPost.addEventListener('click',function(){
+            window.location.href='bloggerForm.html';
+        });
+        document.querySelector("#capsalera").appendChild(botoInsertaPost);
+        
+
+    }
+    
+        
+    async function insertaPost(nouPost){      
+        
+        const p = new PostService();
+        let pt = await p.insertPost();
+        console.log("--> post és " + pt.id );
+        return pt;
+    }
+
+    async function getPost(id){
+        console.log("ENTRAT A GET POST DE BLOGGERFORM")
+        console.log("El valor de id és", id)
+        const p = new PostService();
+        let pt = await p.getPost(id);
+        console.log("--> post és " + pt.id );
+        console.log("--> post és " + pt.titol );
+        return pt;
+    }
+    
+
+    function initGoogle(){
+        const client = google.accounts.oauth2.initTokenClient({
+            client_id: '93131392495-ener171a5pc6c9bhqhn7gck61hiup4bu.apps.googleusercontent.com',
+            scope: 'https://www.googleapis.com/auth/blogger',//'https://www.googleapis.com/auth/calendar.readonly \ https://www.googleapis.com/auth/blogger'
+            callback: (tokenResponse) => {
+              if (tokenResponse && tokenResponse.access_token) {
+                console.log("tokenResponse: ",tokenResponse,tokenResponse.access_token);
+                localStorage.setItem("token",tokenResponse.access_token);
+              }
+            },
+          });
+        client.requestAccessToken();
+    }
+
+    function initBlogger(){
+        /*
+        const myHeaders = new Headers();
+            myHeaders.append("Authorization",localStorage.getItem('token'));
+        console.log("El valor del token és "+ localStorage.getItem('token'));
+        const requestOptions = {
+            method: "GET",
+            headers: myHeaders,
+            redirect: "follow"
+        };
+
+        fetch("https://www.googleapis.com/blogger/v3/blogs/5061924546610576807", requestOptions)
+            .then((response) => response.text())
+            .then((result) => console.log(result))
+            .catch((error) => console.error(error));
+        */
+        //const peticioFetch = fetch("https://www.googleapis.com/blogger/v3/blogs/5061924546610576807",{
+        console.log("El valor del token és "+ localStorage.getItem('token'));
+        const peticioFetch = fetch("https://www.googleapis.com/blogger/v3/blogs/5061924546610576807",{
+            method: 'get',
+            headers: {
+                //'Authorization': localStorage.getItem('token')
+                'Authorization': 'Bearer '+localStorage.getItem('token')
+            }
+        })
+        
+
+        
+    }
+
+    async function updatePost(){
+        const idPost = document.querySelector("#idPost").innerHTML;
+        const titol = document.querySelector("#titolPostTraduit").value
+        const text = document.querySelector("#text").value;
+        console.log("Entrat a actualitzar");
+        console.log("id: " + idPost)
+        console.log("titol: " + titol);
+        const inputTraduccio = document.querySelector("#traduccio").value
+        const inputText = document.querySelector("#text").value
+        
+        const p = new PostService();
+        p.setPost(idPost,titol,inputTraduccio);
+        let pt = await p.updatePost();
+
+    }
+    
+    async function traduirPost(){
+        console.log("ENTRAT A TRADUCCIO")
+        const p = new PostService();
+        const inputTraduccio = document.querySelector("#traduccio")
+        const inputText = document.querySelector("#text").value
+        console.log(inputText)
+        inputTraduccio.value = await p.traduirPost(inputText,"ca","en");
+
+        const titolPostTraduit = document.querySelector("#titolPostTraduit")
+        const inputTextTitol = document.querySelector("#titol").value
+        console.log(inputText)
+        titolPostTraduit.value = await p.traduirPost(inputTextTitol,"ca","en");
+    }
+
+    async function pintarPost(p){
+        const pt = new PostService();
+
+        const anterior = document.querySelector("#formulari");
+        if(anterior){anterior.remove()}
+        
+        const costatEsquerra = document.createElement("div");
+        costatEsquerra.id= "costatEsquerra";
+        document.querySelector("#cos").appendChild(costatEsquerra);
+
+
+        const formulariPost = document.createElement("div");
+        formulariPost.id= "formulari";
+        document.querySelector("#cos").appendChild(formulariPost);
+
+        const divIdPost = document.createElement("div");
+        divIdPost.id="divIdPost"
+        document.querySelector("#formulari").appendChild(divIdPost);
+        
+        const idPost = document.createElement("p");
+        idPost.setAttribute('id','idPost');
+        idPost.innerHTML=  p.id;
+        document.querySelector("#divIdPost").appendChild(idPost);
+
+        const divTitol = document.createElement("div");
+        divTitol.id="divTitol"
+        document.querySelector("#formulari").appendChild(divTitol);
+
+        const labelTitol = document.createElement("label");
+        labelTitol.innerHTML= "TITOL:";
+        document.querySelector("#divTitol").appendChild(labelTitol);
+        
+        const titolPost = document.createElement("input");
+        titolPost.setAttribute('id','titol');
+        titolPost.value = await pt.traduirPost(p.titol,"en","ca");
+        document.querySelector("#divTitol").appendChild(titolPost);
+
+        const divTitolTraduit = document.createElement("div");
+        divTitolTraduit.id="divTitolTraduit"
+        document.querySelector("#formulari").appendChild(divTitolTraduit);
+
+        const labelTitolTraduit = document.createElement("label");
+        labelTitolTraduit.innerHTML= "TITOL TRADUCCIÓ::";
+        document.querySelector("#divTitol").appendChild(labelTitolTraduit);
+        
+        const titolPostTraduit = document.createElement("input");
+        titolPostTraduit.setAttribute('id','titolPostTraduit');
+        titolPostTraduit.value = p.titol;
+        document.querySelector("#divTitol").appendChild(titolPostTraduit);
+
+        const divText = document.createElement("div");
+        divText.id="divText"
+        document.querySelector("#formulari").appendChild(divText);
+
+        const labelText = document.createElement("label");
+        labelText.innerHTML= "TEXT:";
+        document.querySelector("#divText").appendChild(labelText);
+        
+
+        const textPost = document.createElement("textarea");
+        textPost.setAttribute('id','text');
+        textPost.value= await pt.traduirPost(p.contingut,"en","ca");;
+        document.querySelector("#divText").appendChild(textPost);
+        
+        const divTraduccio = document.createElement("div");
+        divTraduccio.id="divTraduccio"
+        document.querySelector("#formulari").appendChild(divTraduccio);
+        
+        const labelTraduccio = document.createElement("label");
+        labelTraduccio.innerHTML= "TRADUCCIO:";
+        document.querySelector("#divTraduccio").appendChild(labelTraduccio);
+
+        const traduccioPost = document.createElement("textarea");
+        traduccioPost.setAttribute('id','traduccio');
+        traduccioPost.value= p.contingut;
+        document.querySelector("#divTraduccio").appendChild(traduccioPost);
+
+        const botoTraduccio = document.createElement("button");
+        botoTraduccio.innerHTML= "traduir post";
+        botoTraduccio.addEventListener('click',traduirPost)
+        document.querySelector("#divTraduccio").appendChild(botoTraduccio);
+        
+        const botoUpdate = document.createElement("button");
+        botoUpdate.innerHTML= "actualitza post";
+        botoUpdate.addEventListener('click',updatePost)
+        document.querySelector("#divTraduccio").appendChild(botoUpdate);
+
+        const costatDreta = document.createElement("div");
+        costatDreta.id= "costatDreta";
+        document.querySelector("#cos").appendChild(costatDreta);
+
+    }
+
+    
+   
+    (async()=>{
+        let post = new PostService();
+        
+        pintarCapsalera();
+
+        const url = new URL(document.location);
+        const idPost = url.searchParams.get("idPost");
+
+        if (idPost){
+            console.log("tenim post");
+            //await post.getPost(idPost)
+            post = await getPost(idPost)
+            //console.log("el post per pintar es" + post.id)  
+        }else{
+            console.log("no tenim post")
+            post = await insertaPost(post);
+        }
+        pintarPost(post);
+        
+    })()
+</script>
+</body>
+
+</html>
