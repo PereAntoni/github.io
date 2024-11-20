@@ -9,6 +9,7 @@ export class idPostService{
     }
 
     async getPosts(){
+        console.log("som per aqui")
         await fetch("http://gimnesia.net/api/especie/read.php",{
             method: 'get',
             headers: {
