@@ -17,7 +17,7 @@
         
     </main>
 <script type="module">
-    import {idPostService} from './js/service/idPostService.js'
+    import {idPostService} from '../js/service/idPostService.js'
 
     console.log("som dins script")
     function pintarCapsalera(model){

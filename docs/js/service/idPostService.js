@@ -9,7 +9,8 @@ export class idPostService{
     }
 
     async getPosts(){
-        await fetch("gimnesia.net/api/especie/read.php",{
+        console.log("som per aqui")
+        await fetch("http://gimnesia.net/api/especie/read.php",{
             method: 'get',
             headers: {
                 //'Authorization': localStorage.getItem('token')
