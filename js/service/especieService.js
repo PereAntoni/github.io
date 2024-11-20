@@ -1,5 +1,4 @@
 
-
 import { IdPost } from "../model/idPost.js";
 export class idPostService{
 

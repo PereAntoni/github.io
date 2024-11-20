@@ -9,11 +9,11 @@ export class idPostService{
     }
 
     async getPosts(){
-        await fetch("gimnesia.net/api/especie/read.php",{
+        await fetch("https://www.googleapis.com/blogger/v3/blogs/5061924546610576807/posts",{
             method: 'get',
             headers: {
                 //'Authorization': localStorage.getItem('token')
-                //'Authorization': 'Bearer '+localStorage.getItem('token')
+                'Authorization': 'Bearer '+localStorage.getItem('token')
             }
         
         })
@@ -21,7 +21,7 @@ export class idPostService{
             .then(r=>{
                 console.log(r)
                 for(let i=0; i<r.items.length; i++) {
-                    const infoPost = this.#fromJSON(r.records[i]);
+                    const infoPost = this.#fromJSON(r.items[i]);
                     this.#posts.push(infoPost);
                     
                 }
@@ -64,9 +64,10 @@ export class idPostService{
 
     #fromJSON(json){
         return new IdPost(
-            json.codi,
-            json.nom,
-            json.cientific
+            json.id,
+            json.title,
+            json.published,
+            json.url
             )
     }
 

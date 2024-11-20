@@ -1,26 +1,26 @@
 export class Post{
-    #id;
-    #titol;
-    #data;
+    #codi;
+    #nom;
+    #cientific;
     #contingut;
     #url;
     
-    constructor(id,titol,data,contingut,url){
-        this.#id = id;
-        this.#titol = titol;
-        this.#data = data;
+    constructor(codi,nom,cientific,contingut,url){
+        this.#codi = codi;
+        this.#nom = nom;
+        this.#cientific = cientific;
         this.#contingut = contingut;
         this.#url = url;
     }
 
-    get id()        {return this.#id;}
-    set id(value)   {this.#id=value;}
+    get codi()        {return this.#codi;}
+    set codi(value)   {this.#codi=value;}
 
-    get titol()     {return this.#titol;}
-    set titol(value){this.#titol=value;}
+    get nom()     {return this.#nom;}
+    set nom(value){this.#nom=value;}
 
-    get data()      {return this.#data;}
-    set data(value) {this.#data=value;}
+    get cientific()      {return this.#cientific;}
+    set cientific(value) {this.#cientific=value;}
 
     get contingut()      {return this.#contingut;}
     set contingut(value) {this.#contingut=value;}
