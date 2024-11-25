@@ -1,6 +1,6 @@
 
-import { IdPost } from "../model/idPost.js";
-export class idPostService{
+import { Especie } from "../model/Especie.js";
+export class Especie{
 
     #posts;
 

@@ -80,6 +80,12 @@
     </li>
         </ul>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#variables">Variables</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#condicionals-if">Condicionals if</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -126,11 +132,25 @@
 <li>Si volem que s'excuti ha de tenir els permisos d'execució.</li>
 <li>Per executar un script es fa amb l'instrucció <code>./nom-script</code></li>
 </ul>
-<p>| Per fer els exercicis cream una carpeta "scripts" al directori home del nostre usuari.</p>
+<p>Per fer els exercicis cream una carpeta "scripts" al directori home del nostre usuari.</p>
 <h3 id="primer-script-echo-hello-world">Primer script. echo "Hello world".</h3>
-<p>Feim un document de texte i el seu contingut ha de ser </p>
+<p>Feim un document "primerscript.sh" de texte i el seu contingut ha de ser </p>
 <p>|<code>#!/bin/sh # This is a comment!
 echo Hello World        # This is a comment, too!</code>|</p>
+<p>Per executar l'script hem de donar permisos d'execució a l'arxiu, l'instrucció </p>
+<p>| sudo chmod 755 primerscript.sh |</p>
+<p><code>$ echo '#!/bin/sh' &gt; my-script.sh
+$ echo 'echo Hello World' &gt;&gt; my-script.sh
+$ chmod 755 my-script.sh
+$ ./my-script.sh
+Hello World
+$</code></p>
+<h2 id="variables">Variables</h2>
+<p>Una variable és un contenidor de valors amb un nom. Aquest contenidor varia durant l'execució del programa. </p>
+<p>Observa el dibuix de programa durant l'execució dins el computador.</p>
+<p>Observam a la pàgina <a href="https://pythontutor.com/visualize.html#mode=edit">pythonTutor</a> la execució i gestió de variables dins memòria.</p>
+<h3 id="condicionals-if">Condicionals if</h3>
+<p><a href="https://www.shellscript.sh/">tutorial</a></p>
               
             </div>
           </div><footer>
