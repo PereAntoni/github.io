@@ -88,7 +88,11 @@
         <ul>
     <li class="toctree-l3"><a class="reference internal" href="#exemples">Exemples</a>
     </li>
+    <li class="toctree-l3"><a class="reference internal" href="#exercicis_1">Exercicis:</a>
+    </li>
         </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#45-funcions-de-programa">4.5 Funcions de programa</a>
     </li>
     </ul>
                 </li>
@@ -185,9 +189,9 @@ if (⟨Condició⟩) {
 <p>El funcionament és senzill: Si es compleix la ⟨Condició⟩, s'executa el bloc d'⟨Instruccions_SÍ⟩; altrament, s'executa el bloc d'⟨Instruccions_NO⟩.</p>
 <p>Aquesta instrucció és útil alhora de controlar límits, comprovar passwords, crear camins de programa, etc.</p>
 <h3 id="exemples">Exemples</h3>
-<ol>
+<ul>
 <li>Volem saber si un número és positiu, negatiu o zero.</li>
-</ol>
+</ul>
 <pre><code>
 
 read -p &quot;Introdueix un número: &quot; numero
@@ -201,9 +205,9 @@ else
 fi
 
 </code></pre>
-<ol>
+<ul>
 <li>Volem saber si un usuari està connectat.</li>
-</ol>
+</ul>
 <pre><code>
 #!/bin/bash
 
@@ -214,11 +218,13 @@ if who | grep -q &quot;^$usuari &quot;; then
 else
     echo &quot;L'usuari $usuari no està connectat.&quot;
 fi
+
 </code></pre>
-<ol>
+<ul>
 <li>Volem saber si un número és parell o senar. </li>
-</ol>
-<pre><code>#!/bin/bash
+</ul>
+<pre><code>
+#!/bin/bash
 
 read -p &quot;Introdueix un nombre: &quot; nombre
 
@@ -227,18 +233,23 @@ if (( $nombre % 2 == 0 )); then
 else
     echo &quot;El nombre $nombre és senar.&quot;
 fi
+
 </code></pre>
-<ol>
+<ul>
 <li>Saber si un fitxer existeix.</li>
-</ol>
-<p>```</p>
-<h1 id="binbash">!/bin/bash</h1>
-<p>read -p "Introdueix la ruta del fitxer: " fitxer</p>
-<p>if [[ -e $fitxer ]]; then
-    echo "El fitxer $fitxer existeix."
+</ul>
+<pre><code>
+#!/bin/bash
+
+read -p &quot;Introdueix la ruta del fitxer: &quot; fitxer
+
+if [[ -e $fitxer ]]; then
+    echo &quot;El fitxer $fitxer existeix.&quot;
 else
-    echo "El fitxer $fitxer no existeix."
-fi`</p>
+    echo &quot;El fitxer $fitxer no existeix.&quot;
+fi
+
+</code></pre>
 <h3 id="exercicis_1">Exercicis:</h3>
 <ol>
 <li>Fes un script que compari dos nombres passats per argument i digui quin és el més alt i quin és el més baix. Si són iguals ha de dir que són iguals.</li>
@@ -255,7 +266,7 @@ HAN DE CALCULAR SOBRE ELS SEUS PARÀMETRES.
 NO HAN D'IMPRIMIR PER PANTALLA NI DEMANAR RES S'AIXÒ S'ENCARREGA EL MAIN.</p>
 <p>EXEMPLE INCORRECTE:
 `</p>
-<h1 id="binbash_1">!/bin/bash</h1>
+<h1 id="binbash">!/bin/bash</h1>
 <h1 id="funcio-per-trobar-el-numero-major-entre-dos">Funció per trobar el número major entre dos</h1>
 <p>major() {
     if (( $1 &gt; $2 )); then
