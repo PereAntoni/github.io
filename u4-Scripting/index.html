@@ -188,43 +188,52 @@ if (⟨Condició⟩) {
 <ol>
 <li>Volem saber si un número és positiu, negatiu o zero.</li>
 </ol>
-<p>````</p>
-<h1 id="binbash">!/bin/bash</h1>
-<p>read -p "Introdueix un número: " numero</p>
-<p>if (( $numero &gt; 0 )); then
-    echo "El número $numero és positiu."
+<pre><code>
+#!/bin/bash
+
+read -p &quot;Introdueix un número: &quot; numero
+
+if (( $numero &gt; 0 )); then
+    echo &quot;El número $numero és positiu.&quot;
 elif (( $numero &lt; 0 )); then
-    echo "El número $numero és negatiu."
+    echo &quot;El número $numero és negatiu.&quot;
 else
-    echo "El número és zero."
-fi</p>
-<pre><code>
-2. Volem saber si un usuari està connectat.
+    echo &quot;El número és zero.&quot;
+fi
 
 </code></pre>
-<h1 id="binbash_1">!/bin/bash</h1>
-<p>read -p "Introdueix el nom de l'usuari: " usuari</p>
-<p>if who | grep -q "^$usuari "; then
-    echo "L'usuari $usuari està connectat."
-else
-    echo "L'usuari $usuari no està connectat."
-fi</p>
+<ol>
+<li>Volem saber si un usuari està connectat.</li>
+</ol>
 <pre><code>
-3. Volem saber si un número és parell o senar. 
+#!/bin/bash
 
-</code></pre>
-<h1 id="binbash_2">!/bin/bash</h1>
-<p>read -p "Introdueix un nombre: " nombre</p>
-<p>if (( $nombre % 2 == 0 )); then
-    echo "El nombre $nombre és parell."
+read -p &quot;Introdueix el nom de l'usuari: &quot; usuari
+
+if who | grep -q &quot;^$usuari &quot;; then
+    echo &quot;L'usuari $usuari està connectat.&quot;
 else
-    echo "El nombre $nombre és senar."
-fi</p>
-<pre><code>
-4. Saber si un fitxer existeix.
-
+    echo &quot;L'usuari $usuari no està connectat.&quot;
+fi
 </code></pre>
-<h1 id="binbash_3">!/bin/bash</h1>
+<ol>
+<li>Volem saber si un número és parell o senar. </li>
+</ol>
+<pre><code>#!/bin/bash
+
+read -p &quot;Introdueix un nombre: &quot; nombre
+
+if (( $nombre % 2 == 0 )); then
+    echo &quot;El nombre $nombre és parell.&quot;
+else
+    echo &quot;El nombre $nombre és senar.&quot;
+fi
+</code></pre>
+<ol>
+<li>Saber si un fitxer existeix.</li>
+</ol>
+<p>```</p>
+<h1 id="binbash">!/bin/bash</h1>
 <p>read -p "Introdueix la ruta del fitxer: " fitxer</p>
 <p>if [[ -e $fitxer ]]; then
     echo "El fitxer $fitxer existeix."
@@ -247,7 +256,7 @@ HAN DE CALCULAR SOBRE ELS SEUS PARÀMETRES.
 NO HAN D'IMPRIMIR PER PANTALLA NI DEMANAR RES S'AIXÒ S'ENCARREGA EL MAIN.</p>
 <p>EXEMPLE INCORRECTE:
 `</p>
-<h1 id="binbash_4">!/bin/bash</h1>
+<h1 id="binbash_1">!/bin/bash</h1>
 <h1 id="funcio-per-trobar-el-numero-major-entre-dos">Funció per trobar el número major entre dos</h1>
 <p>major() {
     if (( $1 &gt; $2 )); then
