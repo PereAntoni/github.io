@@ -85,10 +85,10 @@
         </ul>
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#44-condicionals-if">4.4 Condicionals if</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#exemples">Exemples</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#45-iteracions">4.5 Iteracions</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#46-funcions-de-programa">4.6 Funcions de programa</a>
+        </ul>
     </li>
     </ul>
                 </li>
@@ -173,11 +173,107 @@ demani els operands per terminal. </li>
 }</code></p>
 <p>El funcionament és senzill: Si es compleix la ⟨Condició⟩, s'executa el bloc d'⟨Instruccions_SÍ⟩; altrament, s'executa el bloc d'⟨Instruccions_NO⟩.</p>
 <p>Aquesta instrucció és útil alhora de controlar límits, comprovar passwords, crear camins de programa, etc.</p>
+<h3 id="exemples">Exemples</h3>
+<ol>
+<li>Volem saber si un número és positiu, negatiu o zero.
+`#!/bin/bash</li>
+</ol>
+<p>read -p "Introdueix un número: " numero</p>
+<p>if (( $numero &gt; 0 )); then
+    echo "El número $numero és positiu."
+elif (( $numero &lt; 0 )); then
+    echo "El número $numero és negatiu."
+else
+    echo "El número és zero."
+fi
+<code>2. Volem saber si un usuari està connectat.</code></p>
+<h1 id="binbash">!/bin/bash</h1>
+<p>read -p "Introdueix el nom de l'usuari: " usuari</p>
+<p>if who | grep -q "^$usuari "; then
+    echo "L'usuari $usuari està connectat."
+else
+    echo "L'usuari $usuari no està connectat."
+fi`</p>
+<ol>
+<li>Volem saber si un número és parell o senar. </li>
+</ol>
+<p>` #!/bin/bash</p>
+<p>read -p "Introdueix un nombre: " nombre</p>
+<p>if (( $nombre % 2 == 0 )); then
+    echo "El nombre $nombre és parell."
+else
+    echo "El nombre $nombre és senar."
+fi´</p>
+<ol>
+<li>Saber si un fitxer existeix.</li>
+</ol>
+<p>`</p>
+<h1 id="binbash_1">!/bin/bash</h1>
+<p>read -p "Introdueix la ruta del fitxer: " fitxer</p>
+<p>if [[ -e $fitxer ]]; then
+    echo "El fitxer $fitxer existeix."
+else
+    echo "El fitxer $fitxer no existeix."
+fi`</p>
+<h3 id="exercicis_1">Exercicis:</h3>
+<ol>
+<li>Fes un script que compari dos nombres passats per argument i digui quin és el més alt i quin és el més baix. Si són iguals ha de dir que són iguals.</li>
+<li>Com l'script anterior però amb tres números.</li>
+<li>Fes un script que agafi dos arguments per consola i respongui si són multiples.</li>
+<li>Fes un script que comprovi un password.</li>
+</ol>
 <p><a href="https://www.shellscript.sh/">tutorial</a></p>
-<h2 id="45-iteracions">4.5 Iteracions</h2>
-<h2 id="46-funcions-de-programa">4.6 Funcions de programa</h2>
+<h2 id="45-funcions-de-programa">4.5 Funcions de programa</h2>
 <p>Les funcions són parts de codi que realitzen una tasca concreta. L'ús de funcions ajuda al programador a 
 controlar el codi del programa d'una manera més eficient.</p>
+<p>LES FUNCIONS HAN DE TENIR UNA SOLA FUNCIÓ. 
+HAN DE CALCULAR SOBRE ELS SEUS PARÀMETRES.
+NO HAN D'IMPRIMIR PER PANTALLA NI DEMANAR RES S'AIXÒ S'ENCARREGA EL MAIN.</p>
+<p>EXMPLE INCORRECTE:
+`</p>
+<h1 id="binbash_2">!/bin/bash</h1>
+<p>-Funció per trobar el número major entre dos
+major() {
+    if (( $1 &gt; $2 )); then
+        echo "El major entre $1 i $2 és: $1"
+    elif (( $1 &lt; $2 )); then
+        echo "El major entre $1 i $2 és: $2"
+    else
+        echo "Els números $1 i $2 són iguals."
+    fi
+}</p>
+<p>-Funció per trobar el número menor entre dos
+menor() {
+    if (( $1 &lt; $2 )); then
+        echo "El menor entre $1 i $2 és: $1"
+    elif (( $1 &gt; $2 )); then
+        echo "El menor entre $1 i $2 és: $2"
+    else
+        echo "Els números $1 i $2 són iguals."
+    fi
+}</p>
+<p>-Funció per comprovar si el primer número és múltiple del segon
+multiple() {
+    if (( $2 == 0 )); then
+        echo "No es pot dividir per zero, no hi ha múltiple."
+        return
+    fi</p>
+<pre><code>if (( $1 % $2 == 0 )); then
+    echo "$1 és múltiple de $2."
+else
+    echo "$1 no és múltiple de $2."
+fi
+</code></pre>
+<p>}</p>
+<p>-Entrada de dades
+read -p "Introdueix el primer número: " num1
+read -p "Introdueix el segon número: " num2</p>
+<p>-Crides a les funcions
+major "$num1" "$num2"
+menor "$num1" "$num2"
+multiple "$num1" "$num2"
+`</p>
+<h2 id="46-iteracions">4.6 Iteracions</h2>
 <p>Una funció té varies parts:</p>
 <pre><code>- ** Nom de la funció **. Única dins la seva part de programa, identifica la tasca de la funció.
 - ** Paràmetres d'entrada **. Variables que es poden donar a la funció.
