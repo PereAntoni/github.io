@@ -177,16 +177,22 @@ demani els operands per terminal. </li>
 <ol>
 <li>Volem saber si un número és positiu, negatiu o zero.</li>
 </ol>
-<p>` #!/bin/bash</p>
-<p>read -p "Introdueix un número: " numero</p>
-<p>if (( $numero &gt; 0 )); then
-    echo "El número $numero és positiu."
+<pre><code>#!/bin/bash
+
+read -p &quot;Introdueix un número: &quot; numero
+
+if (( $numero &gt; 0 )); then
+    echo &quot;El número $numero és positiu.&quot;
 elif (( $numero &lt; 0 )); then
-    echo "El número $numero és negatiu."
+    echo &quot;El número $numero és negatiu.&quot;
 else
-    echo "El número és zero."
+    echo &quot;El número és zero.&quot;
 fi
-<code>2. Volem saber si un usuari està connectat.</code></p>
+</code></pre>
+<ol>
+<li>Volem saber si un usuari està connectat.
+`</li>
+</ol>
 <h1 id="binbash">!/bin/bash</h1>
 <p>read -p "Introdueix el nom de l'usuari: " usuari</p>
 <p>if who | grep -q "^$usuari "; then
