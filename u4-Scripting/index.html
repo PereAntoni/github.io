@@ -78,6 +78,18 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#42-primer-script-echo-hello-world">4.2 Primer script. echo "Hello world".</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#43-variables">4.3 Variables</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#exercicis">Exercicis:</a>
+    </li>
+        </ul>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#44-condicionals-if">4.4 Condicionals if</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#exemples">Exemples</a>
+    </li>
+        </ul>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -127,73 +139,64 @@
 <p>Per fer els exercicis cream una carpeta "scripts" al directori home del nostre usuari.</p>
 <h2 id="42-primer-script-echo-hello-world">4.2 Primer script. echo "Hello world".</h2>
 <p>Feim un document "primerscript.sh" de texte i el seu contingut ha de ser </p>
-<p>``` #!/bin/sh # This is a comment!
-echo Hello World        # This is a comment, too!</p>
 <pre><code>
-Per executar l'script hem de donar permisos d'execució a l'arxiu, l'instrucció 
+#!/bin/sh # This is a comment!
+echo Hello World        # This is a comment, too!
 
-| sudo chmod 755 primerscript.sh |
-
-`$ echo '#!/bin/sh' &gt; my-script.sh
+</code></pre>
+<p>Per executar l'script hem de donar permisos d'execució a l'arxiu, l'instrucció </p>
+<p>| sudo chmod 755 primerscript.sh |</p>
+<p><code>$ echo '#!/bin/sh' &gt; my-script.sh
 $ echo 'echo Hello World' &gt;&gt; my-script.sh
 $ chmod 755 my-script.sh
 $ ./my-script.sh
 Hello World
-$`
-
-## 4.3 Variables
-
-Una variable és un contenidor de valors amb un nom. Aquest contenidor varia durant l'execució del programa. 
-
-Observa el dibuix de programa durant l'execució dins el computador.
-
-
-
-Observam a la pàgina [pythonTutor](https://pythontutor.com/visualize.html#mode=edit) la execució i gestió de variables dins memòria.
-
-### Exercicis:
-A cada un dels scritps has de posar el teu nom i la data com a comentari. Per fer els exercicis pots consultar el [tutorial de consulta sobre variables](https://www.shellscript.sh/variables1.html).
-
-1. Fer un script que escrigui &quot;Hello World&quot;.
-2. Fer un script &quot;sumados.sh&quot; que sumi dos nombres passats per paràmetre.
-3. Un script com l'anterior que ens retorni la suma, la resta i la multiplicació de dos nombres passats per paràmetre.
-4. Un script que faci les operacions anteriors (suma,resta, multiplicació) però que ens 
-demani els operands per terminal. 
-5. Fes un script que demani el nom d'un usuari i que mostri per pantalla la seva unitat home.
-6. Fes un script que demani el nom d'un usuari i que mostri per pantalla la mida dels arxius del seu home.
-7. Posa tots els exercici anteriors com a exercici1.sh, exercici2.sh, ...
-
-## 4.4 Condicionals if
-`if (⟨Condició⟩) {
+$</code></p>
+<h2 id="43-variables">4.3 Variables</h2>
+<p>Una variable és un contenidor de valors amb un nom. Aquest contenidor varia durant l'execució del programa. </p>
+<p>Observa el dibuix de programa durant l'execució dins el computador.</p>
+<p>Observam a la pàgina <a href="https://pythontutor.com/visualize.html#mode=edit">pythonTutor</a> la execució i gestió de variables dins memòria.</p>
+<h3 id="exercicis">Exercicis:</h3>
+<p>A cada un dels scritps has de posar el teu nom i la data com a comentari. Per fer els exercicis pots consultar el <a href="https://www.shellscript.sh/variables1.html">tutorial de consulta sobre variables</a>.</p>
+<ol>
+<li>Fer un script que escrigui "Hello World".</li>
+<li>Fer un script "sumados.sh" que sumi dos nombres passats per paràmetre.</li>
+<li>Un script com l'anterior que ens retorni la suma, la resta i la multiplicació de dos nombres passats per paràmetre.</li>
+<li>Un script que faci les operacions anteriors (suma,resta, multiplicació) però que ens 
+demani els operands per terminal. </li>
+<li>Fes un script que demani el nom d'un usuari i que mostri per pantalla la seva unitat home.</li>
+<li>Fes un script que demani el nom d'un usuari i que mostri per pantalla la mida dels arxius del seu home.</li>
+<li>Posa tots els exercici anteriors com a exercici1.sh, exercici2.sh, ...</li>
+</ol>
+<h2 id="44-condicionals-if">4.4 Condicionals if</h2>
+<p><code>if (⟨Condició⟩) {
     ⟨Instruccions_SÍ⟩
 } else {
     ⟨Instruccions_NO⟩
-}`
+}</code></p>
+<p>El funcionament és senzill: Si es compleix la ⟨Condició⟩, s'executa el bloc d'⟨Instruccions_SÍ⟩; altrament, s'executa el bloc d'⟨Instruccions_NO⟩.</p>
+<p>Aquesta instrucció és útil alhora de controlar límits, comprovar passwords, crear camins de programa, etc.</p>
+<h3 id="exemples">Exemples</h3>
+<ol>
+<li>Volem saber si un número és positiu, negatiu o zero.</li>
+</ol>
+<pre><code>#!/bin/bash
 
-El funcionament és senzill: Si es compleix la ⟨Condició⟩, s'executa el bloc d'⟨Instruccions_SÍ⟩; altrament, s'executa el bloc d'⟨Instruccions_NO⟩.
+read -p &quot;Introdueix un número: &quot; numero
 
-Aquesta instrucció és útil alhora de controlar límits, comprovar passwords, crear camins de programa, etc.
-
-### Exemples
-
-1. Volem saber si un número és positiu, negatiu o zero.
-
-</code></pre>
-<h1 id="binbash">!/bin/bash</h1>
-<p>read -p "Introdueix un número: " numero</p>
-<p>if (( $numero &gt; 0 )); then
-    echo "El número $numero és positiu."
+if (( $numero &gt; 0 )); then
+    echo &quot;El número $numero és positiu.&quot;
 elif (( $numero &lt; 0 )); then
-    echo "El número $numero és negatiu."
+    echo &quot;El número $numero és negatiu.&quot;
 else
-    echo "El número és zero."
+    echo &quot;El número és zero.&quot;
 fi
-```</p>
+</code></pre>
 <ol>
 <li>Volem saber si un usuari està connectat.
 `</li>
 </ol>
-<h1 id="binbash_1">!/bin/bash</h1>
+<h1 id="binbash">!/bin/bash</h1>
 <p>read -p "Introdueix el nom de l'usuari: " usuari</p>
 <p>if who | grep -q "^$usuari "; then
     echo "L'usuari $usuari està connectat."
@@ -214,14 +217,14 @@ fi´</p>
 <li>Saber si un fitxer existeix.</li>
 </ol>
 <p>`</p>
-<h1 id="binbash_2">!/bin/bash</h1>
+<h1 id="binbash_1">!/bin/bash</h1>
 <p>read -p "Introdueix la ruta del fitxer: " fitxer</p>
 <p>if [[ -e $fitxer ]]; then
     echo "El fitxer $fitxer existeix."
 else
     echo "El fitxer $fitxer no existeix."
 fi`</p>
-<h3 id="exercicis">Exercicis:</h3>
+<h3 id="exercicis_1">Exercicis:</h3>
 <ol>
 <li>Fes un script que compari dos nombres passats per argument i digui quin és el més alt i quin és el més baix. Si són iguals ha de dir que són iguals.</li>
 <li>Com l'script anterior però amb tres números.</li>
@@ -237,7 +240,7 @@ HAN DE CALCULAR SOBRE ELS SEUS PARÀMETRES.
 NO HAN D'IMPRIMIR PER PANTALLA NI DEMANAR RES S'AIXÒ S'ENCARREGA EL MAIN.</p>
 <p>EXEMPLE INCORRECTE:
 `</p>
-<h1 id="binbash_3">!/bin/bash</h1>
+<h1 id="binbash_2">!/bin/bash</h1>
 <h1 id="funcio-per-trobar-el-numero-major-entre-dos">Funció per trobar el número major entre dos</h1>
 <p>major() {
     if (( $1 &gt; $2 )); then
