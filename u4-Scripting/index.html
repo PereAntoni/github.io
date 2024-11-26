@@ -74,19 +74,21 @@
               <ul class="current">
                 <li class="toctree-l1 current"><a class="reference internal current" href="#">4. SCRIPTING</a>
     <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#que-es-un-script">Què és un script?</a>
+    <li class="toctree-l2"><a class="reference internal" href="#41-que-es-un-script">4.1 Què és un script?</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#primer-script-echo-hello-world">Primer script. echo "Hello world".</a>
+    <li class="toctree-l2"><a class="reference internal" href="#42-primer-script-echo-hello-world">4.2 Primer script. echo "Hello world".</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#variables">Variables</a>
+    <li class="toctree-l2"><a class="reference internal" href="#43-variables">4.3 Variables</a>
+        <ul>
+    <li class="toctree-l3"><a class="reference internal" href="#exercicis">Exercicis:</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#exercicis">Exercicis:</a>
+        </ul>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#condicionals-if">Condicionals if</a>
+    <li class="toctree-l2"><a class="reference internal" href="#44-condicionals-if">4.4 Condicionals if</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#iteracions">Iteracions</a>
+    <li class="toctree-l2"><a class="reference internal" href="#45-iteracions">4.5 Iteracions</a>
     </li>
-    <li class="toctree-l2"><a class="reference internal" href="#funcions-de-programa">Funcions de programa</a>
+    <li class="toctree-l2"><a class="reference internal" href="#46-funcions-de-programa">4.6 Funcions de programa</a>
     </li>
     </ul>
                 </li>
@@ -127,7 +129,7 @@
 <p>Els scripts solen contenir tasques repetitives com per exemple realitzar còpies de seguretat, creació d'usuaris, obertura de sessions, ... </p>
 <p>Com la majoria de llenguatges de programació els scripts també tenen variables, funcions, estructures de control, execucions d'entrada i sortida, estructures de dades, ... </p>
 <p>Per entendre el seu funcionament ho farem amb una sèrie d'exercicis bàsics, per tant ens disposam a començar. </p>
-<h2 id="que-es-un-script">Què és un script?</h2>
+<h2 id="41-que-es-un-script">4.1 Què és un script?</h2>
 <p>Un <strong>script</strong>: </p>
 <ul>
 <li>És un document de texte i té l'extensió <code>.sh</code></li>
@@ -135,7 +137,7 @@
 <li>Per executar un script es fa amb l'instrucció <code>./nom-script</code></li>
 </ul>
 <p>Per fer els exercicis cream una carpeta "scripts" al directori home del nostre usuari.</p>
-<h2 id="primer-script-echo-hello-world">Primer script. echo "Hello world".</h2>
+<h2 id="42-primer-script-echo-hello-world">4.2 Primer script. echo "Hello world".</h2>
 <p>Feim un document "primerscript.sh" de texte i el seu contingut ha de ser </p>
 <p>|<code>#!/bin/sh # This is a comment!
 echo Hello World        # This is a comment, too!</code>|</p>
@@ -147,11 +149,11 @@ $ chmod 755 my-script.sh
 $ ./my-script.sh
 Hello World
 $</code></p>
-<h2 id="variables">Variables</h2>
+<h2 id="43-variables">4.3 Variables</h2>
 <p>Una variable és un contenidor de valors amb un nom. Aquest contenidor varia durant l'execució del programa. </p>
 <p>Observa el dibuix de programa durant l'execució dins el computador.</p>
 <p>Observam a la pàgina <a href="https://pythontutor.com/visualize.html#mode=edit">pythonTutor</a> la execució i gestió de variables dins memòria.</p>
-<h2 id="exercicis">Exercicis:</h2>
+<h3 id="exercicis">Exercicis:</h3>
 <p>A cada un dels scritps has de posar el teu nom i la data com a comentari. Per fer els exercicis pots consultar el <a href="https://www.shellscript.sh/variables1.html">tutorial de consulta sobre variables</a>.</p>
 <ol>
 <li>Fer un script que escrigui "Hello World".</li>
@@ -163,7 +165,7 @@ demani els operands per terminal. </li>
 <li>Fes un script que demani el nom d'un usuari i que mostri per pantalla la mida dels arxius del seu home.</li>
 <li>Posa tots els exercici anteriors com a exercici1.sh, exercici2.sh, ...</li>
 </ol>
-<h2 id="condicionals-if">Condicionals if</h2>
+<h2 id="44-condicionals-if">4.4 Condicionals if</h2>
 <p><code>if (⟨Condició⟩) {
     ⟨Instruccions_SÍ⟩
 } else {
@@ -172,8 +174,8 @@ demani els operands per terminal. </li>
 <p>El funcionament és senzill: Si es compleix la ⟨Condició⟩, s'executa el bloc d'⟨Instruccions_SÍ⟩; altrament, s'executa el bloc d'⟨Instruccions_NO⟩.</p>
 <p>Aquesta instrucció és útil alhora de controlar límits, comprovar passwords, crear camins de programa, etc.</p>
 <p><a href="https://www.shellscript.sh/">tutorial</a></p>
-<h2 id="iteracions">Iteracions</h2>
-<h2 id="funcions-de-programa">Funcions de programa</h2>
+<h2 id="45-iteracions">4.5 Iteracions</h2>
+<h2 id="46-funcions-de-programa">4.6 Funcions de programa</h2>
 <p>Les funcions són parts de codi que realitzen una tasca concreta. L'ús de funcions ajuda al programador a 
 controlar el codi del programa d'una manera més eficient.</p>
 <p>Una funció té varies parts:</p>
