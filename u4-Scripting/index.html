@@ -140,18 +140,23 @@
 <h2 id="42-primer-script-echo-hello-world">4.2 Primer script. echo "Hello world".</h2>
 <p>Feim un document "primerscript.sh" de texte i el seu contingut ha de ser </p>
 <pre><code>
-#!/bin/sh # This is a comment!
-echo Hello World        # This is a comment, too!
+#!/bin/sh 
+# This is a comment!
+echo Hello World        
+# This is a comment, too!
 
 </code></pre>
 <p>Per executar l'script hem de donar permisos d'execució a l'arxiu, l'instrucció </p>
 <p>| sudo chmod 755 primerscript.sh |</p>
-<p><code>$ echo '#!/bin/sh' &gt; my-script.sh
+<pre><code>
+$ echo '#!/bin/sh' &gt; my-script.sh
 $ echo 'echo Hello World' &gt;&gt; my-script.sh
 $ chmod 755 my-script.sh
 $ ./my-script.sh
 Hello World
-$</code></p>
+$
+
+</code></pre>
 <h2 id="43-variables">4.3 Variables</h2>
 <p>Una variable és un contenidor de valors amb un nom. Aquest contenidor varia durant l'execució del programa. </p>
 <p>Observa el dibuix de programa durant l'execució dins el computador.</p>
@@ -169,55 +174,57 @@ demani els operands per terminal. </li>
 <li>Posa tots els exercici anteriors com a exercici1.sh, exercici2.sh, ...</li>
 </ol>
 <h2 id="44-condicionals-if">4.4 Condicionals if</h2>
-<p><code>if (⟨Condició⟩) {
+<pre><code>
+if (⟨Condició⟩) {
     ⟨Instruccions_SÍ⟩
 } else {
     ⟨Instruccions_NO⟩
-}</code></p>
+}
+
+</code></pre>
 <p>El funcionament és senzill: Si es compleix la ⟨Condició⟩, s'executa el bloc d'⟨Instruccions_SÍ⟩; altrament, s'executa el bloc d'⟨Instruccions_NO⟩.</p>
 <p>Aquesta instrucció és útil alhora de controlar límits, comprovar passwords, crear camins de programa, etc.</p>
 <h3 id="exemples">Exemples</h3>
 <ol>
 <li>Volem saber si un número és positiu, negatiu o zero.</li>
 </ol>
-<pre><code>#!/bin/bash
-
-read -p &quot;Introdueix un número: &quot; numero
-
-if (( $numero &gt; 0 )); then
-    echo &quot;El número $numero és positiu.&quot;
-elif (( $numero &lt; 0 )); then
-    echo &quot;El número $numero és negatiu.&quot;
-else
-    echo &quot;El número és zero.&quot;
-fi
-</code></pre>
-<ol>
-<li>Volem saber si un usuari està connectat.
-`</li>
-</ol>
+<p>````</p>
 <h1 id="binbash">!/bin/bash</h1>
+<p>read -p "Introdueix un número: " numero</p>
+<p>if (( $numero &gt; 0 )); then
+    echo "El número $numero és positiu."
+elif (( $numero &lt; 0 )); then
+    echo "El número $numero és negatiu."
+else
+    echo "El número és zero."
+fi</p>
+<pre><code>
+2. Volem saber si un usuari està connectat.
+
+</code></pre>
+<h1 id="binbash_1">!/bin/bash</h1>
 <p>read -p "Introdueix el nom de l'usuari: " usuari</p>
 <p>if who | grep -q "^$usuari "; then
     echo "L'usuari $usuari està connectat."
 else
     echo "L'usuari $usuari no està connectat."
-fi`</p>
-<ol>
-<li>Volem saber si un número és parell o senar. </li>
-</ol>
-<p>` #!/bin/bash</p>
+fi</p>
+<pre><code>
+3. Volem saber si un número és parell o senar. 
+
+</code></pre>
+<h1 id="binbash_2">!/bin/bash</h1>
 <p>read -p "Introdueix un nombre: " nombre</p>
 <p>if (( $nombre % 2 == 0 )); then
     echo "El nombre $nombre és parell."
 else
     echo "El nombre $nombre és senar."
-fi´</p>
-<ol>
-<li>Saber si un fitxer existeix.</li>
-</ol>
-<p>`</p>
-<h1 id="binbash_1">!/bin/bash</h1>
+fi</p>
+<pre><code>
+4. Saber si un fitxer existeix.
+
+</code></pre>
+<h1 id="binbash_3">!/bin/bash</h1>
 <p>read -p "Introdueix la ruta del fitxer: " fitxer</p>
 <p>if [[ -e $fitxer ]]; then
     echo "El fitxer $fitxer existeix."
@@ -240,7 +247,7 @@ HAN DE CALCULAR SOBRE ELS SEUS PARÀMETRES.
 NO HAN D'IMPRIMIR PER PANTALLA NI DEMANAR RES S'AIXÒ S'ENCARREGA EL MAIN.</p>
 <p>EXEMPLE INCORRECTE:
 `</p>
-<h1 id="binbash_2">!/bin/bash</h1>
+<h1 id="binbash_4">!/bin/bash</h1>
 <h1 id="funcio-per-trobar-el-numero-major-entre-dos">Funció per trobar el número major entre dos</h1>
 <p>major() {
     if (( $1 &gt; $2 )); then
