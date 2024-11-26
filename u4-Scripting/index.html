@@ -94,6 +94,8 @@
     </li>
     <li class="toctree-l2"><a class="reference internal" href="#45-funcions-de-programa">4.5 Funcions de programa</a>
     </li>
+    <li class="toctree-l2"><a class="reference internal" href="#46-iteracions">4.6 Iteracions</a>
+    </li>
     </ul>
                 </li>
               </ul>
@@ -264,56 +266,62 @@ controlar el codi del programa d'una manera més eficient.</p>
 <p>LES FUNCIONS HAN DE TENIR UNA SOLA FUNCIÓ. 
 HAN DE CALCULAR SOBRE ELS SEUS PARÀMETRES.
 NO HAN D'IMPRIMIR PER PANTALLA NI DEMANAR RES S'AIXÒ S'ENCARREGA EL MAIN.</p>
-<p>EXEMPLE INCORRECTE:
-`</p>
-<h1 id="binbash">!/bin/bash</h1>
-<h1 id="funcio-per-trobar-el-numero-major-entre-dos">Funció per trobar el número major entre dos</h1>
-<p>major() {
+<p>EXEMPLE INCORRECTE:</p>
+<pre><code>
+#!/bin/bash
+
+#Funció per trobar el número major entre dos
+major() {
     if (( $1 &gt; $2 )); then
-        echo "El major entre $1 i $2 és: $1"
+        echo &quot;El major entre $1 i $2 és: $1&quot;
     elif (( $1 &lt; $2 )); then
-        echo "El major entre $1 i $2 és: $2"
+        echo &quot;El major entre $1 i $2 és: $2&quot;
     else
-        echo "Els números $1 i $2 són iguals."
+        echo &quot;Els números $1 i $2 són iguals.&quot;
     fi
-}</p>
-<h1 id="funcio-per-trobar-el-numero-menor-entre-dos">Funció per trobar el número menor entre dos</h1>
-<p>menor() {
+}
+
+#Funció per trobar el número menor entre dos
+menor() {
     if (( $1 &lt; $2 )); then
-        echo "El menor entre $1 i $2 és: $1"
+        echo &quot;El menor entre $1 i $2 és: $1&quot;
     elif (( $1 &gt; $2 )); then
-        echo "El menor entre $1 i $2 és: $2"
+        echo &quot;El menor entre $1 i $2 és: $2&quot;
     else
-        echo "Els números $1 i $2 són iguals."
+        echo &quot;Els números $1 i $2 són iguals.&quot;
     fi
-}</p>
-<h1 id="funcio-per-comprovar-si-el-primer-numero-es-multiple-del-segon">Funció per comprovar si el primer número és múltiple del segon</h1>
-<p>multiple() {
+}
+
+#Funció per comprovar si el primer número és múltiple del segon
+multiple() {
     if (( $2 == 0 )); then
-        echo "No es pot dividir per zero, no hi ha múltiple."
+        echo &quot;No es pot dividir per zero, no hi ha múltiple.&quot;
         return
-    fi</p>
-<pre><code>if (( $1 % $2 == 0 )); then
-    echo "$1 és múltiple de $2."
-else
-    echo "$1 no és múltiple de $2."
-fi
+    fi
+
+    if (( $1 % $2 == 0 )); then
+        echo &quot;$1 és múltiple de $2.&quot;
+    else
+        echo &quot;$1 no és múltiple de $2.&quot;
+    fi
+}
+
+#Entrada de dades
+read -p &quot;Introdueix el primer número: &quot; num1
+read -p &quot;Introdueix el segon número: &quot; num2
+
+#Crides a les funcions
+major &quot;$num1&quot; &quot;$num2&quot;
+menor &quot;$num1&quot; &quot;$num2&quot;
+multiple &quot;$num1&quot; &quot;$num2&quot;
+
 </code></pre>
-<p>}</p>
-<h1 id="entrada-de-dades">Entrada de dades</h1>
-<p>read -p "Introdueix el primer número: " num1
-read -p "Introdueix el segon número: " num2</p>
-<h1 id="crides-a-les-funcions">Crides a les funcions</h1>
-<p>major "$num1" "$num2"
-menor "$num1" "$num2"
-multiple "$num1" "$num2"
-`</p>
 <h2 id="46-iteracions">4.6 Iteracions</h2>
 <p>Una funció té varies parts:</p>
-<pre><code>- ** Nom de la funció **. Única dins la seva part de programa, identifica la tasca de la funció.
-- ** Paràmetres d'entrada **. Variables que es poden donar a la funció.
-- ** Instruccions ** de la funció.
-- ** Paràmetres de Sortida. ** El retorn d'una funció és una variable o conjunt de variables.
+<pre><code>- **Nom de la funció**. Única dins la seva part de programa, identifica la tasca de la funció.
+- **Paràmetres d'entrada**. Variables que es poden donar a la funció.
+- **Instruccions** de la funció.
+- **Paràmetres de Sortida**. El retorn d'una funció és una variable o conjunt de variables.
 </code></pre>
               
             </div>
