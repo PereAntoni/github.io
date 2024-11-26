@@ -229,11 +229,11 @@ controlar el codi del programa d'una manera més eficient.</p>
 <p>LES FUNCIONS HAN DE TENIR UNA SOLA FUNCIÓ. 
 HAN DE CALCULAR SOBRE ELS SEUS PARÀMETRES.
 NO HAN D'IMPRIMIR PER PANTALLA NI DEMANAR RES S'AIXÒ S'ENCARREGA EL MAIN.</p>
-<p>EXMPLE INCORRECTE:
+<p>EXEMPLE INCORRECTE:
 `</p>
 <h1 id="binbash_2">!/bin/bash</h1>
-<p>-Funció per trobar el número major entre dos
-major() {
+<h1 id="funcio-per-trobar-el-numero-major-entre-dos">Funció per trobar el número major entre dos</h1>
+<p>major() {
     if (( $1 &gt; $2 )); then
         echo "El major entre $1 i $2 és: $1"
     elif (( $1 &lt; $2 )); then
@@ -242,8 +242,8 @@ major() {
         echo "Els números $1 i $2 són iguals."
     fi
 }</p>
-<p>-Funció per trobar el número menor entre dos
-menor() {
+<h1 id="funcio-per-trobar-el-numero-menor-entre-dos">Funció per trobar el número menor entre dos</h1>
+<p>menor() {
     if (( $1 &lt; $2 )); then
         echo "El menor entre $1 i $2 és: $1"
     elif (( $1 &gt; $2 )); then
@@ -252,8 +252,8 @@ menor() {
         echo "Els números $1 i $2 són iguals."
     fi
 }</p>
-<p>-Funció per comprovar si el primer número és múltiple del segon
-multiple() {
+<h1 id="funcio-per-comprovar-si-el-primer-numero-es-multiple-del-segon">Funció per comprovar si el primer número és múltiple del segon</h1>
+<p>multiple() {
     if (( $2 == 0 )); then
         echo "No es pot dividir per zero, no hi ha múltiple."
         return
@@ -265,11 +265,11 @@ else
 fi
 </code></pre>
 <p>}</p>
-<p>-Entrada de dades
-read -p "Introdueix el primer número: " num1
+<h1 id="entrada-de-dades">Entrada de dades</h1>
+<p>read -p "Introdueix el primer número: " num1
 read -p "Introdueix el segon número: " num2</p>
-<p>-Crides a les funcions
-major "$num1" "$num2"
+<h1 id="crides-a-les-funcions">Crides a les funcions</h1>
+<p>major "$num1" "$num2"
 menor "$num1" "$num2"
 multiple "$num1" "$num2"
 `</p>
