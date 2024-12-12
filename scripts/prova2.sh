@@ -1,0 +1,1 @@
+echo "som un script"
