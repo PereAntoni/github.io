@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>u5 ServeiDNS - Serveis en Xarxa CFGM</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "u5 ServeiDNS";
+        var mkdocs_page_input_path = "u5-ServeiDNS.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Serveis en Xarxa CFGM
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">SERVEIS EN XARXA CFGM</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u1-conceptes-xarxes/">1. CONCEPTES SOBRE XARXES</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../exercicis-ipv4/">1.1. Exercicis ipv4</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u2-servei-ftp/">2. SERVEI FTP</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../preguntes-test/">2.1 Preguntes exemple</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u2-ftp-vsftpd/">2.2 Instal.lació vsFTPd</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u2-test-preguntes/">2.3 Preguntes test</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u3-servei-http/">3. SERVEI HTTP</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u4-Scripting/">4. SCRIPTS</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u4-practicaScript/">4.1 Pràctica Script</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u5-Practica-DNS/">5. Projectes SCRUM</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../errors-comuns/">Errors Comuns Apache</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../provaVue/">(provaVue)</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Serveis en Xarxa CFGM</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">u5 ServeiDNS</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aprenentatge i implementació del sistema DNS amb Scrum a l'aula</title>
+</head>
+<body>
+    <h1>Aprenentatge i implementació del sistema DNS amb Scrum a l'aula</h1>
+
+    <h2>Desenvolupaments</h2>
+    <p>Per implementar un sistema DNS, és fonamental entendre la seva estructura, funció i les tasques necessàries per gestionar-lo i implementar-lo. Els passos principals són els següents:</p>
+
+    <h3>Aprendre la jerarquia de DNS</h3>
+    <p>El sistema DNS funciona com una jerarquia distribuïda que inclou els següents nivells:</p>
+    <ul>
+        <li><strong>Arrel:</strong> Representada per un punt (.), és el nivell superior de la jerarquia DNS.</li>
+        <li><strong>Dominis de nivell superior (TLD):</strong> Com ara <code>.com</code>, <code>.org</code>, <code>.edu</code>, o <code>.cat</code>.</li>
+        <li><strong>Dominis de segon nivell:</strong> Noms registrats dins d'un TLD, com <code>projecte1.cat</code>.</li>
+        <li><strong>Subdominis:</strong> Particions d'un domini de segon nivell, com <code>aula.projecte1.cat</code>.</li>
+    </ul>
+    <p>Exemple: Quan un usuari escriu <code>www.exemple.com</code>, el DNS tradueix aquest nom a una adreça IP mitjançant la jerarquia.</p>
+
+    <h3>Aprendre les tasques de gestió d'un administrador de DNS</h3>
+    <p>Un administrador de DNS és responsable de:</p>
+    <ul>
+        <li>Configurar zones DNS i fitxers de zones per associar dominis a adreces IP.</li>
+        <li>Mantenir les dades DNS actualitzades i segures.</li>
+        <li>Fer còpies de seguretat i restauracions de configuracions.</li>
+        <li>Diagnosticar i solucionar problemes relacionats amb la resolució de noms.</li>
+    </ul>
+
+    <h3>Aprendre a implementar un DNS</h3>
+    <p>A l'aula, es pot aprendre a implementar un servidor DNS usant eines com BIND i Webmin:</p>
+    <ul>
+        <li><strong>BIND:</strong> Un dels servidors DNS més populars i flexibles, configurat manualment mitjançant fitxers de configuració.</li>
+        <li><strong>Webmin:</strong> Una interfície web per gestionar configuracions de BIND de manera visual i simplificada.</li>
+    </ul>
+
+    <h2>Implementació</h2>
+    <h3>Instal·lació de BIND9 i Webmin</h3>
+    <p>Per començar, cal instal·lar els paquets necessaris per al servidor DNS:</p>
+    <ul>
+        <li>Instal·lar BIND9: <code>sudo apt-get install bind9</code></li>
+        <li>Instal·lar Webmin: Seguir les instruccions de la <a href="https://www.webmin.com/">pàgina oficial de Webmin</a>.</li>
+    </ul>
+
+    <h3>Agregar dominis</h3>
+    <h4>Usant Webmin</h4>
+    <ol>
+        <li>Inicia sessió a Webmin des del navegador.</li>
+        <li>Anar a <strong>BIND DNS Server</strong> des del menú de serveis.</li>
+        <li>Seleccionar l'opció <strong>Create a new zone</strong>.</li>
+        <li>Introduir el nom del domini, per exemple, <code>projecte1.aula</code>, i configurar-lo com a zona principal.</li>
+        <li>Guardar els canvis i comprovar que la zona s'ha creat correctament.</li>
+    </ol>
+
+    <h4>Usant BIND</h4>
+    <ol>
+        <li>Editar el fitxer de configuració de zones, normalment <code>/etc/bind/named.conf.local</code>, i afegir:
+            <pre>
+zone "projecte1.aula" {
+    type master;
+    file "/etc/bind/db.projecte1.aula";
+};
+            </pre>
+        </li>
+        <li>Crear el fitxer de zona amb el següent contingut base:
+            <pre>
+$TTL 86400
+@   IN  SOA ns1.projecte1.aula. admin.projecte1.aula. (
+        2025010101 ; Serial
+        3600       ; Refresh
+        1800       ; Retry
+        1209600    ; Expire
+        86400 )    ; Minimum TTL
+@   IN  NS  ns1.projecte1.aula.
+ns1 IN  A   192.168.1.1
+            </pre>
+        </li>
+        <li>Reiniciar el servei BIND: <code>sudo systemctl restart bind9</code>.</li>
+    </ol>
+
+    <h3>Taula de comprovacions</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Comprovació</th>
+                <th>Com fer-ho</th>
+                <th>Esperat</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Comprovar la zona amb Webmin</td>
+                <td>Revisar l'opció de configuració de zones.</td>
+                <td>El domini apareix com a configurat.</td>
+            </tr>
+            <tr>
+                <td>Provar la resolució del domini</td>
+                <td><code>nslookup projecte1.aula</code></td>
+                <td>L'adreça IP corresponent es resol correctament.</td>
+            </tr>
+            <tr>
+                <td>Verificar amb BIND</td>
+                <td><code>sudo named-checkzone projecte1.aula /etc/bind/db.projecte1.aula</code></td>
+                <td>Cap error en la configuració.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Com fer una còpia de seguretat</h3>
+    <p>Per fer una còpia de seguretat de la configuració DNS:</p>
+    <ol>
+        <li>Copiar els fitxers de configuració:
+            <pre>
+sudo cp -r /etc/bind /path/to/backup/bind
+            </pre>
+        </li>
+        <li>Fer una còpia de seguretat de les zones creades:
+            <pre>
+sudo tar -cvzf bind-backup.tar.gz /etc/bind
+            </pre>
+        </li>
+        <li>Guardar la còpia de seguretat en un lloc segur.</li>
+    </ol>
+</body>
+</html>
+              
+            </div>
+          </div><footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
