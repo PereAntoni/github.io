@@ -165,14 +165,48 @@
         <li>Instal·lar Webmin: Seguir les instruccions de la <a href="https://www.webmin.com/">pàgina oficial de Webmin</a>.</li>
     </ul>
 
-    <h3>Agregar dominis</h3>
-    <h4>Usant Webmin</h4>
+    <h2>Agregar dominis amb Webmin</h2>
+    <h3>Instruccions detallades</h3>
+    <p>Webmin proporciona una interfície gràfica per gestionar zones DNS de manera visual i simplificada. A continuació es detallen els passos per agregar un domini:</p>
+
     <ol>
-        <li>Inicia sessió a Webmin des del navegador.</li>
-        <li>Anar a <strong>BIND DNS Server</strong> des del menú de serveis.</li>
-        <li>Seleccionar l'opció <strong>Create a new zone</strong>.</li>
-        <li>Introduir el nom del domini, per exemple, <code>projecte1.aula</code>, i configurar-lo com a zona principal.</li>
-        <li>Guardar els canvis i comprovar que la zona s'ha creat correctament.</li>
+        <li><strong>Accedir al servidor Webmin:</strong></li>
+        <p>Obre un navegador i escriu l'adreça URL del servidor Webmin (normalment <code>https://<IP_DEL_SERVIDOR>:10000</code>).</p>
+
+        <li><strong>Iniciar sessió:</strong></li>
+        <p>Escriu les teves credencials d'administrador per iniciar sessió.</p>
+
+        <li><strong>Anar al mòdul BIND DNS Server:</strong></li>
+        <p>Un cop dins de Webmin, segueix aquesta ruta des del menú principal:</p>
+        <ul>
+            <li><strong>Servers</strong> (al menú lateral esquerre).</li>
+            <li>Selecciona <strong>BIND DNS Server</strong>.</li>
+        </ul>
+        <p><em>(Si no veus aquesta opció, assegura't que BIND està instal·lat i activat al servidor.)</em></p>
+
+        <li><strong>Crear una nova zona:</strong></li>
+        <ol>
+            <li>Fes clic a l'opció <strong>Create a new zone</strong>.</li>
+            <li>Selecciona <strong>Master Zone</strong> com a tipus de zona.</li>
+            <li>Introdueix el nom del domini, per exemple, <code>projecte1.aula</code>.</li>
+            <li>Al camp "File for zone", especifica un nom de fitxer per guardar la configuració (per exemple, <code>db.projecte1.aula</code>).</li>
+            <li>Clica a <strong>Create</strong> per guardar la configuració.</li>
+        </ol>
+
+        <li><strong>Afegir registres DNS:</strong></li>
+        <p>Després de crear la zona, es mostren opcions per afegir registres DNS (A, CNAME, MX, etc.).</p>
+        <ol>
+            <li>Fes clic a <strong>Address</strong> per afegir un registre A.</li>
+            <li>Introdueix el nom del subdomini, per exemple, <code>www</code>, i l'adreça IP corresponent, per exemple, <code>192.168.1.1</code>.</li>
+            <li>Repeteix el procés per afegir altres registres com <code>NS</code>, <code>MX</code>, etc.</li>
+            <li>Fes clic a <strong>Save</strong> després d'afegir cada registre.</li>
+        </ol>
+
+        <li><strong>Comprovar i aplicar els canvis:</strong></li>
+        <p>Fes clic a <strong>Apply Configuration</strong> per reiniciar BIND i aplicar els canvis.</p>
+
+        <li><strong>Comprovar la configuració:</strong></li>
+        <p>Utilitza eines com <code>nslookup</code> o <code>dig</code> des del terminal per comprovar que el domini resol correctament.</p>
     </ol>
 
     <h4>Usant BIND</h4>
