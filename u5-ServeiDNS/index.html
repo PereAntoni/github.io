@@ -127,7 +127,42 @@
 </head>
 <body>
     <h1>Servei DNS.</h1>
+    <h1>Què és el servei DNS?</h1>
+    <p>
+        El servei DNS (Domain Name System) és un sistema que tradueix els noms de domini (com ara 
+        <strong>www.gimnesia.net</strong>) en adreces IP comprensibles per als ordinadors (per exemple, <strong>192.168.1.1</strong>). 
+        Això permet als usuaris accedir a llocs web utilitzant noms fàcils de recordar, en lloc d'adreces IP numèriques.
+    </p>
+    <p>
+        Quan escrius una URL al navegador, el procés segueix els passos següents:
+    </p>
+    <ol>
+        <li>El navegador envia una consulta DNS per obtenir l'adreça IP associada al nom de domini.</li>
+        <li>El servidor DNS respon amb l'adreça IP corresponent.</li>
+        <li>El navegador utilitza aquesta adreça IP per connectar-se al servidor web i mostrar el contingut.</li>
+    </ol>
 
+    <h2>Exemples de connexió</h2>
+
+    <h3>Exemple 1: Resolució del domini</h3>
+    <pre>
+    1. L'usuari escriu "www.gimnesia.net" al navegador.
+    2. El sistema operatiu consulta el servidor DNS configurat.
+    3. El servidor DNS respon amb l'adreça IP: 203.0.113.15.
+    4. El navegador estableix una connexió amb el servidor web mitjançant aquesta adreça IP.
+    </pre>
+
+    <h3>Exemple 2: Traça de la connexió</h3>
+    <pre>
+    1. Ordre des del terminal: 
+       tracert www.gimnesia.net (Windows)
+       o 
+       traceroute www.gimnesia.net (Linux/Mac).
+    2. Resultat:
+       salt 1: 192.168.1.1 -> Router local.
+       salt 2: 10.0.0.1 -> Proveïdor d'Internet.
+       salt 3: 203.0.113.15 -> Servidor final de www.gimnesia.net.
+    </pre>
     <h2>Desenvolupaments</h2>
     <p>Per implementar un sistema DNS, és fonamental entendre la seva estructura, funció i les tasques necessàries per gestionar-lo i implementar-lo. Els passos principals són els següents:</p>
 
