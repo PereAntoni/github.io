@@ -126,8 +126,7 @@
     <title>Servei DNS.</title>
 </head>
 <body>
-    <h1>Servei DNS.</h1>
-    <h1>Què és el servei DNS?</h1>
+    <h2>Què és el servei DNS?</h2>
     <p>
         El servei DNS (Domain Name System) és un sistema que tradueix els noms de domini (com ara 
         <strong>www.gimnesia.net</strong>) en adreces IP comprensibles per als ordinadors (per exemple, <strong>192.168.1.1</strong>). 
@@ -142,9 +141,9 @@
         <li>El navegador utilitza aquesta adreça IP per connectar-se al servidor web i mostrar el contingut.</li>
     </ol>
 
-    <h2>Exemples de connexió</h2>
+    <h3>Exemples de connexió</h3>
 
-    <h3>Exemple 1: Resolució del domini</h3>
+    <h4>Exemple 1: Resolució del domini</h4>
     <pre>
     1. L'usuari escriu "www.gimnesia.net" al navegador.
     2. El sistema operatiu consulta el servidor DNS configurat.
@@ -152,7 +151,7 @@
     4. El navegador estableix una connexió amb el servidor web mitjançant aquesta adreça IP.
     </pre>
 
-    <h3>Exemple 2: Traça de la connexió</h3>
+    <h4>Exemple 2: Traça de la connexió</h4>
     <pre>
     1. Ordre des del terminal: 
        tracert www.gimnesia.net (Windows)
@@ -163,10 +162,10 @@
        salt 2: 10.0.0.1 -> Proveïdor d'Internet.
        salt 3: 203.0.113.15 -> Servidor final de www.gimnesia.net.
     </pre>
-    <h2>Desenvolupaments</h2>
+    <h3>Desenvolupaments</h3>
     <p>Per implementar un sistema DNS, és fonamental entendre la seva estructura, funció i les tasques necessàries per gestionar-lo i implementar-lo. Els passos principals són els següents:</p>
 
-    <h3>Jerarquia de DNS</h3>
+    <h4>Jerarquia de DNS</h4>
     <p>El sistema DNS funciona com una jerarquia distribuïda que inclou els següents nivells:</p>
     <ul>
         <li><strong>Arrel:</strong> Representada per un punt (.), és el nivell superior de la jerarquia DNS.</li>
@@ -185,23 +184,22 @@
         <li>Diagnosticar i solucionar problemes relacionats amb la resolució de noms.</li>
     </ul>
 
-    <h3>Aprendre a implementar un DNS</h3>
+    <h4>Aprendre a implementar un DNS</h4>
     <p>A l'aula, es pot aprendre a implementar un servidor DNS usant eines com BIND i Webmin:</p>
     <ul>
         <li><strong>BIND:</strong> Un dels servidors DNS més populars i flexibles, configurat manualment mitjançant fitxers de configuració.</li>
         <li><strong>Webmin:</strong> Una interfície web per gestionar configuracions de BIND de manera visual i simplificada.</li>
     </ul>
 
-    <h2>Implementació</h2>
-    <h3>Instal·lació de BIND9 i Webmin</h3>
+    <h3>Implementació</h3>
+    <h4>Instal·lació de BIND9 i Webmin</h4>
     <p>Per començar, cal instal·lar els paquets necessaris per al servidor DNS:</p>
     <ul>
         <li>Instal·lar BIND9: <code>sudo apt-get install bind9</code></li>
         <li>Instal·lar Webmin: Seguir les instruccions de la <a href="https://www.webmin.com/">pàgina oficial de Webmin</a>.</li>
     </ul>
 
-    <h2>Agregar dominis amb Webmin</h2>
-    <h3>Instruccions detallades</h3>
+    <h3>Agregar dominis amb Webmin</h3>
     <p>Webmin proporciona una interfície gràfica per gestionar zones DNS de manera visual i simplificada. A continuació es detallen els passos per agregar un domini:</p>
 
     <ol>
@@ -244,7 +242,7 @@
         <p>Utilitza eines com <code>nslookup</code> o <code>dig</code> des del terminal per comprovar que el domini resol correctament.</p>
     </ol>
 
-    <h4>Usant BIND</h4>
+    <h3>Agregar dominis usant BIND</h3>
     <ol>
         <li>Editar el fitxer de configuració de zones, normalment <code>/etc/bind/named.conf.local</code>, i afegir:
             <pre>
