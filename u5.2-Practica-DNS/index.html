@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>4.1 Pràctica Script - Serveis en Xarxa CFGM</title>
+    <title>5.2 Projectes SCRUM - Serveis en Xarxa CFGM</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "4.1 Pr\u00e0ctica Script";
-        var mkdocs_page_input_path = "u4-practicaScript.md";
+        var mkdocs_page_name = "5.2 Projectes SCRUM";
+        var mkdocs_page_input_path = "u5.2-Practica-DNS.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -75,20 +75,8 @@
                 <li class="toctree-l1"><a class="reference internal" href="../u4-Scripting/">4. SCRIPTS</a>
                 </li>
               </ul>
-              <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">4.1 Pràctica Script</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#descripcio">Descripció</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#valoracions">Valoracions</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#ampliacions">Ampliacions</a>
-        <ul>
-    <li class="toctree-l3"><a class="reference internal" href="#entrega">Entrega</a>
-    </li>
-        </ul>
-    </li>
-    </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u4-practicaScript/">4.1 Pràctica Script</a>
                 </li>
               </ul>
               <ul>
@@ -99,8 +87,8 @@
                 <li class="toctree-l1"><a class="reference internal" href="../u5.1-ServeiDNS-test/">5.1 Test Servei DNS</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../u5.2-Practica-DNS/">5.2 Projectes SCRUM</a>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">5.2 Projectes SCRUM</a>
                 </li>
               </ul>
               <ul>
@@ -125,7 +113,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">4.1 Pràctica Script</li>
+      <li class="breadcrumb-item active">5.2 Projectes SCRUM</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -134,83 +122,141 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="practica-script">PRÀCTICA SCRIPT</h1>
-<p>La pràctica consisteix en el joc endevina nombre. La màquina "pensa" un nombre i l'usuari l'ha d'endevinar.</p>
-<h2 id="descripcio">Descripció</h2>
-<ol>
-<li>Pantalla on es pot iniciar/sortir del joc.</li>
-<li>Pantalla on es demana el nom del jugador.</li>
-<li>Comença partida<ol>
-<li>El programa genera un nombre 'pensat' entre 0 i 100.</li>
-<li>L'usuari escriu un nombre 'x' entre 1 i 99.</li>
-<li>El programa contesta si és més alt o més baix del nombre 'pensat'.</li>
-<li>El programa compara si 'x' és igual a 'pensat'.<ol>
-<li>Si x=pensat segueix al següent punt</li>
-<li>Sino: pasa al punt 2</li>
-</ol>
-</li>
-</ol>
-</li>
-<li>Pantalla Continuar o acabar.</li>
-</ol>
-<h2 id="valoracions">Valoracions</h2>
-<ol>
-<li>Ús correcte i sòlid de funcions i programa main</li>
-<li>Comentaris de cada una de les funcions, variables i main</li>
-<li>Identació del codi</li>
-<li>Disseny d'interfície.</li>
-<li>Ampliacions</li>
-</ol>
-<h2 id="ampliacions">Ampliacions</h2>
-<p>Feim les ampliacions per ordre per tal de tenir les puntutacions adequades al nostre score d'assignatura ;)</p>
-<ol>
-<li>Al final mostrar el rànquing. Usar la instrucció echo que ens guardi dins un arxiu ranquing.txt.</li>
-<li>Mostra IP del servidor. </li>
-<li>Fes còpia de seguretat, afegir una opció al menú principal que sigui crear còpia de seguretat.<ul>
-<li>Crear carpeta copia-ranquings.</li>
-<li>Dins "copia-ranquings" fer còpia del ranquing amb el nom la data i hora actual.</li>
-<li>Copiar ranquing a FTP gimnèsia.</li>
-</ul>
-</li>
-<li>Demanar el rang de nombres que pensa la màquina la màquina.</li>
-<li>A cada torn Mostrar per pantalla tots els nombres que ha provat l'usuari.</li>
-<li>
-<p>Menú de control de partides (vols jugar, vols sortir, veure ranquing).</p>
-</li>
-<li>
-<p>Crear interfície estàtica usant ús de 'clear'. Per crear l'interfície pots usar la pàgina <a href="http://patorjk.com/software/taag/#p=display&amp;h=0&amp;v=0&amp;c=echo&amp;f=Train&amp;t=***%0AJOC">link</a>.</p>
-</li>
-</ol>
-<h3 id="entrega">Entrega</h3>
-<p>S'han d'entregar tres documents, el codi, document de proves i presentació on es mostra l'arquitectura del programa.</p>
-<ol>
-<li>Document: <ul>
-<li>Introducció a les Explicació del programa. </li>
-<li>Fases de programa. Cada una amb una breu explicació dels objectius aconseguits, mostres del codi.</li>
-<li>Proves de cada fase.</li>
-<li>Adjuntam enllaços al codi.</li>
-</ul>
-</li>
-<li>Codi: <ul>
-<li>Es presenten totes les fases del programa.</li>
-<li>S'han d'ajuntar les versions del programa dins d'un arxiu comprimit.</li>
-<li>En cas d'emprar git es pot usar el repositori com enllaç.</li>
-</ul>
-</li>
-<li>Presentació:<ul>
-<li>Introducció breu</li>
-<li>Aquitectura del programa en forma d'esquema. (variables, instruccions, condicions, ...)</li>
-<li>Mostres del programa</li>
-<li>Proves principals.</li>
-</ul>
-</li>
-</ol>
+                <!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agile Scrum</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #bdc3c7;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #ecf0f1;
+        }
+    </style>
+</head>
+<body>
+    <h1>Introducció a Agile Scrum</h1>
+    <p>Scrum és un marc de treball dins de la metodologia Agile que se centra en la col·laboració, el treball iteratiu i la millora contínua. Es fa servir per gestionar projectes complexos i es basa en rols, esdeveniments i artefactes específics.</p>
+
+    <h2>Principals Rols en Scrum</h2>
+    <ul>
+        <li><strong>Scrum Master:</strong> Facilita el procés Scrum, ajuda l'equip a eliminar obstacles i assegura que el procés es segueixi correctament.</li>
+        <li><strong>Product Owner:</strong> Responsable de maximitzar el valor del producte i gestionar el Backlog del Producte.</li>
+        <li><strong>Equip de Desenvolupament:</strong> Un grup autònom de professionals que treballen junts per crear un increment funcional del producte.</li>
+    </ul>
+
+    <h2>Esdeveniments en Scrum</h2>
+    <ul>
+        <li><strong>Sprint:</strong> Un període de temps (normalment de 2 a 4 setmanes) en què l'equip desenvolupa un increment del producte.</li>
+        <li><strong>Planificació del Sprint:</strong> Reunió per decidir què treballarà l'equip durant el Sprint.</li>
+        <li><strong>Scrum Diari:</strong> Reunió diària curta per revisar el progrés i ajustar el pla si cal.</li>
+        <li><strong>Revisió del Sprint:</strong> Presentació de l'increment als stakeholders.</li>
+        <li><strong>Retrospectiva del Sprint:</strong> Reflexió per millorar en el següent Sprint.</li>
+    </ul>
+
+    <h2>Artefactes en Scrum</h2>
+    <ul>
+        <li><strong>Product Backlog:</strong> Una llista prioritzada de tot el que s'ha de fer en el projecte.</li>
+        <li><strong>Sprint Backlog:</strong> Una llista d'ítems seleccionats del Product Backlog per completar en un Sprint.</li>
+        <li><strong>Increment:</strong> El resultat funcional i entregable d'un Sprint.</li>
+    </ul>
+
+    <h2>Exemple de Registre de Projecte</h2>
+
+    <h3>Product Backlog</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Descripció</th>
+                <th>Prioritat</th>
+                <th>Estat</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Crear la pàgina d'inici</td>
+                <td>Alta</td>
+                <td>Pendent</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Afegir funcionalitat de cerca</td>
+                <td>Mitjana</td>
+                <td>Pendent</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Implementar la base de dades</td>
+                <td>Alta</td>
+                <td>En procés</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Sprint Backlog</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Tasca</th>
+                <th>Assignat a</th>
+                <th>Estat</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1.1</td>
+                <td>Dissenyar el layout de la pàgina d'inici</td>
+                <td>Maria</td>
+                <td>Completat</td>
+            </tr>
+            <tr>
+                <td>1.2</td>
+                <td>Programar el HTML de la pàgina d'inici</td>
+                <td>Joan</td>
+                <td>En procés</td>
+            </tr>
+            <tr>
+                <td>2.1</td>
+                <td>Escriure el codi de la funcionalitat de cerca</td>
+                <td>Anna</td>
+                <td>Pendent</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h3>Increment del Sprint</h3>
+    <p>En aquest Sprint, l'increment inclou el layout complet de la pàgina d'inici i una funcionalitat parcial de la base de dades.</p>
+</body>
+</html>
               
             </div>
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
-        <a href="../u4-Scripting/" class="btn btn-neutral float-left" title="4. SCRIPTS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../u5-ServeiDNS/" class="btn btn-neutral float-right" title="5. SERVEI DNS">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../u5.1-ServeiDNS-test/" class="btn btn-neutral float-left" title="5.1 Test Servei DNS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../errors-comuns/" class="btn btn-neutral float-right" title="Errors Comuns Apache">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -233,10 +279,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
-      <span><a href="../u4-Scripting/" style="color: #fcfcfc">&laquo; Previous</a></span>
+      <span><a href="../u5.1-ServeiDNS-test/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../u5-ServeiDNS/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../errors-comuns/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>

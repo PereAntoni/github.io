@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>5.1 Projectes SCRUM - Serveis en Xarxa CFGM</title>
+    <title>5.1 Test Servei DNS - Serveis en Xarxa CFGM</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "5.1 Projectes SCRUM";
-        var mkdocs_page_input_path = "u5-Practica-DNS.md";
+        var mkdocs_page_name = "5.1 Test Servei DNS";
+        var mkdocs_page_input_path = "u5.1-ServeiDNS-test.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -84,7 +84,11 @@
                 </li>
               </ul>
               <ul class="current">
-                <li class="toctree-l1 current"><a class="reference internal current" href="#">5.1 Projectes SCRUM</a>
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">5.1 Test Servei DNS</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u5.2-Practica-DNS/">5.2 Projectes SCRUM</a>
                 </li>
               </ul>
               <ul>
@@ -109,7 +113,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">5.1 Projectes SCRUM</li>
+      <li class="breadcrumb-item active">5.1 Test Servei DNS</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -123,128 +127,100 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Agile Scrum</title>
+    <title>Test sobre DNS</title>
     <style>
         body {
             font-family: Arial, sans-serif;
             margin: 20px;
             line-height: 1.6;
         }
-        h1, h2 {
-            color: #2c3e50;
+        h1 {
+            color: #007BFF;
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
+        .question {
+            margin-bottom: 20px;
         }
-        table, th, td {
-            border: 1px solid #bdc3c7;
-        }
-        th, td {
+        .result {
+            margin-top: 20px;
             padding: 10px;
-            text-align: left;
-        }
-        th {
-            background-color: #ecf0f1;
+            border: 1px solid #ccc;
+            background-color: #f9f9f9;
         }
     </style>
 </head>
 <body>
-    <h1>Introducció a Agile Scrum</h1>
-    <p>Scrum és un marc de treball dins de la metodologia Agile que se centra en la col·laboració, el treball iteratiu i la millora contínua. Es fa servir per gestionar projectes complexos i es basa en rols, esdeveniments i artefactes específics.</p>
+    <h1>Test sobre DNS</h1>
+    <form id="dnsTest">
+        <!-- Preguntes -->
+        <div class="question">
+            <p><strong>1. Què significa l'acrònim DNS?</strong></p>
+            <label><input type="radio" name="q1" value="a"> Domain Number System</label><br>
+            <label><input type="radio" name="q1" value="b"> Domain Name System</label><br>
+            <label><input type="radio" name="q1" value="c"> Digital Network System</label><br>
+            <label><input type="radio" name="q1" value="d"> Data Name Server</label>
+        </div>
+        <div class="question">
+            <p><strong>2. Quina és la funció principal del DNS?</strong></p>
+            <label><input type="radio" name="q2" value="a"> Tradueix adreces IP en noms de domini</label><br>
+            <label><input type="radio" name="q2" value="b"> Tradueix noms de domini en adreces IP</label><br>
+            <label><input type="radio" name="q2" value="c"> Emmagatzema pàgines web</label><br>
+            <label><input type="radio" name="q2" value="d"> Proporciona serveis de correu electrònic</label>
+        </div>
+        <div class="question">
+            <p><strong>3. Què és un servidor DNS autoritatiu?</strong></p>
+            <label><input type="radio" name="q3" value="a"> Un servidor que emmagatzema còpies de seguretat de dades</label><br>
+            <label><input type="radio" name="q3" value="b"> Un servidor que conté la informació oficial sobre un domini específic</label><br>
+            <label><input type="radio" name="q3" value="c"> Un servidor que proporciona accés a internet</label><br>
+            <label><input type="radio" name="q3" value="d"> Un servidor que gestiona les connexions de xarxa locals</label>
+        </div>
+        <!-- Continua amb les preguntes 4-15 seguint el mateix format -->
+        <button type="button" onclick="checkAnswers()">Comprova les respostes</button>
+    </form>
+    <div class="result" id="result"></div>
 
-    <h2>Principals Rols en Scrum</h2>
-    <ul>
-        <li><strong>Scrum Master:</strong> Facilita el procés Scrum, ajuda l'equip a eliminar obstacles i assegura que el procés es segueixi correctament.</li>
-        <li><strong>Product Owner:</strong> Responsable de maximitzar el valor del producte i gestionar el Backlog del Producte.</li>
-        <li><strong>Equip de Desenvolupament:</strong> Un grup autònom de professionals que treballen junts per crear un increment funcional del producte.</li>
-    </ul>
+    <script>
+        function checkAnswers() {
+            const correctAnswers = {
+                q1: 'b',
+                q2: 'b',
+                q3: 'b',
+                q4: 'b',
+                q5: 'c',
+                q6: 'b',
+                q7: 'b',
+                q8: 'b',
+                q9: 'a',
+                q10: 'b',
+                q11: 'a',
+                q12: 'b',
+                q13: 'c',
+                q14: 'd',
+                q15: 'a'
+            };
 
-    <h2>Esdeveniments en Scrum</h2>
-    <ul>
-        <li><strong>Sprint:</strong> Un període de temps (normalment de 2 a 4 setmanes) en què l'equip desenvolupa un increment del producte.</li>
-        <li><strong>Planificació del Sprint:</strong> Reunió per decidir què treballarà l'equip durant el Sprint.</li>
-        <li><strong>Scrum Diari:</strong> Reunió diària curta per revisar el progrés i ajustar el pla si cal.</li>
-        <li><strong>Revisió del Sprint:</strong> Presentació de l'increment als stakeholders.</li>
-        <li><strong>Retrospectiva del Sprint:</strong> Reflexió per millorar en el següent Sprint.</li>
-    </ul>
+            const form = document.getElementById('dnsTest');
+            let score = 0;
+            let total = Object.keys(correctAnswers).length;
 
-    <h2>Artefactes en Scrum</h2>
-    <ul>
-        <li><strong>Product Backlog:</strong> Una llista prioritzada de tot el que s'ha de fer en el projecte.</li>
-        <li><strong>Sprint Backlog:</strong> Una llista d'ítems seleccionats del Product Backlog per completar en un Sprint.</li>
-        <li><strong>Increment:</strong> El resultat funcional i entregable d'un Sprint.</li>
-    </ul>
+            for (let question in correctAnswers) {
+                const answer = form[question]?.value;
+                if (answer === correctAnswers[question]) {
+                    score++;
+                }
+            }
 
-    <h2>Exemple de Registre de Projecte</h2>
+            const resultDiv = document.getElementById('result');
+            resultDiv.innerHTML = `<p>Has encertat <strong>${score}</strong> de <strong>${total}</strong> preguntes.</p>`;
 
-    <h3>Product Backlog</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Descripció</th>
-                <th>Prioritat</th>
-                <th>Estat</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>Crear la pàgina d'inici</td>
-                <td>Alta</td>
-                <td>Pendent</td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td>Afegir funcionalitat de cerca</td>
-                <td>Mitjana</td>
-                <td>Pendent</td>
-            </tr>
-            <tr>
-                <td>3</td>
-                <td>Implementar la base de dades</td>
-                <td>Alta</td>
-                <td>En procés</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h3>Sprint Backlog</h3>
-    <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Tasca</th>
-                <th>Assignat a</th>
-                <th>Estat</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1.1</td>
-                <td>Dissenyar el layout de la pàgina d'inici</td>
-                <td>Maria</td>
-                <td>Completat</td>
-            </tr>
-            <tr>
-                <td>1.2</td>
-                <td>Programar el HTML de la pàgina d'inici</td>
-                <td>Joan</td>
-                <td>En procés</td>
-            </tr>
-            <tr>
-                <td>2.1</td>
-                <td>Escriure el codi de la funcionalitat de cerca</td>
-                <td>Anna</td>
-                <td>Pendent</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h3>Increment del Sprint</h3>
-    <p>En aquest Sprint, l'increment inclou el layout complet de la pàgina d'inici i una funcionalitat parcial de la base de dades.</p>
+            if (score === total) {
+                resultDiv.innerHTML += `<p>Excel·lent! Has respost totes les preguntes correctament.</p>`;
+            } else if (score >= total / 2) {
+                resultDiv.innerHTML += `<p>Bona feina! Però pots millorar en algunes preguntes.</p>`;
+            } else {
+                resultDiv.innerHTML += `<p>Segueix practicant, segur que milloraràs!</p>`;
+            }
+        }
+    </script>
 </body>
 </html>
               
@@ -252,7 +228,7 @@
           </div><footer>
     <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
         <a href="../u5-ServeiDNS/" class="btn btn-neutral float-left" title="5. SERVEI DNS"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-        <a href="../errors-comuns/" class="btn btn-neutral float-right" title="Errors Comuns Apache">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../u5.2-Practica-DNS/" class="btn btn-neutral float-right" title="5.2 Projectes SCRUM">Next <span class="icon icon-circle-arrow-right"></span></a>
     </div>
 
   <hr/>
@@ -278,7 +254,7 @@
       <span><a href="../u5-ServeiDNS/" style="color: #fcfcfc">&laquo; Previous</a></span>
     
     
-      <span><a href="../errors-comuns/" style="color: #fcfcfc">Next &raquo;</a></span>
+      <span><a href="../u5.2-Practica-DNS/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
