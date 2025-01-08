@@ -173,7 +173,49 @@
             <label><input type="radio" name="q3" value="c"> Un servidor que proporciona accés a internet</label><br>
             <label><input type="radio" name="q3" value="d"> Un servidor que gestiona les connexions de xarxa locals</label>
         </div>
-        <!-- Continua amb les preguntes 4-15 seguint el mateix format -->
+        <div class="question">
+            <p><strong>4. Què és un servidor de noms recursiu?</strong></p>
+            <label><input type="radio" name="q4" value="a"> Un servidor que només respon a consultes internes</label><br>
+            <label><input type="radio" name="q4" value="b"> Un servidor que busca la resposta a una consulta DNS en nom del client</label><br>
+            <label><input type="radio" name="q4" value="c"> Un servidor que emmagatzema pàgines web</label><br>
+            <label><input type="radio" name="q4" value="d"> Un servidor que gestiona les adreces IP públiques</label>
+        </div>
+        <div class="question">
+            <p><strong>5. Quina és la primera etapa en la resolució d'un nom de domini?</strong></p>
+            <label><input type="radio" name="q5" value="a"> Consultar el servidor DNS autoritatiu</label><br>
+            <label><input type="radio" name="q5" value="b"> Consultar el servidor de noms recursiu</label><br>
+            <label><input type="radio" name="q5" value="c"> Consultar el servidor de noms arrel</label><br>
+            <label><input type="radio" name="q5" value="d"> Consultar la memòria cau local</label>
+        </div>
+        <div class="question">
+            <p><strong>6. Què és un servidor de noms arrel?</strong></p>
+            <label><input type="radio" name="q6" value="a"> Un servidor que conté informació sobre tots els dominis existents</label><br>
+            <label><input type="radio" name="q6" value="b"> Un servidor que redirigeix les consultes als servidors de dominis de nivell superior (TLD)</label><br>
+            <label><input type="radio" name="q6" value="c"> Un servidor que emmagatzema les pàgines web més populars</label><br>
+            <label><input type="radio" name="q6" value="d"> Un servidor que gestiona les connexions de xarxa locals</label>
+        </div>
+        <div class="question">
+            <p><strong>7. Què és un domini de nivell superior (TLD)?</strong></p>
+            <label><input type="radio" name="q7" value="a"> La part inicial d'un nom de domini</label><br>
+            <label><input type="radio" name="q7" value="b"> La part final d'un nom de domini, com ara .com, .org, .net</label><br>
+            <label><input type="radio" name="q7" value="c"> Un subdomini dins d'un domini principal</label><br>
+            <label><input type="radio" name="q7" value="d"> Un nom de domini que no està registrat</label>
+        </div>
+        <div class="question">
+            <p><strong>8. Quina és la funció d'un servidor TLD?</strong></p>
+            <label><input type="radio" name="q8" value="a"> Emmagatzemar les pàgines web associades a un domini</label><br>
+            <label><input type="radio" name="q8" value="b"> Redirigir les consultes als servidors DNS autoritatius per a un domini específic</label><br>
+            <label><input type="radio" name="q8" value="c"> Proporcionar serveis de correu electrònic per a un domini</label><br>
+            <label><input type="radio" name="q8" value="d"> Gestionar les connexions de xarxa locals</label>
+        </div>
+        <div class="question">
+            <p><strong>9. Què és la memòria cau DNS?</strong></p>
+            <label><input type="radio" name="q9" value="a"> Un emmagatzematge temporal de les respostes a consultes DNS per accelerar futures sol·licituds</label><br>
+            <label><input type="radio" name="q9" value="b"> Un registre permanent de totes les consultes DNS realitzades</label><br>
+            <label><input type="radio" name="q9" value="c"> Un llistat de tots els dominis disponibles a internet</label><br>
+            <label><input type="radio" name="q9" value="d"> Un sistema de seguretat per protegir les consultes DNS</label>
+        </div>
+        <!-- Continua amb la resta de preguntes fins a 15 -->
         <button type="button" onclick="checkAnswers()">Comprova les respostes</button>
     </form>
     <div class="result" id="result"></div>
