@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>PRÀCTICA: INSTALACIÓ D'UN SERVEIDOR APACHE SOBRE UNA MÀQUINA VIRTUAL. - Serveis en Xarxa CFGM</title>
+    <title>5.3 Sprints de la pràctica - Serveis en Xarxa CFGM</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "PR\u00c0CTICA: INSTALACI\u00d3 D\u0027UN SERVEIDOR APACHE SOBRE UNA M\u00c0QUINA VIRTUAL.";
-        var mkdocs_page_input_path = "u3-prt-apache2.md";
+        var mkdocs_page_name = "5.3 Sprints de la pr\u00e0ctica";
+        var mkdocs_page_input_path = "u5.3-Practica-sprints.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -91,8 +91,12 @@
                 <li class="toctree-l1"><a class="reference internal" href="../u5.2-Practica-DNS/">5.2 Projectes SCRUM</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../u5.3-Practica-sprints/">5.3 Sprints de la pràctica</a>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">5.3 Sprints de la pràctica</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#configuracio-dels-dispositius">Configuració dels dispositius</a>
+    </li>
+    </ul>
                 </li>
               </ul>
               <ul>
@@ -117,7 +121,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">PRÀCTICA: INSTALACIÓ D'UN SERVEIDOR APACHE SOBRE UNA MÀQUINA VIRTUAL.</li>
+      <li class="breadcrumb-item active">5.3 Sprints de la pràctica</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -126,56 +130,75 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="practica-instalacio-dun-serveidor-apache-sobre-una-maquina-virtual">PRÀCTICA: INSTALACIÓ D'UN SERVEIDOR APACHE SOBRE UNA MÀQUINA VIRTUAL.</h1>
-<h2 id="caracteristiques-de-la-practica">Característiques de la pràctica</h2>
-<p>Volem instalar un servidor de http sobre la màquina virtual del nostre ordinador. Tendrà les característiques:
-1. El servidor és un apache2
-2. Està muntat sobre una maquina virtual al virtual box
-3. Ha de ser accessible dins la xarxa d'aula. Actualment hem fet una distribució de 10.0.100.X+1/16
-4. Cream les màquines usant [vagrant]https://developer.hashicorp.com/vagrant/docs.</p>
-<h2 id="instruccions-per-realitzar-la-practica">Instruccions per realitzar la pràctica</h2>
-<p>Per fer l'instal·lació seguim el manual de [devopscube]https://devopscube.com/vagrant-tutorial-beginners/.</p>
-<p>S'ha triat aquest manual per que conté les proves d'instal·lació i comprovació pas a pas, desde local fins a fora de la xarxa.</p>
-<ul>
-<li>Sols s'ha de fer fins a l'instal·lació d'apache i proves.</li>
-</ul>
-<h2 id="entrega-de-la-practica">Entrega de la pràctica</h2>
-<p>S'ha de crear un html que amb les pràctiques anteriors i aquesta, on s'han de respondre les preguntes de l'[arxiu] https://docs.google.com/document/d/1cy9ntr3vyZx_EKqyOVfURuP5bXZ8gHDu4ClTY3JtNE8/edit?usp=sharing</p>
-<h3 id="format-dentrega">Format d'entrega</h3>
-<p>L'HTML és el llenguatge de marques que empren el navegadors. Per entregar les pràctiques aprendrem i usarem  aquest llenguatge.Hi ha molt de material per aprendre a la xarxa, la pàgina https://www.w3schools.com/ és la de referència.</p>
-<p>Un  document html té un esquema bàsic, pas un exemple per que el modifiqueu i poseu les pràctiques.</p>
-<p>Sobre [aquest]https://drive.google.com/file/d/1tIpNRhY9TGHBg0R1HMXjr09ER6tJbBT1/view?usp=sharing esquelet de html documentam les pràctiques.</p>
-<p>Consulta i aprèn a la web de referència [w3schools]https://www.w3schools.com/html/. </p>
-<h3 id="exercicis">EXERCICIS</h3>
-<p>manual sencer apache2 (versio httpd) https://www.dedoimedo.com/computers/www.dedoimedo.com-apache-web-server-lm.pdf</p>
-<p>| Rule no. 1: don’t panic! The list before you might seem intimidating at the moment, but that is simply because you are not yet familiar with Apache. |</p>
-<p>Cerca al manual  apache2 (versio httpd) https://www.dedoimedo.com/computers/www.dedoimedo.com-apache-web-server-lm.pdf la taula de localitzacions del </p>
-<ol>
-<li>
-<p>En quina carpeta es troben els logs?</p>
-</li>
-<li>
-<p>Quins tipus de fitxer log trobam dins la carpeta anterior.</p>
-</li>
-<li>
-<p>Volem saber les vegades que s’ha accedit desde una ip del vostre ordinador d’aula.Quina instrucció usarem. </p>
-</li>
-<li>
-<p>Ves a la carpeta del server.pid i quin pid té el servidor. Posa les instruccions</p>
-</li>
-<li>
-<p>Quines instruccions s’usen per posar el servidor en marxa, per aturar, per sabetr l'estat i per reiniciar?</p>
-</li>
-<li>
-<p>Fer una copia de l’index.html del servidor, posali nom index-copia.html      </p>
-</li>
-<li>
-<p>Edita un document index.html i posa el teu nom.</p>
-</li>
-</ol>
+                <h1 id="sprints">SPRINTS</h1>
+<h2 id="configuracio-dels-dispositius">Configuració dels dispositius</h2>
+<p>Cada dispositiu ha estat configurat, té connexió dhcp mitjançant wifi a la xarxa temporal. Cada un ha estat anomenat com </p>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+<p></head></p>
+<body>
+
+<h2>HTML Table</h2>
+
+<table>
+  <tr>
+    <th>Company</th>
+    <th>Contact</th>
+    <th>Country</th>
+  </tr>
+  <tr>
+    <td>Alfreds Futterkiste</td>
+    <td>Maria Anders</td>
+    <td>Germany</td>
+  </tr>
+  <tr>
+    <td>Centro comercial Moctezuma</td>
+    <td>Francisco Chang</td>
+    <td>Mexico</td>
+  </tr>
+  <tr>
+    <td>Ernst Handel</td>
+    <td>Roland Mendel</td>
+    <td>Austria</td>
+  </tr>
+  <tr>
+    <td>Island Trading</td>
+    <td>Helen Bennett</td>
+    <td>UK</td>
+  </tr>
+  <tr>
+    <td>Laughing Bacchus Winecellars</td>
+    <td>Yoshi Tannamuri</td>
+    <td>Canada</td>
+  </tr>
+  <tr>
+    <td>Magazzini Alimentari Riuniti</td>
+    <td>Giovanni Rovelli</td>
+    <td>Italy</td>
+  </tr>
+</table>
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../u5.2-Practica-DNS/" class="btn btn-neutral float-left" title="5.2 Projectes SCRUM"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../errors-comuns/" class="btn btn-neutral float-right" title="Errors Comuns Apache">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -197,6 +220,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../u5.2-Practica-DNS/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../errors-comuns/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
