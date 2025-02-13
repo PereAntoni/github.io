@@ -5,15 +5,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="shortcut icon" href="../img/favicon.ico" />
-    <title>SERVEI DNS - Serveis en Xarxa CFGM</title>
+    <title>6.1 Xarxes dins router mikrotik - Serveis en Xarxa CFGM</title>
     <link rel="stylesheet" href="../css/theme.css" />
     <link rel="stylesheet" href="../css/theme_extra.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
     
       <script>
         // Current page data
-        var mkdocs_page_name = "SERVEI DNS";
-        var mkdocs_page_input_path = "dns.md";
+        var mkdocs_page_name = "6.1 Xarxes dins router mikrotik";
+        var mkdocs_page_input_path = "u6.1-Xarxes.md";
         var mkdocs_page_url = null;
       </script>
     
@@ -95,8 +95,10 @@
                 <li class="toctree-l1"><a class="reference internal" href="../u5.3-Practica-sprints/">5.3 Sprints de la pràctica</a>
                 </li>
               </ul>
-              <ul>
-                <li class="toctree-l1"><a class="reference internal" href="../u6.1-Xarxes/">6.1 Xarxes dins router mikrotik</a>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">6.1 Xarxes dins router mikrotik</a>
+    <ul class="current">
+    </ul>
                 </li>
               </ul>
               <ul>
@@ -121,7 +123,7 @@
         <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
     <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
-      <li class="breadcrumb-item active">SERVEI DNS</li>
+      <li class="breadcrumb-item active">6.1 Xarxes dins router mikrotik</li>
     <li class="wy-breadcrumbs-aside">
     </li>
   </ul>
@@ -130,12 +132,46 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="servei-dns">SERVEI DNS</h1>
-<p>De tots es sabut que el servei DNS serveix per assignar una IP a un nom de domini. El que hem de saber és com s'organitza l'assignació d'aquest nom.</p>
-<iframe width="320" height="180" src="https://www.youtube.com/watch?v=2ZUxoi7YNgs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="1"></iframe>
+                <h1 id="connexio-al-router-mikrotik">CONNEXIÓ AL ROUTER MIKROTIK</h1>
+<p>Per connectar el teu ordinador portàtil al router MikroTik hEX S RB760iGS, depenent del tipus de connexió que necessitis, pots utilitzar els següents cables:</p>
+<p>Connexió Ethernet (cable recomanat per a configuració i ús general)</p>
+<p>Necessites un cable Ethernet RJ45 (Cat5e, Cat6 o superior) per connectar el port LAN del teu ordinador portàtil a un dels ports Ethernet del router (de l’1 al 5).
+Si el teu portàtil no té port Ethernet, pots fer servir un adaptador USB a Ethernet.
+Connexió a través de la consola (si necessites configuració avançada en CLI)</p>
+<p>El MikroTik hEX S té un port sèrie (RJ45) per a connexió de consola.
+Per connectar-te des d’un portàtil necessites:
+Un cable RJ45 a DB9 (RS232).
+Un adaptador USB a RS232 (DB9), si el teu portàtil no té port sèrie.
+Un programa com PuTTY o Winbox per gestionar la configuració.
+Si només vols configurar el router de manera bàsica, el mètode més fàcil és connectar-te per Ethernet i accedir a la interfície web o a Winbox.</p>
+<h1 id="winbox">WINBOX</h1>
+<p>Si ja has connectat el teu portàtil al MikroTik hEX S RB760iGS mitjançant un cable Ethernet, segueix aquests passos per detectar-lo des de Winbox:</p>
+<p>🔹 1. Obre Winbox
+Descarrega Winbox des del web oficial de MikroTik si encara no el tens.
+Executa'l al teu ordinador (no cal instal·lació).
+🔹 2. Busca el router a la pestanya "Neighbors"
+A Winbox, ves a la pestanya "Neighbors".
+Fes clic a "Refresh" per actualitzar la llista.
+Ha d’aparèixer el teu router a la llista amb la seva MAC address i, si ja té una IP assignada, també es mostrarà.
+🔹 3. Connexió per MAC o IP
+Si el router no té IP configurada o no la saps, fes clic a la MAC address del dispositiu i prem "Connect".
+Si el router té una IP per defecte (normalment 192.168.88.1), pots introduir aquesta IP a la casella "Connect To" i prémer "Connect".
+🔹 4. Inici de sessió
+Usuari per defecte: admin
+Contrasenya per defecte: (deixa-la en blanc si és la primera connexió)
+Si no detecta el router, prova aquests passos:
+✔️ Desactiva el Wi-Fi del portàtil (per evitar conflictes de xarxa).
+✔️ Configura manualment la IP del teu PC a 192.168.88.2 amb màscara 255.255.255.0 i prova de connectar a 192.168.88.1.
+✔️ Canvia de port Ethernet al router i reinicia’l.
+✔️ Comprova el cable Ethernet o prova un altre.</p>
+<p>Un cop connectat, podràs configurar-lo segons les teves necessitats. 🚀 Necessites ajuda amb algun pas?</p>
               
             </div>
           </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../u5.3-Practica-sprints/" class="btn btn-neutral float-left" title="5.3 Sprints de la pràctica"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../errors-comuns/" class="btn btn-neutral float-right" title="Errors Comuns Apache">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
 
   <hr/>
 
@@ -157,6 +193,10 @@
   <span class="rst-current-version" data-toggle="rst-current-version">
     
     
+      <span><a href="../u5.3-Practica-sprints/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../errors-comuns/" style="color: #fcfcfc">Next &raquo;</a></span>
     
   </span>
 </div>
