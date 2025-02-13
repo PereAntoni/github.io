@@ -165,6 +165,34 @@ Si no detecta el router, prova aquests passos:
 ✔️ Canvia de port Ethernet al router i reinicia’l.
 ✔️ Comprova el cable Ethernet o prova un altre.</p>
 <p>Un cop connectat, podràs configurar-lo segons les teves necessitats. 🚀</p>
+<h1 id="integrar-a-la-xarxa-daula">INTEGRAR A LA XARXA D'AULA.</h1>
+<p>Pots configurar la IP per defecte del router MikroTik a 10.0.210.1/16 i canviar la contrasenya de l'usuari admin a "iesSineuRouter" seguint aquests passos a Winbox o per terminal (CLI).</p>
+<p>🔹 Mètode 1: A través de Winbox
+Accedeix al router via Winbox (per MAC o IP).</p>
+<p>Canvia la IP del router:</p>
+<p>Ves a IP → Addresses.
+Esborra l’adreça existent 192.168.88.1/24 (si n'hi ha una).
+Prem "+" (Add) i afegeix:
+Address: 10.0.210.1/16
+Interface: bridge (o ether1 si no tens bridge).
+Guarda-ho amb OK.
+Configura el DHCP Server (Opcional, si vols donar IPs automàtiques als clients):</p>
+<p>Ves a IP → DHCP Server.
+Assegura't que la xarxa 10.0.210.0/16 està configurada correctament.
+Canvia la contrasenya de l’usuari admin:</p>
+<p>Ves a System → Users.
+Selecciona l’usuari admin i fes clic a Set Password.
+Escriu iesSineuRouter i confirma-ho.
+Aplica i guarda la configuració:</p>
+<p>Ves a System → Reboot per reiniciar el router amb els canvis aplicats.
+🔹 Mètode 2: Via Terminal (CLI)
+Si prefereixes fer-ho per línia de comandes, obre New Terminal a Winbox o connecta’t per SSH i executa:</p>
+<p>sh
+Copiar
+Editar
+/ip address add address=10.0.210.1/16 interface=bridge
+/user set admin password=iesSineuRouter
+Després d’això, desconnecta i torna a connectar amb la nova IP: 10.0.210.1. 🚀</p>
               
             </div>
           </div><footer>
