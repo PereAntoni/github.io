@@ -132,7 +132,75 @@
           <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
             <div class="section" itemprop="articleBody">
               
-                <h1 id="connexio-al-router-mikrotik">CONNEXIÓ AL ROUTER MIKROTIK</h1>
+                <!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntes sobre MikroTik</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        .question {
+            background: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-left: 5px solid #007bff;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+        .answer {
+            background: #e9ecef;
+            padding: 15px;
+            margin-bottom: 20px;
+            border-left: 5px solid #28a745;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+        }
+        h2 {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <h2>Preguntes sobre MikroTik</h2>
+
+    <div class="question">
+        <strong>1. Quin cable he d'emprar per connectar-me des d'un ordinador portàtil a un router MikroTik hEX S RB760iGS?</strong>
+    </div>
+    <div class="answer">
+        Per connectar-te al router, pots utilitzar un **cable Ethernet RJ45** (Cat5e, Cat6 o superior). Si el teu portàtil no té port Ethernet, necessites un **adaptador USB a Ethernet**.
+    </div>
+
+    <div class="question">
+        <strong>2. Ara he connectat. Com puc detectar el router des del programa Winbox?</strong>
+    </div>
+    <div class="answer">
+        Obre Winbox i ves a la pestanya **"Neighbors"**. Fes clic a **"Refresh"** per veure els dispositius disponibles. Pots connectar-te mitjançant **MAC address** o IP. Si el router no apareix, assegura't que el Wi-Fi estigui desactivat i que la IP del teu PC estigui configurada manualment dins del mateix rang.
+    </div>
+
+    <div class="question">
+        <strong>3. Al router, com es pot posar la IP per defecte a 10.0.210.1/16?</strong>
+    </div>
+    <div class="answer">
+        A Winbox, ves a **IP → Addresses**, esborra la IP existent i afegeix **10.0.210.1/16** a la interfície **bridge**. També pots fer-ho per terminal amb el següent comandament:
+        <pre>/ip address add address=10.0.210.1/16 interface=bridge</pre>
+    </div>
+
+    <div class="question">
+        <strong>4. Com puc canviar la contrasenya de l'usuari admin a "iesSineuRouter"?</strong>
+    </div>
+    <div class="answer">
+        A Winbox, ves a **System → Users**, selecciona l’usuari **admin** i canvia la contrasenya. Alternativament, pots utilitzar aquest comandament en terminal:
+        <pre>/user set admin password=iesSineuRouter</pre>
+    </div>
+</body>
+</html>
+
+<p>Versió antiga:</p>
+<h1 id="connexio-al-router-mikrotik">CONNEXIÓ AL ROUTER MIKROTIK</h1>
 <p>Per connectar el teu ordinador portàtil al router MikroTik hEX S RB760iGS, depenent del tipus de connexió que necessitis, pots utilitzar els següents cables:</p>
 <p>Connexió Ethernet (cable recomanat per a configuració i ús general)</p>
 <p>Necessites un cable Ethernet RJ45 (Cat5e, Cat6 o superior) per connectar el port LAN del teu ordinador portàtil a un dels ports Ethernet del router (de l’1 al 5).
@@ -191,8 +259,8 @@ Si prefereixes fer-ho per línia de comandes, obre New Terminal a Winbox o conne
 Copiar
 Editar
 /ip address add address=10.0.210.1/16 interface=bridge
-/user set admin password=iesSineuRouter
-Després d’això, desconnecta i torna a connectar amb la nova IP: 10.0.210.1. 🚀</p>
+/user set admin password=iesSineuRouter</p>
+<p>Després d’això, desconnecta i torna a connectar amb la nova IP: 10.0.210.1. 🚀</p>
               
             </div>
           </div><footer>
