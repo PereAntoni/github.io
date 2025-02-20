@@ -141,6 +141,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Configuració de Xarxes amb Mikrotik</title>
 </head>
+<style>
+    h1{ text-decoration:underline;}
+</style>
 <body>
     <h1>Configuració 1</h1>
     <p>Dins una xarxa amb acces a internet (10.0.0.0/16, gateway 10.0.0.1) hi volem afegir una altra gestionada pel router mikrotik (192.168.1.0/24). Amb les seguents condicions:
@@ -237,7 +240,7 @@
         <li>Si no funciona, revisa les configuracions de NAT i la ruta per Internet.</li>
     </ol>
 
-
+<hr>
     <h1>
     Configuració 2
     </h1>
@@ -334,11 +337,6 @@
     <p>En aquesta configuració tenim <strong>quatre routers Mikrotik</strong> connectats a la xarxa principal <strong>10.0.0.0/16</strong>, cadascun amb la seva pròpia xarxa interna.</p>
 
     <!DOCTYPE html>
-<html lang="ca">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Configuració de Xarxes amb Mikrotik</title>
     <style>
         body { font-family: Arial, sans-serif; line-height: 1.6; }
         pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
@@ -346,12 +344,25 @@
         th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
         th { background: #f4f4f4; }
     </style>
-</head>
-<body>
-    <h1>Configuració de Xarxes amb Mikrotik</h1>
+<hr>
+<h1>Configuració 3</h1>
 
     <p>Aquesta configuració permet que tots els dispositius de la xarxa <strong>10.0.0.0/16</strong> puguin accedir als dispositius interns de cada subxarxa connectada als quatre routers Mikrotik.</p>
-
+<h2>5. Esquema de xarxa</h2>
+    <pre>
+                         ┌──────────────────────────┐
+                         │ Xarxa Principal (LAN)   │
+                         │       10.0.0.0/16       │
+                         └──────────────────────────┘
+                                     │
+            ┌────────────────────────┴────────────────────────┐
+       ┌────┴────┐       ┌────┴────┐       ┌────┴────┐       ┌────┴────┐
+       │ Router1 │       │ Router2 │       │ Router3 │       │ Router4 │
+       └────┬────┘       └────┬────┘       └────┬────┘       └────┬────┘
+  ┌────────┴────────┐ ┌────────┴────────┐ ┌────────┴────────┐ ┌────────┴────────┐
+  │ Xarxa interna 1 │ │ Xarxa interna 2 │ │ Xarxa interna 3 │ │ Xarxa interna 4 │
+  └─────────────────┘ └─────────────────┘ └─────────────────┘ └─────────────────┘
+    </pre>
     <h2>1. Taula de configuració per cada router Mikrotik</h2>
 
     <table>
@@ -450,21 +461,7 @@ ping 192.168.4.4
         <li><a href="http://192.168.4.4">http://192.168.4.4</a></li>
     </ul>
 
-    <h2>5. Esquema de xarxa</h2>
-    <pre>
-                         ┌──────────────────────────┐
-                         │ Xarxa Principal (LAN)   │
-                         │       10.0.0.0/16       │
-                         └──────────────────────────┘
-                                     │
-            ┌────────────────────────┴────────────────────────┐
-       ┌────┴────┐       ┌────┴────┐       ┌────┴────┐       ┌────┴────┐
-       │ Router1 │       │ Router2 │       │ Router3 │       │ Router4 │
-       └────┬────┘       └────┬────┘       └────┬────┘       └────┬────┘
-  ┌────────┴────────┐ ┌────────┴────────┐ ┌────────┴────────┐ ┌────────┴────────┐
-  │ Xarxa interna 1 │ │ Xarxa interna 2 │ │ Xarxa interna 3 │ │ Xarxa interna 4 │
-  └─────────────────┘ └─────────────────┘ └─────────────────┘ └─────────────────┘
-    </pre>
+
 
 </body>
 </html>
