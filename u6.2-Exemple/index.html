@@ -145,35 +145,89 @@
     <h1>Configuració de Xarxes amb Mikrotik</h1>
 
     <h2>1. Configurar la interfície per la xarxa amb accés a internet (10.0.0.0/16)</h2>
-    <p>Assignam la IP 10.0.150.4 a una interfície del router per connectar-se a la xarxa amb accés a Internet.</p>
-    <pre>
-/ip address add address=10.0.150.4/16 interface=ether1
-    </pre>
+    <p>Assignam la IP <strong>10.0.150.4</strong> a la interfície que connecta el router a la xarxa amb accés a Internet.</p>
+
+    <h3>Passos en Winbox:</h3>
+    <ol>
+        <li>Obre <strong>Winbox</strong> i connecta't al router.</li>
+        <li>Ves a <strong>IP → Addresses</strong>.</li>
+        <li>Clica <strong>Add (+)</strong>.</li>
+        <li>A <strong>Address</strong>, escriu: <code>10.0.150.4/16</code>.</li>
+        <li>A <strong>Interface</strong>, selecciona: <code>ether1</code> (o la interfície que connecta a Internet).</li>
+        <li>Clica <strong>OK</strong>.</li>
+    </ol>
 
     <h2>2. Configurar la interfície per la xarxa interna (192.168.1.0/24)</h2>
-    <p>Assignam la IP 192.168.1.1 a una altra interfície del router per gestionar la xarxa interna.</p>
-    <pre>
-/ip address add address=192.168.1.1/24 interface=ether2
-    </pre>
+    <p>Assignam la IP <strong>192.168.1.1</strong> a la interfície que gestionarà la xarxa interna.</p>
+
+    <h3>Passos en Winbox:</h3>
+    <ol>
+        <li>Ves a <strong>IP → Addresses</strong>.</li>
+        <li>Clica <strong>Add (+)</strong>.</li>
+        <li>A <strong>Address</strong>, escriu: <code>192.168.1.1/24</code>.</li>
+        <li>A <strong>Interface</strong>, selecciona: <code>ether2</code> (o la interfície assignada a la xarxa interna).</li>
+        <li>Clica <strong>OK</strong>.</li>
+    </ol>
 
     <h2>3. Configurar el gateway per a la xarxa interna</h2>
-    <p>Ens asseguram que els dispositius de la xarxa interna usin el router com a passarel·la predeterminada.</p>
-    <p>L'ordinador tindrà la IP 192.168.1.2 amb el gateway 192.168.1.1.</p>
+    <p>L'ordinador de la xarxa interna ha de tenir la següent configuració:</p>
+    <ul>
+        <li><strong>IP:</strong> 192.168.1.2</li>
+        <li><strong>Gateway:</strong> 192.168.1.1</li>
+    </ul>
+
+    <h3>Passos a Windows (Opcional, si configures manualment):</h3>
+    <ol>
+        <li>Obre <strong>Panell de control → Xarxa i Internet → Centre de xarxes i recursos compartits</strong>.</li>
+        <li>Clica <strong>Canvia la configuració de l'adaptador</strong> (al menú esquerre).</li>
+        <li>Fes clic dret sobre la connexió i selecciona <strong>Propietats</strong>.</li>
+        <li>Selecciona <strong>Protocol d’Internet versió 4 (TCP/IPv4)</strong> i clica <strong>Propietats</strong>.</li>
+        <li>Marca <strong>Utilitza la següent adreça IP</strong> i introdueix:
+            <ul>
+                <li>IP: <code>192.168.1.2</code></li>
+                <li>Màscara de subxarxa: <code>255.255.255.0</code></li>
+                <li>Gateway predeterminat: <code>192.168.1.1</code></li>
+            </ul>
+        </li>
+        <li>Clica <strong>Acceptar</strong> i tanca totes les finestres.</li>
+    </ol>
 
     <h2>4. Configurar el NAT perquè la xarxa interna tingui accés a Internet</h2>
-    <p>Aquesta regla permetrà als dispositius de la xarxa interna (192.168.1.0/24) sortir a Internet a través de la interfície de la xarxa 10.0.0.0/16.</p>
-    <pre>
-/ip firewall nat add chain=srcnat out-interface=ether1 action=masquerade
-    </pre>
+    <p>Afegim una regla NAT perquè els dispositius de la xarxa interna (192.168.1.0/24) puguin sortir a Internet.</p>
+
+    <h3>Passos en Winbox:</h3>
+    <ol>
+        <li>Ves a <strong>IP → Firewall</strong>.</li>
+        <li>Aneu a la pestanya <strong>NAT</strong> i clica <strong>Add (+)</strong>.</li>
+        <li>A <strong>Chain</strong>, selecciona: <code>srcnat</code>.</li>
+        <li>A <strong>Out Interface</strong>, selecciona: <code>ether1</code> (o la interfície que connecta a Internet).</li>
+        <li>Ves a la pestanya <strong>Action</strong> i selecciona: <code>masquerade</code>.</li>
+        <li>Clica <strong>OK</strong>.</li>
+    </ol>
 
     <h2>5. Afegir la ruta per permetre l’accés a Internet</h2>
-    <p>Creem una ruta per assegurar que el trànsit sortint de la xarxa interna es redirigeixi correctament cap a la xarxa amb Internet.</p>
-    <pre>
-/ip route add dst-address=0.0.0.0/0 gateway=10.0.0.1
-    </pre>
+    <p>Creem una ruta perquè el trànsit sortint es dirigeixi correctament cap al gateway de la xarxa amb Internet.</p>
 
-    <h2>6. Configuració Final</h2>
-    <p>Amb aquestes configuracions, l'ordinador 192.168.1.2 hauria de poder accedir a Internet passant pel router Mikrotik.</p>
+    <h3>Passos en Winbox:</h3>
+    <ol>
+        <li>Ves a <strong>IP → Routes</strong>.</li>
+        <li>Clica <strong>Add (+)</strong>.</li>
+        <li>A <strong>Dst. Address</strong>, escriu: <code>0.0.0.0/0</code>.</li>
+        <li>A <strong>Gateway</strong>, escriu: <code>10.0.0.1</code>.</li>
+        <li>Clica <strong>OK</strong>.</li>
+    </ol>
+
+    <h2>6. Comprovació de la connexió</h2>
+    <p>Amb aquestes configuracions, l'ordinador <strong>192.168.1.2</strong> hauria de poder accedir a Internet passant pel router Mikrotik.</p>
+
+    <h3>Per verificar la connexió:</h3>
+    <ol>
+        <li>Obre una consola de comandes a Windows (<code>cmd</code>).</li>
+        <li>Executa: <code>ping 8.8.8.8</code>.</li>
+        <li>Si reps resposta, la connexió funciona correctament.</li>
+        <li>Si no funciona, revisa les configuracions de NAT i la ruta per Internet.</li>
+    </ol>
+
 </body>
 </html>
               
