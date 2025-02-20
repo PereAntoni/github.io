@@ -142,12 +142,21 @@
     <title>Configuració de Xarxes amb Mikrotik</title>
 </head>
 <body>
-    <h1>Configuració de Xarxes amb Mikrotik</h1>
+    <h1>Configuració 1</h1>
+    <p>Dins una xarxa amb acces a internet (10.0.0.0/16, gateway 10.0.0.1) hi volem afegir una altra gestionada pel router mikrotik (192.168.1.0/24). Amb les seguents condicions:
+    </p>
+    <ol>
+    <li>La xarxa amb acces a internet és 10.0.0.0/16.</li>
+    <li>El router tendrà una interfície dins la xarxa 10.0.0.0/16 i és la 10.0.150.4</li>
+    <li>Cream una xarxa interna que serà la 192.168.1.0/24 i tendrà una interficie 192.168.1.1</li>
+    <li>El computador desde on operam tendrà una ip 192.168.1.2 amb el gateway 192.168.1.1</li>
+    <li>Volem configurar per que l'ordinador tengui acces a internet via 10.0.0.1</li>
+    </ol>
 
     <h2>1. Configurar la interfície per la xarxa amb accés a internet (10.0.0.0/16)</h2>
     <p>Assignam la IP <strong>10.0.150.4</strong> a la interfície que connecta el router a la xarxa amb accés a Internet.</p>
 
-    <h3>Passos en Winbox:</h3>
+    <h3>Passos a Winbox:</h3>
     <ol>
         <li>Obre <strong>Winbox</strong> i connecta't al router.</li>
         <li>Ves a <strong>IP → Addresses</strong>.</li>
@@ -160,7 +169,7 @@
     <h2>2. Configurar la interfície per la xarxa interna (192.168.1.0/24)</h2>
     <p>Assignam la IP <strong>192.168.1.1</strong> a la interfície que gestionarà la xarxa interna.</p>
 
-    <h3>Passos en Winbox:</h3>
+    <h3>Passos a Winbox:</h3>
     <ol>
         <li>Ves a <strong>IP → Addresses</strong>.</li>
         <li>Clica <strong>Add (+)</strong>.</li>
@@ -229,8 +238,12 @@
     </ol>
 
 
-    <h1>ACCEDINT AMB LA DIRECCIÓ EXTERNA A LA XARXA</h1>
-
+    <h1>
+    Configuració 2
+    </h1>
+    <p>
+    Aplicam canvis a la configuració anterior on l'ordinador de control tengui el gateway a 10.0.150.4 i la ip 10.0.100.80. Configuram al mikrotik les regles per poder accedir a la direcció 192.168.1.5 el router li deixi accedir de forma rutes estàtiques.
+    </p>
     <h2>1. Configurar la interfície per la xarxa amb accés a internet (10.0.0.0/16)</h2>
     <p>Assignam la IP <strong>10.0.150.4</strong> a la interfície que connecta el router a la xarxa amb accés a Internet.</p>
 
