@@ -328,6 +328,144 @@
         <li>Per accedir a la càmera via Apache, obre un navegador i entra: <code>http://192.168.1.5</code>.</li>
     </ol>
 
+
+    <h1>Configuració 3</h1>
+
+    <p>En aquesta configuració tenim <strong>quatre routers Mikrotik</strong> connectats a la xarxa principal <strong>10.0.0.0/16</strong>, cadascun amb la seva pròpia xarxa interna.</p>
+
+    <!DOCTYPE html>
+<html lang="ca">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuració de Xarxes amb Mikrotik</title>
+    <style>
+        body { font-family: Arial, sans-serif; line-height: 1.6; }
+        pre { background: #f4f4f4; padding: 10px; border-radius: 5px; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background: #f4f4f4; }
+    </style>
+</head>
+<body>
+    <h1>Configuració de Xarxes amb Mikrotik</h1>
+
+    <p>Aquesta configuració permet que tots els dispositius de la xarxa <strong>10.0.0.0/16</strong> puguin accedir als dispositius interns de cada subxarxa connectada als quatre routers Mikrotik.</p>
+
+    <h2>1. Taula de configuració per cada router Mikrotik</h2>
+
+    <table>
+        <tr>
+            <th>Router</th>
+            <th>Interfície a LAN (10.0.0.0/16)</th>
+            <th>Interfície a xarxa interna</th>
+            <th>Dispositiu intern accessible</th>
+            <th>Ruta per accedir-hi</th>
+        </tr>
+        <tr>
+            <td>Router 1</td>
+            <td>10.0.150.1 (ether1)</td>
+            <td>192.168.1.1 (ether2)</td>
+            <td>192.168.1.4</td>
+            <td>192.168.1.0/24 via 192.168.1.1</td>
+        </tr>
+        <tr>
+            <td>Router 2</td>
+            <td>10.0.150.2 (ether1)</td>
+            <td>192.168.2.1 (ether2)</td>
+            <td>192.168.2.4</td>
+            <td>192.168.2.0/24 via 192.168.2.1</td>
+        </tr>
+        <tr>
+            <td>Router 3</td>
+            <td>10.0.150.3 (ether1)</td>
+            <td>192.168.3.1 (ether2)</td>
+            <td>192.168.3.4</td>
+            <td>192.168.3.0/24 via 192.168.3.1</td>
+        </tr>
+        <tr>
+            <td>Router 4</td>
+            <td>10.0.150.4 (ether1)</td>
+            <td>192.168.4.1 (ether2)</td>
+            <td>192.168.4.4</td>
+            <td>192.168.4.0/24 via 192.168.4.1</td>
+        </tr>
+    </table>
+
+    <h2>2. Configuració de rutes estàtiques</h2>
+
+    <h3>Router 1</h3>
+    <pre>
+/ip route add dst-address=192.168.1.0/24 gateway=192.168.1.1
+/ip route add dst-address=192.168.2.0/24 gateway=10.0.150.2
+/ip route add dst-address=192.168.3.0/24 gateway=10.0.150.3
+/ip route add dst-address=192.168.4.0/24 gateway=10.0.150.4
+    </pre>
+
+    <h3>Router 2</h3>
+    <pre>
+/ip route add dst-address=192.168.2.0/24 gateway=192.168.2.1
+/ip route add dst-address=192.168.1.0/24 gateway=10.0.150.1
+/ip route add dst-address=192.168.3.0/24 gateway=10.0.150.3
+/ip route add dst-address=192.168.4.0/24 gateway=10.0.150.4
+    </pre>
+
+    <h3>Router 3</h3>
+    <pre>
+/ip route add dst-address=192.168.3.0/24 gateway=192.168.3.1
+/ip route add dst-address=192.168.1.0/24 gateway=10.0.150.1
+/ip route add dst-address=192.168.2.0/24 gateway=10.0.150.2
+/ip route add dst-address=192.168.4.0/24 gateway=10.0.150.4
+    </pre>
+
+    <h3>Router 4</h3>
+    <pre>
+/ip route add dst-address=192.168.4.0/24 gateway=192.168.4.1
+/ip route add dst-address=192.168.1.0/24 gateway=10.0.150.1
+/ip route add dst-address=192.168.2.0/24 gateway=10.0.150.2
+/ip route add dst-address=192.168.3.0/24 gateway=10.0.150.3
+    </pre>
+
+    <h2>3. Configuració de NAT</h2>
+    <p>Si volem que els dispositius interns surtin a Internet, cal activar NAT a cada router:</p>
+    <pre>
+/ip firewall nat add chain=srcnat out-interface=ether1 action=masquerade
+    </pre>
+
+    <h2>4. Comprovació de la connexió</h2>
+    <p>Per verificar que qualsevol dispositiu de la xarxa <strong>10.0.0.0/16</strong> pot accedir als dispositius interns:</p>
+
+    <pre>
+ping 192.168.1.4
+ping 192.168.2.4
+ping 192.168.3.4
+ping 192.168.4.4
+    </pre>
+
+    <h3>Accedir als dispositius via navegador (si tenen serveis web):</h3>
+    <ul>
+        <li><a href="http://192.168.1.4">http://192.168.1.4</a></li>
+        <li><a href="http://192.168.2.4">http://192.168.2.4</a></li>
+        <li><a href="http://192.168.3.4">http://192.168.3.4</a></li>
+        <li><a href="http://192.168.4.4">http://192.168.4.4</a></li>
+    </ul>
+
+    <h2>5. Esquema de xarxa</h2>
+    <pre>
+                         ┌──────────────────────────┐
+                         │ Xarxa Principal (LAN)   │
+                         │       10.0.0.0/16       │
+                         └──────────────────────────┘
+                                     │
+            ┌────────────────────────┴────────────────────────┐
+       ┌────┴────┐       ┌────┴────┐       ┌────┴────┐       ┌────┴────┐
+       │ Router1 │       │ Router2 │       │ Router3 │       │ Router4 │
+       └────┬────┘       └────┬────┘       └────┬────┘       └────┬────┘
+  ┌────────┴────────┐ ┌────────┴────────┐ ┌────────┴────────┐ ┌────────┴────────┐
+  │ Xarxa interna 1 │ │ Xarxa interna 2 │ │ Xarxa interna 3 │ │ Xarxa interna 4 │
+  └─────────────────┘ └─────────────────┘ └─────────────────┘ └─────────────────┘
+    </pre>
+
 </body>
 </html>
               
