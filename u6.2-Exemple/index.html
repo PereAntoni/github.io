@@ -228,6 +228,93 @@
         <li>Si no funciona, revisa les configuracions de NAT i la ruta per Internet.</li>
     </ol>
 
+
+    <h1>ACCEDINT AMB LA DIRECCIÓ EXTERNA A LA XARXA</h1>
+
+    <h2>1. Configurar la interfície per la xarxa amb accés a internet (10.0.0.0/16)</h2>
+    <p>Assignam la IP <strong>10.0.150.4</strong> a la interfície que connecta el router a la xarxa amb accés a Internet.</p>
+
+    <h3>Passos en Winbox:</h3>
+    <ol>
+        <li>Obre <strong>Winbox</strong> i connecta't al router.</li>
+        <li>Ves a <strong>IP → Addresses</strong>.</li>
+        <li>Clica <strong>Add (+)</strong>.</li>
+        <li>A <strong>Address</strong>, escriu: <code>10.0.150.4/16</code>.</li>
+        <li>A <strong>Interface</strong>, selecciona: <code>ether1</code> (o la interfície que connecta a Internet).</li>
+        <li>Clica <strong>OK</strong>.</li>
+    </ol>
+
+    <h2>2. Configurar la interfície per la xarxa interna (192.168.1.0/24)</h2>
+    <p>Assignam la IP <strong>192.168.1.1</strong> a la interfície que gestionarà la xarxa interna.</p>
+
+    <h3>Passos en Winbox:</h3>
+    <ol>
+        <li>Ves a <strong>IP → Addresses</strong>.</li>
+        <li>Clica <strong>Add (+)</strong>.</li>
+        <li>A <strong>Address</strong>, escriu: <code>192.168.1.1/24</code>.</li>
+        <li>A <strong>Interface</strong>, selecciona: <code>ether2</code> (o la interfície assignada a la xarxa interna).</li>
+        <li>Clica <strong>OK</strong>.</li>
+    </ol>
+
+    <h2>3. Configurar el gateway per a l'ordinador de control</h2>
+    <p>L'ordinador de control ha de tenir la següent configuració:</p>
+    <ul>
+        <li><strong>IP:</strong> 10.0.100.80</li>
+        <li><strong>Gateway:</strong> 10.0.150.4</li>
+    </ul>
+
+    <h3>Passos a Windows (Opcional, si configures manualment):</h3>
+    <ol>
+        <li>Obre <strong>Panell de control → Xarxa i Internet → Centre de xarxes i recursos compartits</strong>.</li>
+        <li>Clica <strong>Canvia la configuració de l'adaptador</strong> (al menú esquerre).</li>
+        <li>Fes clic dret sobre la connexió i selecciona <strong>Propietats</strong>.</li>
+        <li>Selecciona <strong>Protocol d’Internet versió 4 (TCP/IPv4)</strong> i clica <strong>Propietats</strong>.</li>
+        <li>Marca <strong>Utilitza la següent adreça IP</strong> i introdueix:
+            <ul>
+                <li>IP: <code>10.0.100.80</code></li>
+                <li>Màscara de subxarxa: <code>255.255.0.0</code></li>
+                <li>Gateway predeterminat: <code>10.0.150.4</code></li>
+            </ul>
+        </li>
+        <li>Clica <strong>Acceptar</strong> i tanca totes les finestres.</li>
+    </ol>
+
+    <h2>4. Configurar el NAT perquè la xarxa interna tingui accés a Internet</h2>
+    <p>Afegim una regla NAT perquè els dispositius de la xarxa interna (192.168.1.0/24) puguin sortir a Internet.</p>
+
+    <h3>Passos en Winbox:</h3>
+    <ol>
+        <li>Ves a <strong>IP → Firewall</strong>.</li>
+        <li>Aneu a la pestanya <strong>NAT</strong> i clica <strong>Add (+)</strong>.</li>
+        <li>A <strong>Chain</strong>, selecciona: <code>srcnat</code>.</li>
+        <li>A <strong>Out Interface</strong>, selecciona: <code>ether1</code> (o la interfície que connecta a Internet).</li>
+        <li>Ves a la pestanya <strong>Action</strong> i selecciona: <code>masquerade</code>.</li>
+        <li>Clica <strong>OK</strong>.</li>
+    </ol>
+
+    <h2>5. Afegir una ruta estàtica per accedir a 192.168.1.5 des de 10.0.100.80</h2>
+    <p>Perquè l'ordinador de control pugui accedir a la Raspberry Pi (<strong>192.168.1.5</strong>), hem d'afegir una ruta estàtica.</p>
+
+    <h3>Passos en Winbox:</h3>
+    <ol>
+        <li>Ves a <strong>IP → Routes</strong>.</li>
+        <li>Clica <strong>Add (+)</strong>.</li>
+        <li>A <strong>Dst. Address</strong>, escriu: <code>192.168.1.5/32</code>.</li>
+        <li>A <strong>Gateway</strong>, escriu: <code>192.168.1.1</code>.</li>
+        <li>Clica <strong>OK</strong>.</li>
+    </ol>
+
+    <h2>6. Comprovació de la connexió a la Raspberry Pi</h2>
+    <p>Per verificar que l'ordinador de control pot accedir a la Raspberry Pi:</p>
+
+    <h3>Passos:</h3>
+    <ol>
+        <li>Obre una consola de comandes a Windows (<code>cmd</code>).</li>
+        <li>Executa: <code>ping 192.168.1.5</code>.</li>
+        <li>Si reps resposta, la connexió funciona correctament.</li>
+        <li>Per accedir a la càmera via Apache, obre un navegador i entra: <code>http://192.168.1.5</code>.</li>
+    </ol>
+
 </body>
 </html>
               
