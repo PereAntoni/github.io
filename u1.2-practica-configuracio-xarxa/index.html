@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <link rel="shortcut icon" href="../img/favicon.ico" />
+    <title>1.2 PRÀCTICA CONFIGURACIÓ XARXA - Serveis en Xarxa CFGM</title>
+    <link rel="stylesheet" href="../css/theme.css" />
+    <link rel="stylesheet" href="../css/theme_extra.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" />
+    
+      <script>
+        // Current page data
+        var mkdocs_page_name = "1.2 PR\u00c0CTICA CONFIGURACI\u00d3 XARXA";
+        var mkdocs_page_input_path = "u1.2-practica-configuracio-xarxa.md";
+        var mkdocs_page_url = null;
+      </script>
+    
+    <!--[if lt IE 9]>
+      <script src="../js/html5shiv.min.js"></script>
+    <![endif]-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+      <script>hljs.highlightAll();</script> 
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
+      <div class="wy-side-nav-search">
+          <a href=".." class="icon icon-home"> Serveis en Xarxa CFGM
+        </a><div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+      <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="..">SERVEIS EN XARXA CFGM</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u1-conceptes-xarxes/">1. CONCEPTES SOBRE XARXES</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../u1.1-enrutament/">1.1 ENRUTAMENT</a>
+                </li>
+              </ul>
+              <ul class="current">
+                <li class="toctree-l1 current"><a class="reference internal current" href="#">1.2 PRÀCTICA CONFIGURACIÓ XARXA</a>
+                </li>
+              </ul>
+              <ul>
+                <li class="toctree-l1"><a class="reference internal" href="../exercicis-ipv4/">Exercicis ipv4</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+      <nav class="wy-nav-top" role="navigation" aria-label="Mobile navigation menu">
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="..">Serveis en Xarxa CFGM</a>
+        
+      </nav>
+      <div class="wy-nav-content">
+        <div class="rst-content"><div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href=".." class="icon icon-home" aria-label="Docs"></a></li>
+      <li class="breadcrumb-item active">1.2 PRÀCTICA CONFIGURACIÓ XARXA</li>
+    <li class="wy-breadcrumbs-aside">
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+            <div class="section" itemprop="articleBody">
+              
+                <!doctype html>
+<html lang="ca">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Guia: 5 Sessions — Sense DHCP i amb DNS intern</title>
+  <style>
+    /* Estils incrustats (basats a site-style.css) */
+    :root{--bg:#ffffff;--card:#f8fafc;--text:#0b1220;--muted:#6b7280;--accent:#0b64a8;--accent-2:#58a6ff;--success:#10b981;--danger:#ef4444;--warning:#f59e0b;--code-bg:#0b1220;--code-fg:#e6eef8;--glass:rgba(11,18,32,0.04);--radius:10px;--max-width:1100px;--content-padding:20px;--monospace:ui-monospace, SFMono-Regular, Menlo, Monaco, 'Roboto Mono','Courier New', monospace}
+    .theme-dark{--bg:#0f1724;--card:#0f1724;--text:#e6eef8;--muted:#9aa3b2;--accent:#58a6ff;--accent-2:#9ad1ff;--code-bg:#07090b;--code-fg:#eaf6ff;--glass:rgba(255,255,255,0.02)}
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;padding:0;font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+    .container{max-width:var(--max-width);margin:24px auto;padding:var(--content-padding)}
+    header{background:linear-gradient(180deg, rgba(11,100,168,0.06), transparent);padding:22px;border-radius:12px}
+    h1{margin:0;font-size:1.6rem;color:var(--accent)}
+    h2{color:var(--accent-2);margin-top:14px}
+    .lead{color:var(--muted);margin-top:8px}
+    .card{background:var(--card);border-radius:var(--radius);padding:16px;margin:16px 0;border:1px solid rgba(11,18,32,0.04)}
+    pre{background:var(--code-bg);color:var(--code-fg);padding:12px;border-radius:8px;overflow:auto;font-family:var(--monospace);font-size:0.95rem}
+    table{width:100%;border-collapse:collapse;margin:12px 0}
+    th,td{padding:8px;border:1px solid rgba(11,18,32,0.06);text-align:left}
+    .note{background:#fffbe6;border-left:4px solid var(--warning);padding:10px;border-radius:6px}
+    .tip{background:#ecfdf5;border-left:4px solid var(--success);padding:10px;border-radius:6px}
+    .danger{background:#fff0f0;border-left:4px solid var(--danger);padding:10px;border-radius:6px}
+    .kbd{font-family:var(--monospace);background:#eef2ff;padding:2px 6px;border-radius:4px}
+    footer{color:var(--muted);margin-top:18px;font-size:0.95rem;text-align:center}
+    @media (max-width:720px){.container{padding:12px}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Guia docent — 5 sessions sense DHCP i amb DNS intern</h1>
+      <p class="lead">Pla de 5 sessions adaptat per a un laboratori amb 6 Mikrotiks, 14 alumnes i xarxa comuna 10.0.0.0/16. Les IPs als clients seran manuals i cada Mikrotik oferirà un DNS intern per a la seva LAN.</p>
+    </header>
+
+    <section class="card">
+      <h2>Objectiu general</h2>
+      <p>Els alumnes aprendran a configurar una xarxa amb Mikrotik que:</p>
+      <ul>
+        <li>Gestiona IPs manuals en una LAN pròpia.</li>
+        <li>Proporciona accés a Internet mitjançant NAT.</li>
+        <li>Proporciona un <strong>DNS intern</strong> per resolució de noms locals i forwarding extern.</li>
+        <li>Permet rutes i proves entre diferents segments de xarxa.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Organització i adreçament</h2>
+      <p class="note"><strong>6 Mikrotiks físics — 14 alumnes</strong>. Grups de 2–3. Cada grup té 1 Mikrotik i 2 PCs/VMs. Xarxa comuna: <span class="kbd">10.0.0.0/16</span>. LANs de grup: <span class="kbd">192.168.X.0/24</span>.</p>
+      <table>
+        <thead><tr><th>Grup</th><th>WAN (ether1)</th><th>LAN (ether2)</th><th>Gateway LAN</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>10.0.0.101</td><td>192.168.1.1</td><td>192.168.1.1</td></tr>
+          <tr><td>2</td><td>10.0.0.102</td><td>192.168.2.1</td><td>192.168.2.1</td></tr>
+          <tr><td>3</td><td>10.0.0.103</td><td>192.168.3.1</td><td>192.168.3.1</td></tr>
+          <tr><td>4</td><td>10.0.0.104</td><td>192.168.4.1</td><td>192.168.4.1</td></tr>
+          <tr><td>5</td><td>10.0.0.105</td><td>192.168.5.1</td><td>192.168.5.1</td></tr>
+          <tr><td>6</td><td>10.0.0.106</td><td>192.168.6.1</td><td>192.168.6.1</td></tr>
+        </tbody>
+      </table>
+      <p class="tip">Els clients han d'usar IPs manuals dins el rang <span class="kbd">192.168.X.10–192.168.X.200</span> i configurar gateway i DNS apuntant a <span class="kbd">192.168.X.1</span>.</p>
+    </section>
+
+    <section class="card">
+      <h2>Planificació de les 5 sessions</h2>
+      <table>
+        <thead><tr><th>Sessió</th><th>Objectius</th><th>Activitats</th><th>Resultat esperat</th></tr></thead>
+        <tbody>
+          <tr><td>1. Configuració inicial i IPs</td><td>Configurar interfícies i IPs manuals</td><td>Assignació d'IPs, proves de ping local</td><td>Mikrotik i clients comunicant-se</td></tr>
+          <tr><td>2. Routing i NAT</td><td>Ruta per defecte i NAT</td><td>Afegir default route i masquerade, provar sortida a Internet</td><td>Clients amb Internet</td></tr>
+          <tr><td>3. DNS intern</td><td>Configurar DNS forwarding i entrades locals</td><td>Configurar /ip dns, afegir entrades estàtiques, provar resolució</td><td>Clients resolen noms locals i externs</td></tr>
+          <tr><td>4. Rutes entre LANs i seguretat</td><td>Permetre comunicació 10.0.0.0/16 ↔ LANs</td><td>Afegir rutes al router central, regles firewall d'accés</td><td>Connexió controlada entre grups</td></tr>
+          <tr><td>5. Proves finals i documentació</td><td>Verificació i lliurament</td><td>Execució del manual de proves, export de configuració</td><td>Informe i export del config</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card">
+      <h2>Guia pas a pas per cada sessió</h2>
+
+      <h3>Sessió 1 — Configuració bàsica i IPs manuals</h3>
+      <ol>
+        <li>Connectar-se al Mikrotik amb Winbox o WebFig.</li>
+        <li>Assignar IPs al Mikrotik:</li>
+      </ol>
+      <pre>/ip address add address=10.0.0.10X/16 interface=ether1 comment="WAN"
+/ip address add address=192.168.X.1/24 interface=ether2 comment="LAN"</pre>
+      <ol start="3">
+        <li>Configurar clients amb IP manual (ex: 192.168.X.10), gateway 192.168.X.1, DNS 192.168.X.1.</li>
+        <li>Provar connectivitat local: <code>/ping 192.168.X.1</code>.</li>
+      </ol>
+
+      <h3>Sessió 2 — Ruta i NAT</h3>
+      <pre>/ip route add dst-address=0.0.0.0/0 gateway=10.0.0.1
+/ip firewall nat add chain=srcnat out-interface=ether1 action=masquerade</pre>
+      <p>Provar des d'un client: <code>ping 8.8.8.8</code>. Si respon, Internet OK.</p>
+
+      <h3>Sessió 3 — Configurar DNS intern</h3>
+      <p>Objectiu: el Mikrotik actua com a <em>DNS forwarder</em> i com a servidor de noms local.</p>
+      <pre>/ip dns set servers=8.8.8.8,1.1.1.1 allow-remote-requests=yes
+/ip dns static add name=serverX.lab address=192.168.X.10
+/ip dns static add name=routerX.lab address=192.168.X.1</pre>
+      <p>Provar: <code>ping routerX.lab</code> i <code>ping google.com</code>.</p>
+
+      <h3>Sessió 4 — Rutes entre LANs i seguretat</h3>
+      <ol>
+        <li>Al router central, afegir rutes de tornada:</li>
+      </ol>
+      <pre>(router central)  
+/ip route add dst-address=192.168.X.0/24 gateway=10.0.0.10X</pre>
+      <p>Al Mikrotik, afegir regles de firewall per permetre trànsit desitjat:</p>
+      <pre>/ip firewall filter add chain=forward src-address=10.0.0.0/16 dst-address=192.168.X.0/24 action=accept
+/ip firewall filter add chain=forward src-address=192.168.X.0/24 dst-address=10.0.0.0/16 action=accept</pre>
+
+      <h3>Sessió 5 — Proves finals i documentació</h3>
+      <p>Cada alumne ha de fer i anotar una bateria de proves (ping, DNS, rutes) i exportar la configuració:</p>
+      <pre>/export file=config-grupX</pre>
+      <p>Entregar: export + manual de proves completat + captures.</p>
+    </section>
+
+    <section class="card">
+      <h2>Manual de proves (pas a pas)</h2>
+      <p>Per a cada prova, anotar comanda, resultat i observacions.</p>
+      <table>
+        <thead><tr><th>Prova</th><th>Comanda/Acció</th><th>Resultat esperat</th></tr></thead>
+        <tbody>
+          <tr><td>Ping a gateway LAN</td><td><code>ping 192.168.X.1</code></td><td>Resposta</td></tr>
+          <tr><td>Ping a Internet</td><td><code>ping 8.8.8.8</code></td><td>Resposta (si NAT/ruta OK)</td></tr>
+          <tr><td>Resolució DNS extern</td><td><code>ping google.com</code></td><td>Resolució i resposta</td></tr>
+          <tr><td>Resolució DNS intern</td><td><code>ping routerX.lab</code></td><td>Resolució a 192.168.X.1</td></tr>
+          <tr><td>Ping entre LANs</td><td><code>ping 192.168.Y.1</code></td><td>Depèn de rutes</td></tr>
+        </tbody>
+      </table>
+      <p class="tip">Comandes útils de diagnòstic: <code>/ip route print</code>, <code>/ip firewall nat print</code>, <code>/ip dns cache print</code>.</p>
+    </section>
+
+    <section class="card">
+      <h2>Guia per al professor</h2>
+      <ul>
+        <li>Verificar que cap grup té DHCP actiu a l'interfície WAN (10.0.0.0/16).</li>
+        <li>Comprovar la coherència del pla d'adreçament abans de començar.</li>
+        <li>Comprovar rutes de tornada al router central un cop s'introdueixen LANs privades.</li>
+        <li>Recol·lectar exports de configuració i revisar logs per incidències.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Notes de seguretat i bones pràctiques</h2>
+      <ul>
+        <li>No activar DHCP en la xarxa comuna per evitar conflictes.</li>
+        <li>Usar DNS intern per a noms locals i forwarding per a ressolució externa.</li>
+        <li>Desactivar serveis d'administració no necessaris i fer backups abans de canvis grans.</li>
+      </ul>
+    </section>
+
+    <footer>
+      <p>Document generat per al curs de pràctiques Mikrotik — Sense DHCP i amb DNS intern. Si vols, puc exportar-ho a PDF o afegir camps imprimibles perquè els alumnes hi apuntin resultats.</p>
+    </footer>
+  </div>
+</body>
+</html>
+              
+            </div>
+          </div><footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="Footer Navigation">
+        <a href="../u1.1-enrutament/" class="btn btn-neutral float-left" title="1.1 ENRUTAMENT"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../exercicis-ipv4/" class="btn btn-neutral float-right" title="Exercicis ipv4">Next <span class="icon icon-circle-arrow-right"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+  </div>
+
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+          
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" aria-label="Versions">
+  <span class="rst-current-version" data-toggle="rst-current-version">
+    
+    
+      <span><a href="../u1.1-enrutament/" style="color: #fcfcfc">&laquo; Previous</a></span>
+    
+    
+      <span><a href="../exercicis-ipv4/" style="color: #fcfcfc">Next &raquo;</a></span>
+    
+  </span>
+</div>
+    <script src="../js/jquery-3.6.0.min.js"></script>
+    <script>var base_url = "..";</script>
+    <script src="../js/theme_extra.js"></script>
+    <script src="../js/theme.js"></script>
+      <script src="../search/main.js"></script>
+    <script>
+        jQuery(function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        });
+    </script>
+
+</body>
+</html>
