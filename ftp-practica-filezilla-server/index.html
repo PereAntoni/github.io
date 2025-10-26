@@ -590,6 +590,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="CREACIÓ GRUPS I USUARIS I PROVES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-carpetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Carpetes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-grups-i-permisos" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Grups i permisos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-registre-dentrades-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Registre d'entrades (logs)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1196,6 +1229,39 @@
     </span>
   </a>
   
+    <nav class="md-nav" aria-label="CREACIÓ GRUPS I USUARIS I PROVES">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-carpetes" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 Carpetes
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-grups-i-permisos" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 Grups i permisos
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-registre-dentrades-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. Registre d'entrades (logs)
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
         
           <li class="md-nav__item">
@@ -1257,6 +1323,71 @@ Document proves</p>
 <h3 id="proves-de-funcionament-en-local">PROVES DE FUNCIONAMENT EN LOCAL</h3>
 <h3 id="proves-de-funcionament-en-lan">PROVES DE FUNCIONAMENT EN LAN</h3>
 <h3 id="creacio-grups-i-usuaris-i-proves">CREACIÓ GRUPS I USUARIS I PROVES</h3>
+<blockquote>
+<p>Ha de tenir un grup administrador amb accces a totes les carpetes, una entrada anomim sense password que pot veure la carpeta public, un client que pot veure la carpeta public i la carpeta catàleg, treballador pot veure totes les carpetes i pot veure i editar la carpeta stock. Un grup departament de control pot veure i editar totes les carpetes. Es vol tenir també un detall de totes les entrades que s'han produit durant un temps.
+- Primer es creen les carpetes dins del servidor.
+- Seguidament s'han de crear els grups
+- Desprès a cada grup s'han de crear dos usuaris, el password de cada usuari i de cada grup és el mateix que el nom (pe: admin,admin).
+- Finalment s'han de fer les proves.</p>
+</blockquote>
+<h4 id="31-carpetes">3.1 Carpetes</h4>
+<ul>
+<li><strong>/public</strong>: Carpeta accessible per a tots, inclòs accés anònim.</li>
+<li><strong>/cataleg</strong>: Carpeta amb informació sobre productes o serveis.</li>
+<li><strong>/stock</strong>: Carpeta amb informació de l'estoc de l'empresa.</li>
+<li><strong>/altres</strong>: Carpeta general per a documents interns.</li>
+</ul>
+<h4 id="32-grups-i-permisos">3.2 Grups i permisos</h4>
+<table>
+<thead>
+<tr>
+<th>Grup / Usuari</th>
+<th>Carpetes accessibles</th>
+<th>Permisos</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Administradors</strong></td>
+<td>Totes les carpetes</td>
+<td>Veure i editar tot</td>
+</tr>
+<tr>
+<td><strong>Accés anònim</strong></td>
+<td>/public</td>
+<td>Veure només</td>
+</tr>
+<tr>
+<td><strong>Clients</strong></td>
+<td>/public, /cataleg</td>
+<td>Veure només</td>
+</tr>
+<tr>
+<td><strong>Treballadors</strong></td>
+<td>Totes les carpetes</td>
+<td>Veure tot, editar /stock</td>
+</tr>
+<tr>
+<td><strong>Departament de control</strong></td>
+<td>Totes les carpetes</td>
+<td>Veure i editar tot</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Notes:</strong>
+- L'accés anònim no requereix contrasenya.
+- Els clients només poden llegir informació, sense possibilitat de modificar.
+- Els treballadors poden modificar només la carpeta <strong>stock</strong>.
+- El departament de control té permisos complets per supervisar i modificar contingut.</p>
+<h4 id="4-registre-dentrades-logs">4. Registre d'entrades (logs)</h4>
+<p>Per tal de fer un seguiment de totes les accions realitzades al servidor FTP, es configurarà un registre que inclogui:</p>
+<ul>
+<li>Usuari que ha accedit</li>
+<li>Carpeta accedida</li>
+<li>Data i hora de l'accés</li>
+<li>Tipus d'acció: lectura, escriptura, eliminació</li>
+<li>IP d'origen</li>
+</ul>
 <h3 id="creacio-routing">CREACIÓ ROUTING</h3>
 <h3 id="proves-xarxa-externa">PROVES XARXA EXTERNA</h3>
 
