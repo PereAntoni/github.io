@@ -9,10 +9,10 @@
       
       
       
-        <link rel="prev" href="../u5-ServeiDNS/">
+        <link rel="prev" href="../u2-ftp-vsftpd/">
       
       
-        <link rel="next" href="../u5.2-Practica-DNS/">
+        <link rel="next" href="../u3-servei-http/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +20,7 @@
     
     
       
-        <title>5.1 Test Servei DNS - Serveis en Xarxa CFGM</title>
+        <title>2.3 Preguntes test - Serveis en Xarxa CFGM</title>
       
     
     
@@ -93,7 +93,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              5.1 Test Servei DNS
+              2.3 Preguntes test
             
           </span>
         </div>
@@ -350,17 +350,19 @@
       
   
   
+    
   
   
+  
     
     
     
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
         
           
           <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
@@ -374,7 +376,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_3">
             <span class="md-nav__icon md-icon"></span>
             2. SERVEI FTP
@@ -512,10 +514,17 @@
                 
   
   
+    
   
   
-    <li class="md-nav__item">
-      <a href="../u2-test-ftp/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -524,6 +533,7 @@
   
 
       </a>
+      
     </li>
   
 
@@ -687,19 +697,17 @@
       
   
   
-    
   
   
-  
     
     
     
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
         
         
-        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
         
           
           <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
@@ -713,7 +721,7 @@
             <span class="md-nav__icon md-icon"></span>
           </label>
         
-        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
           <label class="md-nav__title" for="__nav_6">
             <span class="md-nav__icon md-icon"></span>
             5. SERVEI DNS
@@ -745,17 +753,10 @@
                 
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../u5.1-ServeiDNS-test/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -764,7 +765,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -998,188 +998,92 @@
 <!DOCTYPE html>
 <html lang="ca">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test sobre DNS</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            line-height: 1.6;
-        }
-        h1 {
-            color: #007BFF;
-        }
-        .question {
-            margin-bottom: 20px;
-        }
-        .result {
-            margin-top: 20px;
-            padding: 10px;
-            border: 1px solid #ccc;
-            background-color: #f9f9f9;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <title>Test de 25 preguntes sobre el Servei FTP</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; background: #f7f9fb; color: #333; }
+    h1 { text-align: center; color: #004a99; }
+    .pregunta { background: #fff; padding: 15px; margin: 20px 0; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    button { background: #004a99; color: white; padding: 10px 20px; border: none; border-radius: 8px; cursor: pointer; }
+    button:hover { background: #0066cc; }
+    .resultat { font-weight: bold; margin-top: 15px; }
+    .correcte { color: green; }
+    .incorrecte { color: red; }
+    .explicacio { font-size: 0.9em; margin-top: 5px; color: #444; }
+  </style>
 </head>
 <body>
-    <h1>Test sobre DNS</h1>
-    <form id="dnsTest">
-        <!-- Preguntes -->
-        <div class="question">
-            <p><strong>1. Què significa l'acrònim DNS?</strong></p>
-            <label><input type="radio" name="q1" value="a"> Domain Number System</label><br>
-            <label><input type="radio" name="q1" value="b"> Domain Name System</label><br>
-            <label><input type="radio" name="q1" value="c"> Digital Network System</label><br>
-            <label><input type="radio" name="q1" value="d"> Data Name Server</label>
-        </div>
-        <div class="question">
-            <p><strong>2. Quina és la funció principal del DNS?</strong></p>
-            <label><input type="radio" name="q2" value="a"> Tradueix adreces IP en noms de domini</label><br>
-            <label><input type="radio" name="q2" value="b"> Tradueix noms de domini en adreces IP</label><br>
-            <label><input type="radio" name="q2" value="c"> Emmagatzema pàgines web</label><br>
-            <label><input type="radio" name="q2" value="d"> Proporciona serveis de correu electrònic</label>
-        </div>
-        <div class="question">
-            <p><strong>3. Què és un servidor DNS autoritatiu?</strong></p>
-            <label><input type="radio" name="q3" value="a"> Un servidor que emmagatzema còpies de seguretat de dades</label><br>
-            <label><input type="radio" name="q3" value="b"> Un servidor que conté la informació oficial sobre un domini específic</label><br>
-            <label><input type="radio" name="q3" value="c"> Un servidor que proporciona accés a internet</label><br>
-            <label><input type="radio" name="q3" value="d"> Un servidor que gestiona les connexions de xarxa locals</label>
-        </div>
-        <div class="question">
-            <p><strong>4. Què és un servidor de noms recursiu?</strong></p>
-            <label><input type="radio" name="q4" value="a"> Un servidor que només respon a consultes internes</label><br>
-            <label><input type="radio" name="q4" value="b"> Un servidor que busca la resposta a una consulta DNS en nom del client</label><br>
-            <label><input type="radio" name="q4" value="c"> Un servidor que emmagatzema pàgines web</label><br>
-            <label><input type="radio" name="q4" value="d"> Un servidor que gestiona les adreces IP públiques</label>
-        </div>
-        <div class="question">
-            <p><strong>5. Quina és la primera etapa en la resolució d'un nom de domini?</strong></p>
-            <label><input type="radio" name="q5" value="a"> Consultar el servidor DNS autoritatiu</label><br>
-            <label><input type="radio" name="q5" value="b"> Consultar el servidor de noms recursiu</label><br>
-            <label><input type="radio" name="q5" value="c"> Consultar el servidor de noms arrel</label><br>
-            <label><input type="radio" name="q5" value="d"> Consultar la memòria cau local</label>
-        </div>
-        <div class="question">
-            <p><strong>6. Què és un servidor de noms arrel?</strong></p>
-            <label><input type="radio" name="q6" value="a"> Un servidor que conté informació sobre tots els dominis existents</label><br>
-            <label><input type="radio" name="q6" value="b"> Un servidor que redirigeix les consultes als servidors de dominis de nivell superior (TLD)</label><br>
-            <label><input type="radio" name="q6" value="c"> Un servidor que emmagatzema les pàgines web més populars</label><br>
-            <label><input type="radio" name="q6" value="d"> Un servidor que gestiona les connexions de xarxa locals</label>
-        </div>
-        <div class="question">
-            <p><strong>7. Què és un domini de nivell superior (TLD)?</strong></p>
-            <label><input type="radio" name="q7" value="a"> La part inicial d'un nom de domini</label><br>
-            <label><input type="radio" name="q7" value="b"> La part final d'un nom de domini, com ara .com, .org, .net</label><br>
-            <label><input type="radio" name="q7" value="c"> Un subdomini dins d'un domini principal</label><br>
-            <label><input type="radio" name="q7" value="d"> Un nom de domini que no està registrat</label>
-        </div>
-        <div class="question">
-            <p><strong>8. Quina és la funció d'un servidor TLD?</strong></p>
-            <label><input type="radio" name="q8" value="a"> Emmagatzemar les pàgines web associades a un domini</label><br>
-            <label><input type="radio" name="q8" value="b"> Redirigir les consultes als servidors DNS autoritatius per a un domini específic</label><br>
-            <label><input type="radio" name="q8" value="c"> Proporcionar serveis de correu electrònic per a un domini</label><br>
-            <label><input type="radio" name="q8" value="d"> Gestionar les connexions de xarxa locals</label>
-        </div>
-        <div class="question">
-            <p><strong>9. Què és la memòria cau DNS?</strong></p>
-            <label><input type="radio" name="q9" value="a"> Un emmagatzematge temporal de les respostes a consultes DNS per accelerar futures sol·licituds</label><br>
-            <label><input type="radio" name="q9" value="b"> Un registre permanent de totes les consultes DNS realitzades</label><br>
-            <label><input type="radio" name="q9" value="c"> Un llistat de tots els dominis disponibles a internet</label><br>
-            <label><input type="radio" name="q9" value="d"> Un sistema de seguretat per protegir les consultes DNS</label>
-        </div>
-        <div class="question">
-    <p><strong>10. Què és una consulta DNS inversa?</strong></p>
-    <label><input type="radio" name="q10" value="a"> Una consulta que tradueix un nom de domini en una adreça IP</label><br>
-    <label><input type="radio" name="q10" value="b"> Una consulta que tradueix una adreça IP en un nom de domini</label><br>
-    <label><input type="radio" name="q10" value="c"> Una consulta que verifica la disponibilitat d'un nom de domini</label><br>
-    <label><input type="radio" name="q10" value="d"> Una consulta que comprova l'estat d'un servidor DNS</label>
-</div>
-<div class="question">
-    <p><strong>11. Què és un registre A en DNS?</strong></p>
-    <label><input type="radio" name="q11" value="a"> Un registre que associa un nom de domini amb una adreça IPv4</label><br>
-    <label><input type="radio" name="q11" value="b"> Un registre que associa un nom de domini amb una adreça IPv6</label><br>
-    <label><input type="radio" name="q11" value="c"> Un registre que redirigeix el correu electrònic a un servidor específic</label><br>
-    <label><input type="radio" name="q11" value="d"> Un registre que defineix els servidors de noms per a un domini</label>
-</div>
-<div class="question">
-    <p><strong>12. Què és un registre MX en DNS?</strong></p>
-    <label><input type="radio" name="q12" value="a"> Un registre que associa un nom de domini amb una adreça IP</label><br>
-    <label><input type="radio" name="q12" value="b"> Un registre que especifica els servidors de correu per a un domini</label><br>
-    <label><input type="radio" name="q12" value="c"> Un registre que defineix els servidors de noms per a un domini</label><br>
-    <label><input type="radio" name="q12" value="d"> Un registre que redirigeix un domini a un altre</label>
-</div>
 
-        <div class="question">
-    <p><strong>13. Què és un registre CNAME en DNS?</strong></p>
-    <label><input type="radio" name="q13" value="a"> Un registre que associa un nom de domini amb una adreça IP</label><br>
-    <label><input type="radio" name="q13" value="b"> Un registre que especifica els servidors de correu per a un domini</label><br>
-    <label><input type="radio" name="q13" value="c"> Un registre que defineix un àlies per a un altre nom de domini</label><br>
-    <label><input type="radio" name="q13" value="d"> Un registre que redirigeix un domini a un altre</label>
-</div>
-<div class="question">
-    <p><strong>14. Què és un registre PTR en DNS?</strong></p>
-    <label><input type="radio" name="q14" value="a"> Un registre que associa un nom de domini amb una adreça IP</label><br>
-    <label><input type="radio" name="q14" value="b"> Un registre que especifica els servidors de correu per a un domini</label><br>
-    <label><input type="radio" name="q14" value="c"> Un registre que defineix un àlies per a un altre nom de domini</label><br>
-    <label><input type="radio" name="q14" value="d"> Un registre que associa una adreça IP amb un nom de domini (utilitzat en consultes inverses)</label>
-</div>
-<div class="question">
-    <p><strong>15. Què és el temps de vida (TTL) en un registre DNS?</strong></p>
-    <label><input type="radio" name="q15" value="a"> El temps que un registre DNS és vàlid abans de ser actualitzat</label><br>
-    <label><input type="radio" name="q15" value="b"> El temps que triga una consulta DNS a ser processada</label><br>
-    <label><input type="radio" name="q15" value="c"> El temps que un servidor DNS roman actiu</label><br>
-    <label><input type="radio" name="q15" value="d"> El temps que un domini està registrat abans de la seva expiració</label>
-</div>
+<h1>🧠 Test autocorregible: Protocol FTP (25 preguntes)</h1>
 
-        <!-- Continua amb la resta de preguntes fins a 15 -->
-        <button type="button" onclick="checkAnswers()">Comprova les respostes</button>
-    </form>
-    <div class="result" id="result"></div>
+<form id="quiz">
 
-    <script>
-        function checkAnswers() {
-            const correctAnswers = {
-                q1: 'b',
-                q2: 'b',
-                q3: 'b',
-                q4: 'b',
-                q5: 'c',
-                q6: 'b',
-                q7: 'b',
-                q8: 'b',
-                q9: 'a',
-                q10: 'b',
-                q11: 'a',
-                q12: 'b',
-                q13: 'c',
-                q14: 'd',
-                q15: 'a'
-            };
+<script>
+const preguntes = [
+  { q: "1. Quin és el port predeterminat per a la connexió de control FTP?", a:["Port 20","Port 21","Port 22","Port 69"], c:"b", e:"El port 21 és el port utilitzat per la connexió de control FTP, on s’envien ordres i credencials."},
+  { q: "2. Quin port utilitza FTP per a la connexió de dades?", a:["Port 69","Port 80","Port 20","Port 21"], c:"c", e:"FTP utilitza el port 20 per a la connexió de dades, on es transfereixen els fitxers."},
+  { q: "3. Quin protocol utilitza el port 22 i proporciona xifratge segur?", a:["FTP","FTPS","SFTP","TFTP"], c:"c", e:"SFTP funciona sobre SSH al port 22 i xifra totes les dades."},
+  { q: "4. Què significa FTP?", a:["File Transfer Protocol","Fast Transfer Protocol","File Transmission Path","First Transfer Program"], c:"a", e:"FTP significa File Transfer Protocol (Protocol de Transferència de Fitxers)."},
+  { q: "5. En mode passiu, qui inicia la connexió de dades?", a:["El servidor","El client","Els dos","Cap"], c:"b", e:"En mode passiu, el client inicia tant la connexió de control com la de dades."},
+  { q: "6. Quin d’aquests és un tipus de FTP segur?", a:["FTP anònim","FTPS","TFTP","FTP local"], c:"b", e:"FTPS és FTP amb SSL/TLS, que afegeix seguretat i xifratge."},
+  { q: "7. Quin protocol de transferència no està relacionat amb FTP?", a:["FTPS","SFTP","HTTP","TFTP"], c:"c", e:"HTTP és un protocol diferent que serveix per transferir pàgines web, no fitxers FTP."},
+  { q: "8. Quina ordre s’utilitza per descarregar un fitxer via FTP?", a:["put","get","ls","del"], c:"b", e:"L'ordre 'get' serveix per descarregar fitxers del servidor al client."},
+  { q: "9. Quina ordre s’utilitza per pujar un fitxer al servidor FTP?", a:["push","upload","put","send"], c:"c", e:"L'ordre 'put' permet carregar un fitxer del client al servidor."},
+  { q: "10. Quin codi de resposta FTP indica que no s’ha iniciat sessió?", a:["404","530","221","503"], c:"b", e:"El codi 530 significa que l’usuari no ha iniciat sessió correctament."},
+  { q: "11. Quin tipus de fitxer és el format predeterminat per transferències binàries?", a:["ASCII","Imatge","EBCDIC","Local"], c:"b", e:"El mode Imatge és el predeterminat per a fitxers binaris."},
+  { q: "12. Quin avantatge té FTP?", a:["Velocitat i estabilitat","No necessita autenticació","Encripta per defecte","Funciona només localment"], c:"a", e:"FTP és ràpid, estable i eficient per grans volums de dades."},
+  { q: "13. Quin inconvenient té FTP?", a:["No xifra les dades","Només admet Windows","No permet pujar arxius","És massa segur"], c:"a", e:"FTP envia dades en text clar, incloent contrasenyes, per això és insegur."},
+  { q: "14. Quina diferència principal hi ha entre FTP i SFTP?", a:["FTP és més lent","SFTP xifra les dades","FTP usa port 22","No hi ha diferències"], c:"b", e:"SFTP xifra totes les dades, mentre que FTP no ho fa."},
+  { q: "15. Quin tipus de connexió FTP envia ordres com l'inici de sessió o el canvi de directori?", a:["Connexió de dades","Connexió de control","Connexió passiva","Connexió segura"], c:"b", e:"La connexió de control (port 21) envia ordres i informació d’usuari."},
+  { q: "16. Quina connexió FTP s’utilitza per transferir els fitxers reals?", a:["Connexió de dades","Connexió de control","Connexió segura","Connexió local"], c:"a", e:"La connexió de dades (port 20) serveix per transferir els fitxers."},
+  { q: "17. Quin mode FTP és més compatible amb tallafocs?", a:["Actiu","Passiu","Dual","Local"], c:"b", e:"El mode passiu és més compatible amb tallafocs, ja que el client inicia totes les connexions."},
+  { q: "18. Què significa l'acrònim TFTP?", a:["Tiny File Transfer Protocol","Transfer File Test Protocol","Trivial File Transfer Protocol","Total File Transfer Process"], c:"c", e:"TFTP significa Trivial File Transfer Protocol, una versió senzilla d’FTP."},
+  { q: "19. Quin port utilitza TFTP?", a:["21","22","69","20"], c:"c", e:"TFTP utilitza el port 69 i opera amb UDP, no amb TCP."},
+  { q: "20. Quina resposta FTP indica que el comandament s’ha acceptat correctament?", a:["200","530","404","551"], c:"a", e:"El codi 200 indica que l’ordre FTP s’ha executat correctament."},
+  { q: "21. Quina d’aquestes opcions descriu millor el mode actiu d’FTP?", a:["El client obre tots els ports","El servidor inicia la connexió de dades cap al client","Només hi ha una connexió","Cap d’aquestes"], c:"b", e:"En mode actiu, el servidor inicia la connexió de dades cap al client."},
+  { q: "22. Quin tipus de FTP permet accés públic sense contrasenya?", a:["FTP protegit","FTP anònim","SFTP","FTPS"], c:"b", e:"L’FTP anònim permet descarregar fitxers públics sense autenticar-se."},
+  { q: "23. Quina és una característica principal del protocol FTP?", a:["És sense estat","Manté estat durant la sessió","Només usa UDP","Només serveix per text"], c:"b", e:"FTP manté estat durant tota la sessió (a diferència d’HTTP)."},
+  { q: "24. Quina acció realitza l’ordre 'ls' dins d’una sessió FTP?", a:["Llista fitxers i directoris","Esborra fitxers","Puja fitxers","Tanca la sessió"], c:"a", e:"L'ordre 'ls' mostra el contingut del directori remot."},
+  { q: "25. Quina de les següents afirmacions és correcta sobre FTPS?", a:["Funciona al port 69","No xifra les dades","És FTP amb SSL/TLS","És un protocol totalment diferent"], c:"c", e:"FTPS és FTP amb seguretat SSL/TLS afegida per xifrar dades i credencials."}
+];
 
-            const form = document.getElementById('dnsTest');
-            let score = 0;
-            let total = Object.keys(correctAnswers).length;
+window.onload = function(){
+  const form = document.getElementById("quiz");
+  preguntes.forEach((p,i)=>{
+    const div = document.createElement("div");
+    div.className = "pregunta";
+    div.innerHTML = `<p><strong>${p.q}</strong></p>` +
+      p.a.map((opt,j)=>`<label><input type="radio" name="p${i}" value="${String.fromCharCode(97+j)}"> ${String.fromCharCode(97+j)}) ${opt}</label><br>`).join("") +
+      `<div class="explicacio" id="e${i}"></div>`;
+    form.insertBefore(div, form.lastElementChild);
+  });
+};
 
-            for (let question in correctAnswers) {
-                const answer = form[question]?.value;
-                if (answer === correctAnswers[question]) {
-                    score++;
-                }
-            }
+function corregir(){
+  let correctes = 0;
+  preguntes.forEach((p,i)=>{
+    const resposta = document.querySelector(`input[name="p${i}"]:checked`);
+    const explicacio = document.getElementById(`e${i}`);
+    if(resposta){
+      if(resposta.value===p.c){
+        correctes++;
+        explicacio.innerHTML = `<span class="correcte">✅ Correcte.</span> ${p.e}`;
+      }else{
+        explicacio.innerHTML = `<span class="incorrecte">❌ Incorrecte.</span> ${p.e}`;
+      }
+    }else{
+      explicacio.innerHTML = `<span class="incorrecte">⚠️ No has triat cap resposta.</span> ${p.e}`;
+    }
+  });
+  document.getElementById("resultatFinal").textContent = `Has encertat ${correctes} de ${preguntes.length} preguntes.`;
+}
+</script>
 
-            const resultDiv = document.getElementById('result');
-            resultDiv.innerHTML = `<p>Has encertat <strong>${score}</strong> de <strong>${total}</strong> preguntes.</p>`;
+<button type="button" onclick="corregir()">Comprova respostes</button>
+</form>
 
-            if (score === total) {
-                resultDiv.innerHTML += `<p>Excel·lent! Has respost totes les preguntes correctament.</p>`;
-            } else if (score >= total / 2) {
-                resultDiv.innerHTML += `<p>Bona feina! Però pots millorar en algunes preguntes.</p>`;
-            } else {
-                resultDiv.innerHTML += `<p>Segueix practicant, segur que milloraràs!</p>`;
-            }
-        }
-    </script>
+<p class="resultat" id="resultatFinal"></p>
+
 </body>
 </html>
 
