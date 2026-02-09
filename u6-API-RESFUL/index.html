@@ -9,10 +9,6 @@
       
       
       
-        <link rel="prev" href="../miquel/">
-      
-      
-        <link rel="next" href="../provaVue/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -20,7 +16,7 @@
     
     
       
-        <title>Errors Comuns Apache - Serveis en Xarxa CFGM</title>
+        <title>u6 API RESFUL - Serveis en Xarxa CFGM</title>
       
     
     
@@ -61,11 +57,6 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
-        
-        <a href="#questionari-sobre-configuracio-del-servidor-apache-errors-comuns" class="md-skip">
-          Skip to content
-        </a>
-      
     </div>
     <div data-md-component="announce">
       
@@ -98,7 +89,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Errors Comuns Apache
+              u6 API RESFUL
             
           </span>
         </div>
@@ -1091,19 +1082,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../errors-comuns/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -1112,7 +1094,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -1154,8 +1135,6 @@
   
   
   
-    
-  
   
 </nav>
                   </div>
@@ -1170,102 +1149,130 @@
                   
 
 
-<h1 id="questionari-sobre-configuracio-del-servidor-apache-errors-comuns">Qüestionari sobre configuració del servidor Apache: Errors comuns</h1>
+  <h1>u6 API RESFUL</h1>
+
+<p>Introducció a l'API REST
+Darrera actualització: 23 de desembre de 2025
+REST API significa Representational State Transfer API. És un tipus d'API (Application Programming Interface) que permet la comunicació entre diferents sistemes a través d'Internet. Les API REST funcionen enviant sol·licituds i rebent respostes, normalment en format JSON, entre el client i el servidor.</p>
+<p>11
+Una sol·licitud s'envia des del client al servidor a través d'una URL web, utilitzant un dels mètodes HTTP.
+El servidor respon amb el recurs sol·licitat, que pot ser HTML, XML, imatge o JSON, sent JSON el format més utilitzat per als serveis web moderns.
+Aquests mètodes es corresponen amb operacions CRUD (Create, Read, Update, Delete) per gestionar recursos a la web.
+NOTA: REST és un estil de disseny arquitectònic per a les API, mentre que HTTP és el protocol de comunicació utilitzat per a la transferència de dades a través del web. Les API REST utilitzen mètodes HTTP per interactuar amb els recursos, però no són el mateix. REST defineix com s'han de comportar les API, mentre que HTTP defineix les regles per a la comunicació a través del web. Normalment funcionen juntes, però tenen finalitats diferents.</p>
+<p>Mètodes HTTP comuns utilitzats a l'API REST
+En HTTP, hi ha cinc mètodes que s'utilitzen habitualment en una arquitectura basada en REST, és a dir, POST, GET, PUT, PATCH i DELETE. Aquests corresponen a les operacions de creació, lectura, actualització i supressió (o CRUD), respectivament. Hi ha altres mètodes que s'utilitzen amb menys freqüència, com ara OPTIONS i HEAD.</p>
 <ol>
-<li><strong>Quin error es pot cometre en configurar un servidor Apache per HTTPS sense tenir un certificat vàlid?</strong></li>
-<li>
-<p>A) El servidor no funcionarà correctament.</p>
-</li>
-<li>
-<p>B) Els fitxers no es carregaran en HTTPS.</p>
-</li>
-<li>C) HTTPS funciona, però amb un avís de seguretat.</li>
-<li>
-<p>D) HTTPS es configura automàticament sense problemes.</p>
-</li>
-<li>
-<p><strong>Quina d'aquestes opcions pot provocar que Apache no arrenqui després d’una modificació al fitxer <code>httpd.conf</code>?</strong></p>
-</li>
-<li>A) Ús incorrecte d’una directiva sense incloure el mòdul requerit.</li>
-<li>B) Arxius de log no configurats.</li>
-<li>C) Absència del fitxer de configuració SSL.</li>
-<li>
-<p>D) Instal·lar Apache sense permisos d'usuari root.</p>
-</li>
-<li>
-<p><strong>Quin error apareix sovint si el port 80 o 443 està ocupat per un altre servei?</strong></p>
-</li>
-<li>A) Error 404</li>
-<li>B) Error de sintaxi</li>
-<li>C) Error de vinculació de socket (Address already in use)</li>
-<li>
-<p>D) Error d’autenticació</p>
-</li>
-<li>
-<p><strong>Quina comanda hauries d’executar després de modificar <code>apache2.conf</code> per aplicar els canvis?</strong></p>
-</li>
-<li>A) <code>service apache2 start</code></li>
-<li>B) <code>service apache2 stop</code></li>
-<li>C) <code>systemctl reload apache2</code></li>
-<li>
-<p>D) <code>apache2 reset</code></p>
-</li>
-<li>
-<p><strong>Què indica l’error “403 Forbidden” quan es carrega una pàgina Apache?</strong></p>
-</li>
-<li>A) El fitxer de configuració <code>httpd.conf</code> té un error.</li>
-<li>B) El directori arrel té permisos restrictius.</li>
-<li>C) El port 80 no està obert.</li>
-<li>
-<p>D) La IP no està configurada.</p>
-</li>
-<li>
-<p><strong>Quin error comet un usuari si es troba amb “500 Internal Server Error” després de canviar <code>htaccess</code>?</strong></p>
-</li>
-<li>A) Ha establert permisos massa alts al directori.</li>
-<li>B) No ha activat el mòdul <code>mod_rewrite</code>.</li>
-<li>C) Ha editat <code>httpd.conf</code> en comptes de <code>htaccess</code>.</li>
-<li>
-<p>D) Ha activat el mòdul SSL sense certificat.</p>
-</li>
-<li>
-<p><strong>Quina és la causa comuna de l’error "AH00558: apache2: Could not reliably determine the server's fully qualified domain name"?</strong></p>
-</li>
-<li>A) Falta la configuració de <code>ServerName</code> a <code>apache2.conf</code>.</li>
-<li>B) No està activat el mòdul SSL.</li>
-<li>C) El fitxer <code>htaccess</code> té sintaxi incorrecta.</li>
-<li>
-<p>D) Els permisos del servidor són massa restrictius.</p>
-</li>
-<li>
-<p><strong>Quina comanda serveix per comprovar si el fitxer de configuració Apache té errors de sintaxi?</strong></p>
-</li>
-<li>A) <code>apachectl test</code></li>
-<li>B) <code>apache2 check</code></li>
-<li>C) <code>apachectl configtest</code></li>
-<li>
-<p>D) <code>systemctl check apache2</code></p>
-</li>
-<li>
-<p><strong>Quina d'aquestes configuracions podria generar un error si no s'activa abans en Apache?</strong></p>
-</li>
-<li>A) <code>ServerName</code></li>
-<li>B) <code>DocumentRoot</code></li>
-<li>C) <code>AllowOverride All</code></li>
-<li>
-<p>D) <code>Listen 80</code></p>
-</li>
-<li>
-<p><strong>Quin error es genera si <code>https</code> es configura en un VirtualHost sense tenir el mòdul SSL activat?</strong></p>
-<ul>
-<li>A) Error 500</li>
-<li>B) El servidor redirigeix automàticament a HTTP</li>
-<li>C) Error d'inici del servei per absència del mòdul SSL</li>
-<li>D) El servidor ignora la configuració i es manté en HTTP</li>
-</ul>
-</li>
+<li>Mètode GET
+El mètode HTTP GET s'utilitza per llegir (o recuperar) una representació d'un recurs. A la ruta segura, GET retorna una representació en XML o JSON i un codi de resposta HTTP de 200 (OK). En cas d'error, sovint retorna un 404 (NOT FOUND) o 400 (BAD REQUEST). </li>
 </ol>
-<hr />
+<p>GET /usuaris/123
+Aquesta sol·licitud obté dades per a l'usuari amb l'ID 123.</p>
+<ol>
+<li>Mètode POST
+El mètode POST s'utilitza habitualment per crear recursos nous. Sovint s'utilitza per crear recursos subordinats relacionats amb un recurs principal. Un cop creat correctament, el servidor retorna l'estat HTTP 201 (Creat) juntament amb una capçalera d'ubicació que apunta al recurs recentment creat.</li>
+</ol>
+<p>POST /usuaris 
+{ 
+  "nom": "Anjali", 
+  "correu electrònic": "gfg@example.com" 
+}
+Aquesta sol·licitud crea un nou usuari amb les dades proporcionades.</p>
+<p>NOTA: POST no és ni segur ni idempotent. </p>
+<ol>
+<li>Mètode PUT
+PUT és un mètode HTTP que s'utilitza per actualitzar o crear un recurs al servidor. Quan s'utilitza PUT, s'envia tot el recurs al cos de la sol·licitud i substitueix el recurs actual a l'URL especificada. Si el recurs no existeix, es pot crear un de nou.</li>
+</ol>
+<p>PUT /usuaris/123 
+{ 
+  "nom": "Anjali", 
+  "correu electrònic": "gfg@example.com" 
+}
+Aquesta sol·licitud actualitza l'usuari amb l'ID 123 o crea un usuari nou si no n'existeix cap.</p>
+<ol>
+<li>Mètode PATCH
+PATCH és un mètode HTTP que s'utilitza per actualitzar parcialment un recurs al servidor. A diferència de PUT, PATCH només requereix que els camps que cal actualitzar s'enviïn al cos de la sol·licitud. Modifica parts específiques del recurs en lloc de substituir tot el recurs.</li>
+</ol>
+<p>PATCH /users/123 
+{ 
+  "email": "new.email@example.com" 
+}
+Aquesta sol·licitud només actualitza el correu electrònic de l'usuari amb l'ID 123, deixant la resta de les dades de l'usuari sense canvis.</p>
+<p>Diferències entre PUT i PATCH
+Tant PATCH com PUT s'utilitzen per actualitzar recursos al servidor, però difereixen en la manera com gestionen el procés d'actualització:</p>
+<p>POSAR   PEGAT
+Substitueix tot el recurs   Només actualitza els camps especificats
+Cal enviar les dades completes  Només envia els canvis
+Idempotent  No sempre idempotent
+Exemple: Actualització de tot el perfil d'un usuari Exemple: Canviar només el correu electrònic d'un usuari
+5. Mètode DELETE
+S'utilitza per suprimir un recurs identificat per un URI. Si s'elimina correctament, retorna l'estat HTTP 200 (OK) juntament amb un cos de resposta.</p>
+<p>SUPRIMEIX /usuaris/123
+Aquesta sol·licitud elimina l'usuari amb l'ID 123.</p>
+<p>Idempotència: Un mètode HTTP idempotent és un mètode HTTP que es pot cridar moltes vegades sense resultats diferents. No importa si el mètode es crida només una vegada o deu vegades. El resultat hauria de ser el mateix. De nou, això només s'aplica al resultat, no al recurs en si.</p>
+<p>Creació d'una API REST senzilla amb Node.js i Express
+Ara creem una API REST i realitzem les diverses operacions HTTP.</p>
+<p>Pas 1: Crea la carpeta
+Crea el projecte Node.js mitjançant l'ordre següent:</p>
+<p>mkdir aplicació-node 
+cd aplicació-node
+Pas 2: Instal·leu el fitxer package.json
+npm init -y
+Pas 3: Instal·leu Express
+Per començar a crear una API REST a Node.js, cal instal·lar Express . Executeu l'ordre següent al terminal:</p>
+<p>instal·lació exprés de npm
+Pas 4: Crea el servidor
+Crea un fitxer anomenat server.js al directori arrel del projecte (node-app) i afegeix el codi següent:</p>
+<p>// Import the Express module
+const express = require('express');
+const app = express();
+const port = 3000;</p>
+<p>app.use(express.json());</p>
+<p>// Define a route for GET requests
+app.get('/users', (req, res) =&gt; {
+    res.json({ message: 'Returning list of users' });
+});</p>
+<p>// Define a route for POST requests
+app.post('/users', (req, res) =&gt; {
+    const newUser = req.body;
+    res.json({ message: 'User created', user: newUser });
+});</p>
+<p>// Define a route for PUT requests
+app.put('/users/:id', (req, res) =&gt; {
+    const userId = req.params.id;
+    const updatedUser = req.body;
+    res.json({ message: <code>User with ID ${userId} updated</code>, updatedUser });
+});</p>
+<p>// Define a route for DELETE requests
+app.delete('/users/:id', (req, res) =&gt; {
+    const userId = req.params.id;
+    res.json({ message: <code>User with ID ${userId} deleted</code> });
+});</p>
+<p>// Start the server
+app.listen(port, () =&gt; {
+    console.log(<code>Server is running on http://localhost:${port}</code>);
+});
+Pas 5: Inicieu el servidor
+Executeu l'ordre següent al terminal des del directori arrel del projecte:</p>
+<p>node server.js
+Si el servidor s'inicia correctament, veureu el missatge:</p>
+<p>El servidor s'està executant a http://localhost:3000
+Sortida: Per provar l'API, obriu http://localhost:3000 a Postman o una altra eina de prova d'API.</p>
+<p>GET /users: Aquesta ruta obté la llista d'usuaris (o dades simulades en aquest cas).
+POST /users: Aquesta ruta accepta dades JSON del client per crear un usuari nou.
+PUT /users/:id: Aquesta ruta actualitza la informació d'un usuari en funció de l'ID d'usuari proporcionat a l'URL.
+DELETE /users/:id: Aquesta ruta elimina un usuari amb l'ID especificat.
+Característiques de les API REST
+Sense estat : Cada sol·licitud d'un client a un servidor ha de contenir tota la informació que el servidor necessita per complir la sol·licitud. No s'emmagatzema cap estat de sessió al servidor.
+Arquitectura client-servidor : les API RESTful es basen en un model client-servidor, on el client i el servidor operen de manera independent, cosa que permet l'escalabilitat.
+Memòria cau : Les respostes del servidor es poden marcar explícitament com a memoriacautable o no per millorar el rendiment.
+Interfície uniforme : les API REST segueixen un conjunt de convencions i restriccions, com ara rutes d'URL consistents, mètodes HTTP estandarditzats i codis d'estat, per garantir una comunicació fluida.
+Sistema per capes : les API REST es poden implementar en diverses capes, cosa que ajuda a l'escalabilitat i la seguretat.
+Exemple del món real d'API Rest
+Les API REST s'utilitzen àmpliament en diverses indústries per simplificar la comunicació entre sistemes. Algunes aplicacions comunes inclouen:</p>
+<p>Xarxes socials: Integració de plataformes de tercers com Facebook, Twitter i Instagram per a funcions com ara iniciar sessió, compartir i publicar.
+Comerç electrònic: Gestió de productes, processament de pagaments, tramitació de comandes i gestió de clients.
+Serveis de geolocalització : seguiment GPS, actualitzacions d'ubicació en temps real i serveis basats en la ubicació com ara trobar llocs propers.
+Previsió meteorològica: Obtenció de dades meteorològiques de fonts externes per proporcionar actualitzacions i previsions meteorològiques en temps real.</p>
 
 
 
